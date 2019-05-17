@@ -1,13 +1,13 @@
 #ifndef _GXO_GPU_TYPE_H
 #define _GXO_GPU_TYPE_H
 enum GPUDataType {
-	GDT_CHAR,
-        GDT_SHORT,
-        GDT_USHORT,
-	GDT_INT,
-	GDT_UINT,
-        GDT_HALF_FLOAT,
-	GDT_FLOAT
+	GPU_CHAR,
+        GPU_SHORT,
+        GPU_USHORT,
+	GPU_INT,
+	GPU_UINT,
+        GPU_HALF_FLOAT,
+	GPU_FLOAT
 };
 
 #endif
