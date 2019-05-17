@@ -1,24 +1,24 @@
 #ifndef _GXO_ID_H
 #define _GXO_ID_H
+#include"type.h"
 namespace gxo {
-	typedef unsigned int GPUID;
 	typedef unsigned int UID;
 	class IDManager
 	{
 	public:
-		unsigned int id;
+		UID id;
 	public:
-		ID(unsigned int id)
+		IDManager()
 		{
-			id = id;
+			id = 0;
 		}
 
-		~ID()
+		~IDManager()
 		{
 		}
-                Uint32 gen(){
-
-                }
+		UID gen_uid(){
+			return ++id;
+        }
 
 	private:
 

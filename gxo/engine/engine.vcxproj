@@ -122,7 +122,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\gxo\async_system.h" />
     <ClInclude Include="..\gxo\engine.h" />
+    <ClInclude Include="..\gxo\file_system.h" />
+    <ClInclude Include="..\gxo\resource_manager.h" />
+    <ClInclude Include="event_system.h" />
+    <ClInclude Include="net_system.h" />
+    <ClInclude Include="state_mechine.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp" />

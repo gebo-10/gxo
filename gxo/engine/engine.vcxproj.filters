@@ -1,18 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="src">
+    <Filter Include="3rdparty">
+      <UniqueIdentifier>{ef9e4700-8a04-4b0d-b3fb-c6f0262cd519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{7f575345-d97c-4a43-9406-3ab841aa8888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine">
       <UniqueIdentifier>{ff2c0b87-777e-4904-8c12-d322a75b4cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{bc1a12bd-1984-471d-8333-62bd6c3875b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\window">
+      <UniqueIdentifier>{2796b911-766f-4885-8d02-4dead4c2c108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\linux">
+      <UniqueIdentifier>{c745ebb1-dd11-4e71-895a-02240a23be77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="manager">
+      <UniqueIdentifier>{c615642b-4798-45c4-b0c6-f539eb36167c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="support">
+      <UniqueIdentifier>{ea7899cf-6616-4431-81d2-3657ac3d8bc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua">
+      <UniqueIdentifier>{1da2d866-dd2b-494e-a4e7-7d0cffb531fe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gxo\engine.h">
-      <Filter>src</Filter>
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\file_system.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\async_system.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="net_system.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="state_mechine.h">
+      <Filter>support</Filter>
+    </ClInclude>
+    <ClInclude Include="event_system.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\resource_manager.h">
+      <Filter>manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp">
-      <Filter>src</Filter>
+      <Filter>engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

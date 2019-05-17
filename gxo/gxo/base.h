@@ -3,4 +3,6 @@
 #include"type.h"
 #include"buffer.h"
 #include"name_manager.h"
+#include"stl.h"
+#include"id.h"
 #endif

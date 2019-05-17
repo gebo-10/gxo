@@ -1,7 +1,6 @@
 #ifndef _GXO_RESOURCE_H
 #define _GXO_RESOURCE_H
-#include"id.h"
-#include<string>
+#include"base.h"
 namespace gxo {
 	class Resource
 	{
@@ -23,8 +22,8 @@ namespace gxo {
 		MemeryType memery_type;
 
 		int resource_type;
-		UUID m_uuid;
-		URL m_url;
+		UID uid;
+		URL url;
 	public:
 		Resource()
 		{
@@ -34,5 +33,6 @@ namespace gxo {
 		{
 		}
 	};
+	typedef  std::shared_ptr<Resource> ResourcePtr;
 }
 #endif

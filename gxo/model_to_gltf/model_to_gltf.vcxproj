@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,10 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{C8691A70-E6FB-48FA-B6C7-9FB7FBB57E0B}</ProjectGuid>
-    <RootNamespace>gxo</RootNamespace>
+    <ProjectGuid>{013A3F47-8D93-4A0C-A09D-600F0D33E4FF}</ProjectGuid>
+    <RootNamespace>modeltogltf</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
-    <ProjectName>core</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -70,29 +69,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\gxo\master\gxo\3rdpart\glfw\lib;E:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>glfw3.lib;glew32sd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-    </ClCompile>
-  </ItemDefinitionGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -106,6 +83,22 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -122,50 +115,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="base.h" />
-    <ClInclude Include="blit_pass.h" />
-    <ClInclude Include="bvh.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="camera_node.h" />
-    <ClInclude Include="clear_pass.h" />
-    <ClInclude Include="compose_pass.h" />
-    <ClInclude Include="compositer.h" />
-    <ClInclude Include="draw_pass.h" />
-    <ClInclude Include="gpu.h" />
-    <ClInclude Include="gpu_api.h" />
-    <ClInclude Include="gpu_buffer.h" />
-    <ClInclude Include="gpu_manager.h" />
-    <ClInclude Include="gpu_object.h" />
-    <ClInclude Include="gpu_type.h" />
-    <ClInclude Include="id.h" />
-    <ClInclude Include="kdtree.h" />
-    <ClInclude Include="layer.h" />
-    <ClInclude Include="line.h" />
-    <ClInclude Include="manipulator.h" />
-    <ClInclude Include="material.h" />
-    <ClInclude Include="mesh.h" />
-    <ClInclude Include="model.h" />
-    <ClInclude Include="name_manager.h" />
-    <ClInclude Include="node.h" />
-    <ClInclude Include="pass.h" />
-    <ClInclude Include="pass_group.h" />
-    <ClInclude Include="pipeline.h" />
-    <ClInclude Include="point.h" />
-    <ClInclude Include="problem_domain.h" />
-    <ClInclude Include="buffer.h" />
-    <ClInclude Include="render.h" />
-    <ClInclude Include="renderpass.h" />
-    <ClInclude Include="render_target.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="sample.h" />
-    <ClInclude Include="scene_manager.h" />
-    <ClInclude Include="script.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="stl.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="triangle.h" />
-    <ClInclude Include="type.h" />
-    <ClInclude Include="viewport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

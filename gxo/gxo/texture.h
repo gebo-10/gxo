@@ -7,6 +7,7 @@ namespace gxo {
 	{
 	public:
 		GPUID gpu_id;
+		Buffer buffer;
 		int width;
 		int height;
 	public:

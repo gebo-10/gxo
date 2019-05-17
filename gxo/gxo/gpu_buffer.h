@@ -8,5 +8,8 @@ namespace gxo {
 		GPUID  gpu_id;
 		uint32_t size;
 	};
+
+	
+
 }
 #endif

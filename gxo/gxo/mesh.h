@@ -4,7 +4,10 @@
 #include"gpu.h"
 #include"name_manager.h"
 #include <vector>
+#ifndef _GXO_MESH_H
+#define _GXO_MESH_H
 #include"base.h"
+#include"gpu.h"
 namespace gxo {
 	class Mesh
 	{
@@ -17,7 +20,7 @@ namespace gxo {
 		std::vector<VertexAttr> vertex_attr;
 		Buffer vertex;
 		Buffer indices;  //如果大于65536 需要 用 uint32来索引
-		GPUID gpu_object_id;
+		GPUObject gpu_object;
 	public:
 		Mesh()
 		{
