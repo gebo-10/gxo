@@ -3,7 +3,7 @@
 namespace gxo {
 	typedef unsigned int GPUID;
 	typedef unsigned int UID;
-	class ID
+	class IDManager
 	{
 	public:
 		unsigned int id;
@@ -16,6 +16,9 @@ namespace gxo {
 		~ID()
 		{
 		}
+                Uint32 gen(){
+
+                }
 
 	private:
 
