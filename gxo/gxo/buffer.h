@@ -1,6 +1,6 @@
 #ifndef _GXO_BUFFER_H
 #define _GXO_BUFFER_H
-#include "base.h"
+#include "type.h"
 
 namespace gxo {
 	struct Buffer {

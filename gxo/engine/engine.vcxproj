@@ -22,32 +22,32 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{7159F78E-1882-4BC4-966C-B510AF2CE04F}</ProjectGuid>
     <RootNamespace>engine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\gxo\master\gxo\3rdpart\glfw\lib;E:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\gxo\master\gxo\gxo;D:\gxo\master\gxo\3rdpart\libuv\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\gxo\master\gxo\3rdpart\libuv\lib;D:\gxo\master\gxo\3rdpart\glfw\lib;D:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -82,7 +82,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>glew32sd.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libuv.lib;glew32sd.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,15 +123,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\gxo\async_system.h" />
-    <ClInclude Include="..\gxo\engine.h" />
+    <ClInclude Include="..\gxo\camera_node.h" />
+    <ClInclude Include="..\gxo\compositer.h" />
     <ClInclude Include="..\gxo\file_system.h" />
+    <ClInclude Include="..\gxo\gpu.h" />
+    <ClInclude Include="..\gxo\layer.h" />
+    <ClInclude Include="..\gxo\manipulator.h" />
     <ClInclude Include="..\gxo\resource_manager.h" />
+    <ClInclude Include="..\gxo\viewport.h" />
+    <ClInclude Include="bvh.h" />
+    <ClInclude Include="engine.h" />
     <ClInclude Include="event_system.h" />
+    <ClInclude Include="gxo.h" />
+    <ClInclude Include="kdtree.h" />
+    <ClInclude Include="light.h" />
+    <ClInclude Include="lua.h" />
     <ClInclude Include="net_system.h" />
+    <ClInclude Include="scene_node.h" />
+    <ClInclude Include="scene_manager.h.h" />
     <ClInclude Include="state_mechine.h" />
+    <ClInclude Include="ui_node.h" />
+    <ClInclude Include="window_system.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

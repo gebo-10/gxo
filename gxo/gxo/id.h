@@ -1,26 +1,28 @@
+//检查index实际跑的增加率 是否需要增加到 64位
 #ifndef _GXO_ID_H
 #define _GXO_ID_H
 #include"type.h"
 namespace gxo {
-	typedef unsigned int UID;
-	class IDManager
+	class UID
 	{
 	public:
-		UID id;
-	public:
-		IDManager()
+		static unsigned int index;
+		unsigned int id;
+		UID()
 		{
-			id = 0;
+			id = ++index;
+		}
+		UID(unsigned int id)
+		{
+			id = id;
+		}
+		unsigned int current() {
+			return index;
 		}
 
-		~IDManager()
-		{
+		static UID gen() {
+			return UID();
 		}
-		UID gen_uid(){
-			return ++id;
-        }
-
-	private:
 
 	};
 }

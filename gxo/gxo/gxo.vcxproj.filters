@@ -1,26 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="3rdparty">
-      <UniqueIdentifier>{f73254be-49ad-4485-a22f-95f86de68d2a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="platform">
-      <UniqueIdentifier>{ffc5a22e-07e9-4ee4-9ac7-8bd40aa1d71e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="platform\window">
-      <UniqueIdentifier>{d6da3c4b-e8f9-4330-9663-c6a45e4ca71a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="platform\linux">
-      <UniqueIdentifier>{1161c0d2-a8a1-4e53-b74f-b20ddee916ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core">
       <UniqueIdentifier>{ae9b71b2-6eda-4d06-8f96-9d247ffaf25e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\slot">
-      <UniqueIdentifier>{69f11fba-9e18-40af-b25c-d9290a8ddd47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\object">
-      <UniqueIdentifier>{09e66b56-07af-41b6-a5ab-6a93d2972acc}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\geometry">
       <UniqueIdentifier>{a9d0978b-828e-4ff4-813c-dc8cc40c2921}</UniqueIdentifier>
@@ -46,32 +28,14 @@
     <Filter Include="core\font">
       <UniqueIdentifier>{8988f4a9-b5a9-4d33-aef5-25e09398555f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core\property">
-      <UniqueIdentifier>{8f56a482-f716-4ddc-aa9c-47d17aced407}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\ui">
-      <UniqueIdentifier>{7fc8f72c-1168-4bdb-908e-1ddaa87ba8c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\ui\2d">
-      <UniqueIdentifier>{55244d69-8b68-43d4-b128-e5081611032b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\ui\3d">
-      <UniqueIdentifier>{c76ed698-965b-4f04-9c3f-74f5859b93c3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\physics">
       <UniqueIdentifier>{26bd952d-5081-4777-839e-c49cc76f071e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\scene">
-      <UniqueIdentifier>{cf90e4ee-ca38-4c4d-8fee-b2a00301b711}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\resource">
       <UniqueIdentifier>{45f1c3d6-6bb6-4bd7-bdb2-bd0c654ccd39}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\base">
       <UniqueIdentifier>{13042580-95a8-4829-922e-c229197d9fd1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\vector_graph">
-      <UniqueIdentifier>{768dc489-7cbc-44ad-b9fb-025418c85a41}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\gpu">
       <UniqueIdentifier>{c9e35ca8-7218-4002-8c6e-8c71d70a217a}</UniqueIdentifier>
@@ -87,9 +51,6 @@
     </Filter>
     <Filter Include="core\media\image">
       <UniqueIdentifier>{d8b86191-ac31-4ed0-b9c2-3eaf23ec1c51}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\operator">
-      <UniqueIdentifier>{deb8d093-2420-4570-adc6-8bee60f8dbd7}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\render">
       <UniqueIdentifier>{610db6de-44a4-4c67-8f92-44e1e3995144}</UniqueIdentifier>
@@ -115,6 +76,21 @@
     <Filter Include="core\metadata">
       <UniqueIdentifier>{29e3b5cb-7047-48cd-afb7-784316f10a73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\system">
+      <UniqueIdentifier>{e9d8da91-41e1-4e7f-9c77-a502d3c6ab55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\vg">
+      <UniqueIdentifier>{768dc489-7cbc-44ad-b9fb-025418c85a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\entity">
+      <UniqueIdentifier>{887ea781-ca5d-40ba-a2ff-a96b926b3932}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\entity\property">
+      <UniqueIdentifier>{8f56a482-f716-4ddc-aa9c-47d17aced407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\animation\ik">
+      <UniqueIdentifier>{65ae48ff-567c-4556-af7a-1eb3b921ef98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mesh.h">
@@ -132,26 +108,11 @@
     <ClInclude Include="texture.h">
       <Filter>core\resource</Filter>
     </ClInclude>
-    <ClInclude Include="name_manager.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
     <ClInclude Include="id.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
-    <ClInclude Include="problem_domain.h">
       <Filter>core\base</Filter>
     </ClInclude>
     <ClInclude Include="render.h">
       <Filter>core\render\render</Filter>
-    </ClInclude>
-    <ClInclude Include="scene_manager.h">
-      <Filter>core\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="viewport.h">
-      <Filter>core\slot</Filter>
-    </ClInclude>
-    <ClInclude Include="node.h">
-      <Filter>core\scene</Filter>
     </ClInclude>
     <ClInclude Include="renderpass.h">
       <Filter>core\resource</Filter>
@@ -161,9 +122,6 @@
     </ClInclude>
     <ClInclude Include="model.h">
       <Filter>core\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="camera_node.h">
-      <Filter>core\slot</Filter>
     </ClInclude>
     <ClInclude Include="pass.h">
       <Filter>core\render\render</Filter>
@@ -183,20 +141,11 @@
     <ClInclude Include="compose_pass.h">
       <Filter>core\render\render</Filter>
     </ClInclude>
-    <ClInclude Include="kdtree.h">
-      <Filter>core\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="bvh.h">
-      <Filter>core\scene</Filter>
-    </ClInclude>
     <ClInclude Include="gpu_buffer.h">
       <Filter>core\gpu</Filter>
     </ClInclude>
     <ClInclude Include="render_target.h">
       <Filter>core\render\render</Filter>
-    </ClInclude>
-    <ClInclude Include="manipulator.h">
-      <Filter>core\slot</Filter>
     </ClInclude>
     <ClInclude Include="line.h">
       <Filter>core\render\renderable\primitive</Filter>
@@ -213,21 +162,6 @@
     <ClInclude Include="gpu_object.h">
       <Filter>core\gpu</Filter>
     </ClInclude>
-    <ClInclude Include="compositer.h">
-      <Filter>core\ui\2d</Filter>
-    </ClInclude>
-    <ClInclude Include="layer.h">
-      <Filter>core\ui\2d</Filter>
-    </ClInclude>
-    <ClInclude Include="script.h">
-      <Filter>core\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="gpu.h">
-      <Filter>core\gpu</Filter>
-    </ClInclude>
-    <ClInclude Include="base.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
     <ClInclude Include="buffer.h">
       <Filter>core\base</Filter>
     </ClInclude>
@@ -235,9 +169,6 @@
       <Filter>core\base</Filter>
     </ClInclude>
     <ClInclude Include="gpu_type.h">
-      <Filter>core\gpu</Filter>
-    </ClInclude>
-    <ClInclude Include="gpu_manager.h">
       <Filter>core\gpu</Filter>
     </ClInclude>
     <ClInclude Include="gpu_api.h">
@@ -248,6 +179,36 @@
     </ClInclude>
     <ClInclude Include="sample.h">
       <Filter>core\animation\key</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>core\system</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>core\system</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_script.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_shader.h">
+      <Filter>core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="name.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="domain.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>core\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

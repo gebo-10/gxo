@@ -1,6 +1,6 @@
 #ifndef _GXO_RESOURCE_MANAGER_H
 #define _GXO_RESOURCE_MANAGER_H
-#include"base.h"
+#include"core.h"
 #include"resource.h"
 namespace gxo {
 	class ResourceManager
@@ -22,16 +22,16 @@ namespace gxo {
 		~ResourceManager()
 		{
 		}
-		ResourcePtr get(UID id, bool sync) {
+		ResourcePtr get(UID id, bool sync = true) {
 			return resource_map[id].resource.lock();
 		}
-		ResourcePtr get(URL url, bool sync) {
-
+		ResourcePtr get(string_view &url, bool sync = true) {
+			return get(Name::to_id(url).id, sync);
 		}
 
 	private:
 		void resource_deleter(Resource * resource) {
-			std::cout << "resource_deleter " << resource->uid << std::endl;
+			std::cout << "resource_deleter " << resource->uid .id<< std::endl;
 		}
 	};
 }

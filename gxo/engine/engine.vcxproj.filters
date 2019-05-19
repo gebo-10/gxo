@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="3rdparty">
-      <UniqueIdentifier>{ef9e4700-8a04-4b0d-b3fb-c6f0262cd519}</UniqueIdentifier>
-    </Filter>
     <Filter Include="system">
       <UniqueIdentifier>{7f575345-d97c-4a43-9406-3ab841aa8888}</UniqueIdentifier>
     </Filter>
@@ -19,20 +16,35 @@
     <Filter Include="platform\linux">
       <UniqueIdentifier>{c745ebb1-dd11-4e71-895a-02240a23be77}</UniqueIdentifier>
     </Filter>
-    <Filter Include="manager">
-      <UniqueIdentifier>{c615642b-4798-45c4-b0c6-f539eb36167c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="support">
       <UniqueIdentifier>{ea7899cf-6616-4431-81d2-3657ac3d8bc3}</UniqueIdentifier>
     </Filter>
     <Filter Include="lua">
       <UniqueIdentifier>{1da2d866-dd2b-494e-a4e7-7d0cffb531fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="plugin">
+      <UniqueIdentifier>{2a075a3a-5b57-439e-b422-267298f8e68d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{c4d0b526-b542-4464-99a4-7864159774f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\2d">
+      <UniqueIdentifier>{e8bfa5f0-5e2c-49e9-88b6-0a747165e7e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui\3d">
+      <UniqueIdentifier>{f13c4198-dd3e-4586-b965-d1107a88fc24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="slot">
+      <UniqueIdentifier>{0bcb0cb9-8cc8-4dea-9a5f-9434f1165333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="manager">
+      <UniqueIdentifier>{c615642b-4798-45c4-b0c6-f539eb36167c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="manager\scene">
+      <UniqueIdentifier>{15e18d8e-1fc2-4e39-96b6-7846e7c1bd52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\gxo\engine.h">
-      <Filter>engine</Filter>
-    </ClInclude>
     <ClInclude Include="..\gxo\file_system.h">
       <Filter>system</Filter>
     </ClInclude>
@@ -51,10 +63,54 @@
     <ClInclude Include="..\gxo\resource_manager.h">
       <Filter>manager</Filter>
     </ClInclude>
+    <ClInclude Include="window_system.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_manager.h.h">
+      <Filter>manager\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh.h">
+      <Filter>manager\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="kdtree.h">
+      <Filter>manager\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\compositer.h">
+      <Filter>ui\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\layer.h">
+      <Filter>ui\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\camera_node.h">
+      <Filter>slot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\manipulator.h">
+      <Filter>slot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\viewport.h">
+      <Filter>slot</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_node.h">
+      <Filter>manager\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_node.h">
+      <Filter>ui\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>slot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\gpu.h">
+      <Filter>manager</Filter>
+    </ClInclude>
+    <ClInclude Include="lua.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo.h" />
+    <ClInclude Include="engine.h">
+      <Filter>engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine.cpp">
-      <Filter>engine</Filter>
-    </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>

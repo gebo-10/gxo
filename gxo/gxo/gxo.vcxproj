@@ -22,33 +22,33 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C8691A70-E6FB-48FA-B6C7-9FB7FBB57E0B}</ProjectGuid>
     <RootNamespace>gxo</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>core</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -122,50 +122,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="base.h" />
     <ClInclude Include="blit_pass.h" />
-    <ClInclude Include="bvh.h" />
     <ClInclude Include="camera.h" />
-    <ClInclude Include="camera_node.h" />
     <ClInclude Include="clear_pass.h" />
+    <ClInclude Include="color.h" />
     <ClInclude Include="compose_pass.h" />
-    <ClInclude Include="compositer.h" />
+    <ClInclude Include="core.h" />
     <ClInclude Include="draw_pass.h" />
-    <ClInclude Include="gpu.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="file.h" />
     <ClInclude Include="gpu_api.h" />
     <ClInclude Include="gpu_buffer.h" />
-    <ClInclude Include="gpu_manager.h" />
     <ClInclude Include="gpu_object.h" />
+    <ClInclude Include="gpu_shader.h" />
     <ClInclude Include="gpu_type.h" />
     <ClInclude Include="id.h" />
-    <ClInclude Include="kdtree.h" />
-    <ClInclude Include="layer.h" />
     <ClInclude Include="line.h" />
-    <ClInclude Include="manipulator.h" />
+    <ClInclude Include="log.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="mesh.h" />
     <ClInclude Include="model.h" />
-    <ClInclude Include="name_manager.h" />
-    <ClInclude Include="node.h" />
+    <ClInclude Include="name.h" />
     <ClInclude Include="pass.h" />
     <ClInclude Include="pass_group.h" />
     <ClInclude Include="pipeline.h" />
     <ClInclude Include="point.h" />
-    <ClInclude Include="problem_domain.h" />
+    <ClInclude Include="domain.h" />
     <ClInclude Include="buffer.h" />
     <ClInclude Include="render.h" />
     <ClInclude Include="renderpass.h" />
     <ClInclude Include="render_target.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="sample.h" />
-    <ClInclude Include="scene_manager.h" />
-    <ClInclude Include="script.h" />
+    <ClInclude Include="lua_script.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="stl.h" />
     <ClInclude Include="texture.h" />
+    <ClInclude Include="time.h" />
     <ClInclude Include="triangle.h" />
     <ClInclude Include="type.h" />
-    <ClInclude Include="viewport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
