@@ -3,3 +3,10 @@
 ################################################################################
 
 /gxo/studio/Debug
+/gxo/Release
+/gxo/ptr_deleter/Release
+/gxo/ptr_deleter/Debug
+/gxo/model_to_gltf/Debug
+/gxo/gxo/Debug
+/gxo/common/Debug
+/gxo/.vs/gxo/v16
