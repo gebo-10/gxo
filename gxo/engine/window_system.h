@@ -18,20 +18,22 @@ namespace gxo {
 
 		bool init() {
 			if (!glfwInit())
-				return -1;
+				return false;
 			/* Create a windowed mode window and its OpenGL context */
 			window = glfwCreateWindow(480, 320, "Hello World", NULL, NULL);
 			if (!window)
 			{
 				glfwTerminate();
-				return -1;
+				return false;
 			}
 
 			/* Make the window's context current */
 			glfwMakeContextCurrent(window);
+		}
 
-			/* Loop until the user closes the window */
-			while (!glfwWindowShouldClose(window))
+		void update() {
+			
+			if (!glfwWindowShouldClose(window))
 			{
 				/* Draw a triangle */
 				glBegin(GL_TRIANGLES);

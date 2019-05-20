@@ -48,9 +48,6 @@
     <ClInclude Include="..\gxo\file_system.h">
       <Filter>system</Filter>
     </ClInclude>
-    <ClInclude Include="..\gxo\async_system.h">
-      <Filter>system</Filter>
-    </ClInclude>
     <ClInclude Include="net_system.h">
       <Filter>system</Filter>
     </ClInclude>
@@ -108,6 +105,9 @@
     <ClInclude Include="gxo.h" />
     <ClInclude Include="engine.h">
       <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="async_system.h">
+      <Filter>system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
