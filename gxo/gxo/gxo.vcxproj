@@ -129,7 +129,6 @@
     <ClInclude Include="compose_pass.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="draw_pass.h" />
-    <ClInclude Include="entity.h" />
     <ClInclude Include="file.h" />
     <ClInclude Include="gpu_api.h" />
     <ClInclude Include="gpu_buffer.h" />

@@ -82,12 +82,6 @@
     <Filter Include="core\vg">
       <UniqueIdentifier>{768dc489-7cbc-44ad-b9fb-025418c85a41}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core\entity">
-      <UniqueIdentifier>{887ea781-ca5d-40ba-a2ff-a96b926b3932}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\entity\property">
-      <UniqueIdentifier>{8f56a482-f716-4ddc-aa9c-47d17aced407}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\animation\ik">
       <UniqueIdentifier>{65ae48ff-567c-4556-af7a-1eb3b921ef98}</UniqueIdentifier>
     </Filter>
@@ -200,9 +194,6 @@
     </ClInclude>
     <ClInclude Include="domain.h">
       <Filter>core\base</Filter>
-    </ClInclude>
-    <ClInclude Include="entity.h">
-      <Filter>core\entity</Filter>
     </ClInclude>
     <ClInclude Include="color.h">
       <Filter>core\base</Filter>
