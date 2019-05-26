@@ -96,6 +96,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>glew32sd.lib;glfw3.lib;libuv.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -149,6 +150,7 @@
     <ClInclude Include="light.h" />
     <ClInclude Include="lua.h" />
     <ClInclude Include="net_system.h" />
+    <ClInclude Include="tree_node.h" />
     <ClInclude Include="render_system.h" />
     <ClInclude Include="scene_node.h" />
     <ClInclude Include="scene_manager.h" />

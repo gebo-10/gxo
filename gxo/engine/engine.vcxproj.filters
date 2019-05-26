@@ -124,9 +124,6 @@
     <ClInclude Include="ui_root.h">
       <Filter>ecs\ui\2d\entity</Filter>
     </ClInclude>
-    <ClInclude Include="ui_node.h">
-      <Filter>ecs\ui\2d\entity</Filter>
-    </ClInclude>
     <ClInclude Include="scene_root.h">
       <Filter>ecs\scene\entity</Filter>
     </ClInclude>
@@ -138,6 +135,12 @@
     </ClInclude>
     <ClInclude Include="entity.h">
       <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="tree_node.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_node.h">
+      <Filter>ecs\ui\2d\entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
