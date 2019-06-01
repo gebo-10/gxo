@@ -2,12 +2,12 @@
 #define _GXO_ASYNC_SYSTEM_H
 #include"uv.h"
 #include<functional>
+#include<iostream>
 namespace gxo {
 	class AsyncSystem
 	{
 	public:
 		uv_idle_t idler;
-		std::function<void(void)> update;
 		AsyncSystem()
 		{
 		}
@@ -29,15 +29,8 @@ namespace gxo {
 		//void destory() {
 		//	uv_idle_stop(handle);
 		//}
-		void register_update(std::function<void(void)> update) {
-			this->update = update;
-		}
-		static void idle(uv_idle_t* handle) {
-				//uv_idle_stop(handle);
-			AsyncSystem* as = (AsyncSystem*)handle->data;
-			as->update();
-			std::cout << "hah" << std::endl;
-		}
+
+		static void idle(uv_idle_t* handle);
 
 	};
 

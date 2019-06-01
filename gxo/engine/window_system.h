@@ -2,6 +2,7 @@
 #define _GXO_WINDOW_SYSTEM_H
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include<iostream>
 namespace gxo {
 	class WindowSystem
 	{
@@ -29,36 +30,29 @@ namespace gxo {
 
 			/* Make the window's context current */
 			glfwMakeContextCurrent(window);
+
+			glfwSetMouseButtonCallback(window, mouse_button_callback);
+		}
+
+		void swap_buffer() {
+			glfwSwapBuffers(window);
 		}
 
 		void update() {
-			
-			if (!glfwWindowShouldClose(window))
-			{
-				/* Draw a triangle */
-				glBegin(GL_TRIANGLES);
-
-				glColor3f(1.0, 0.0, 0.0);    // Red
-				glVertex3f(0.0, 1.0, 0.0);
-
-				glColor3f(0.0, 1.0, 0.0);    // Green
-				glVertex3f(-1.0, -1.0, 0.0);
-
-				glColor3f(0.0, 0.0, 1.0);    // Blue
-				glVertex3f(1.0, -1.0, 0.0);
-
-				glEnd();
-
-				/* Swap front and back buffers */
-				glfwSwapBuffers(window);
-
-				/* Poll for and process events */
-				glfwPollEvents();
-			}
+			glfwPollEvents();
+			//if (!glfwWindowShouldClose(window))
+			//{
+			//	glfwPollEvents();
+			//}
 		}
 
 	private:
-
+		static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+		{
+			if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
+				std::cout << "right button press" << std::endl;
+				//popup_menu();
+		}
 	};
 
 }

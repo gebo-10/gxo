@@ -6,7 +6,7 @@ namespace gxo {
 	class UiRoot :public UiNode
 	{
 	public:
-		 
+		UiNode* focus;
 	private:
 
 	};

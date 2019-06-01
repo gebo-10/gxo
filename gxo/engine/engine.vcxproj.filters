@@ -49,8 +49,11 @@
     <Filter Include="ecs\ui\2d">
       <UniqueIdentifier>{e8bfa5f0-5e2c-49e9-88b6-0a747165e7e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ecs\ui\2d\entity">
+    <Filter Include="ecs\ui\2d\nodes">
       <UniqueIdentifier>{ff7556f0-c99f-4600-a686-27bfd498bd4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\ui\2d\UiRender">
+      <UniqueIdentifier>{095555a9-ee8e-45f6-88f7-8df97e927e0f}</UniqueIdentifier>
     </Filter>
     <Filter Include="ecs\ui\3d">
       <UniqueIdentifier>{f13c4198-dd3e-4586-b965-d1107a88fc24}</UniqueIdentifier>
@@ -102,9 +105,6 @@
     <ClInclude Include="..\gxo\gpu.h">
       <Filter>manager</Filter>
     </ClInclude>
-    <ClInclude Include="lua.h">
-      <Filter>lua</Filter>
-    </ClInclude>
     <ClInclude Include="gxo.h" />
     <ClInclude Include="engine.h">
       <Filter>engine</Filter>
@@ -122,7 +122,7 @@
       <Filter>ecs\scene</Filter>
     </ClInclude>
     <ClInclude Include="ui_root.h">
-      <Filter>ecs\ui\2d\entity</Filter>
+      <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
     <ClInclude Include="scene_root.h">
       <Filter>ecs\scene\entity</Filter>
@@ -140,10 +140,44 @@
       <Filter>ecs</Filter>
     </ClInclude>
     <ClInclude Include="ui_node.h">
-      <Filter>ecs\ui\2d\entity</Filter>
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="textblock.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="viewport.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="process_node.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="work_system.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="application.h" />
+    <ClInclude Include="..\..\..\depence\sol\forward.hpp">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\depence\sol\sol.hpp">
+      <Filter>lua</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="engine.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="render_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="async_system.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\gxo\master\gxo\3rdpart\spdlog\include;E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\gxo\master\gxo\3rdpart\glfw\lib;E:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

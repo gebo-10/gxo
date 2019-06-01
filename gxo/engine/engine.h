@@ -1,7 +1,11 @@
 #ifndef _GXO_ENGINE_H
 #define _GXO_ENGINE_H
+#include"config.h"
 #include"window_system.h"
 #include"async_system.h"
+#include"render_system.h"
+#include "ui_root.h"
+#include"log.h"
 namespace gxo {
 	class Engine
 	{
@@ -14,10 +18,15 @@ namespace gxo {
 		};
 		int width;
 		int height;
+		Config config;
 		EngineStatus status;
 		//uint32 last_tick;
 		WindowSystem window_system;
 		AsyncSystem async_system;
+
+		RenderSystem render_system;
+		UiRoot tree;
+
 		static Engine& instacne() {
 			static Engine engine;
 			return engine;
@@ -31,9 +40,9 @@ namespace gxo {
 
 		}
 		bool init() {
+			config.init();
 			window_system.init();
 			async_system.init();
-			async_system.register_update(std::bind(&Engine::update,this));
 			return true;
 		}
 
@@ -47,7 +56,10 @@ namespace gxo {
 		void stop();
 
 		void update() {
+			//TODO 帧率控制 根据配置文件
+			//TODO 性能检测 benchmarking 
 			window_system.update();
+			render_system.update();
 		}
 
 		void clear(){
