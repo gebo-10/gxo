@@ -4,8 +4,11 @@
 #include"window_system.h"
 #include"async_system.h"
 #include"render_system.h"
-#include "ui_root.h"
+#include"event_system.h"
+#include"tree_manager.h"
+#include"profiler.h"
 #include"log.h"
+
 namespace gxo {
 	class Engine
 	{
@@ -18,14 +21,15 @@ namespace gxo {
 		};
 		int width;
 		int height;
-		Config config;
 		EngineStatus status;
 		//uint32 last_tick;
 		WindowSystem window_system;
 		AsyncSystem async_system;
 
 		RenderSystem render_system;
-		UiRoot tree;
+		EventSystem event_system;
+		
+		TreeManager tree_manager;
 
 		static Engine& instacne() {
 			static Engine engine;
@@ -40,14 +44,15 @@ namespace gxo {
 
 		}
 		bool init() {
-			config.init();
+			Config::instacne().init();
+			Profiler::instacne().init();
 			window_system.init();
+			event_system.init();
 			async_system.init();
 			return true;
 		}
 
-		bool init(char * name, int width, int height);
-		bool run() {
+		bool start() {
 			async_system.loop();
 			return true;
 		}
@@ -58,7 +63,9 @@ namespace gxo {
 		void update() {
 			//TODO 帧率控制 根据配置文件
 			//TODO 性能检测 benchmarking 
+			if (!Profiler::instacne().fps()) return;
 			window_system.update();
+			event_system.update();
 			render_system.update();
 		}
 

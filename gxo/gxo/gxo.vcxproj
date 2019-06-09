@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\gxo\master\gxo\3rdpart\spdlog\include;E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\gxo\master\gxo\3rdpart\spdlog\include;E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\3rdpart;$(IncludePath)</IncludePath>
     <LibraryPath>E:\gxo\master\gxo\3rdpart\glfw\lib;E:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -128,13 +128,15 @@
     <ClInclude Include="color.h" />
     <ClInclude Include="compose_pass.h" />
     <ClInclude Include="core.h" />
+    <ClInclude Include="curve.h" />
     <ClInclude Include="draw_pass.h" />
-    <ClInclude Include="file.h" />
     <ClInclude Include="gpu_api.h" />
     <ClInclude Include="gpu_buffer.h" />
     <ClInclude Include="gpu_object.h" />
     <ClInclude Include="gpu_shader.h" />
     <ClInclude Include="gpu_type.h" />
+    <ClInclude Include="gxo_math.h" />
+    <ClInclude Include="gxo_meta.h" />
     <ClInclude Include="id.h" />
     <ClInclude Include="line.h" />
     <ClInclude Include="log.h" />
@@ -157,7 +159,6 @@
     <ClInclude Include="shader.h" />
     <ClInclude Include="stl.h" />
     <ClInclude Include="texture.h" />
-    <ClInclude Include="time.h" />
     <ClInclude Include="triangle.h" />
     <ClInclude Include="type.h" />
   </ItemGroup>

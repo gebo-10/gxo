@@ -14,9 +14,7 @@ namespace gxo {
 
 		}
 
-		bool init() {
 
-		}
 		virtual void on_config() {
 
 		}

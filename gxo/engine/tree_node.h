@@ -1,21 +1,23 @@
 #ifndef ENGINE_NODE_H
 #define ENGINE_NODE_H
-#include<vector>
+#include<list>
+#include"entity.h"
+
 namespace gxo {
-	class TreeNode
+	class TreeNode:public Entity
 	{
 	public:
-		enum Status
-		{
-			CRWEATED,
-			INITED,
-			ACTIVE,
-			NOT_ACTIVE,
-			DESTORIED,
-		};
-		Status status;
+		//enum Status
+		//{
+		//	CRWEATED,
+		//	INITED,
+		//	ACTIVE,
+		//	NOT_ACTIVE,
+		//	DESTORIED,
+		//};
+		//Status status;
 		TreeNode* parent;
-		std::vector<TreeNode*> children;
+		std::list<TreeNode*> children;
 		
 		TreeNode()
 		{

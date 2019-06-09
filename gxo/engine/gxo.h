@@ -11,7 +11,7 @@ namespace gxo {
 
 	static bool run() {
 		std::cout << "gxo::run" << std::endl;
-		Engine::instacne().run();
+		Engine::instacne().start();
 		return true;
 	}
 	static bool clear() {

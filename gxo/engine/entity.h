@@ -3,6 +3,7 @@
 #include <map>
 #include <any>
 #include <cassert>
+#include "property_name_def.h"
 namespace gxo {
 	typedef  int PropertyType;
 	class Entity {
@@ -53,6 +54,15 @@ namespace gxo {
 		template<typename T>
 		bool set(PropertyType type, T t) {
 			m_property[type] = t;
+			return true;
+		}
+
+		bool has_property(PropertyType type) {
+			auto itr = m_property.find(type);
+			if (itr != m_property.end())
+			{
+				return false;
+			}
 			return true;
 		}
 

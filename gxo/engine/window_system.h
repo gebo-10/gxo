@@ -21,7 +21,8 @@ namespace gxo {
 			if (!glfwInit())
 				return false;
 			/* Create a windowed mode window and its OpenGL context */
-			window = glfwCreateWindow(480, 320, "Hello World", NULL, NULL);
+			std::string name = Config::instacne().data["name"];
+			window = glfwCreateWindow(Config::instacne().data["width"], Config::instacne().data["height"], name.c_str(), NULL, NULL);
 			if (!window)
 			{
 				glfwTerminate();

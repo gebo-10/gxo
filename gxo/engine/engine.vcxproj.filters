@@ -58,18 +58,36 @@
     <Filter Include="ecs\ui\3d">
       <UniqueIdentifier>{f13c4198-dd3e-4586-b965-d1107a88fc24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="system\event_system">
+      <UniqueIdentifier>{9a5c7045-b241-4da1-98d1-bc2de5ce2221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic">
+      <UniqueIdentifier>{bc2622f1-a08d-41cf-b647-7b83c4b66691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic\state_machine">
+      <UniqueIdentifier>{58827c73-2881-4aff-a73a-a3a02cb1ce34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic\script">
+      <UniqueIdentifier>{d6c9f03e-225c-4cb5-af91-d2ea95270430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic\animation">
+      <UniqueIdentifier>{dd6d1d59-838f-487d-905e-c2164f7ce875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic\binding">
+      <UniqueIdentifier>{aa00f20b-c310-467b-b380-894a6c279aad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic\behive_tree">
+      <UniqueIdentifier>{cb5a0676-01ae-4e6e-9bd8-56b28b1580b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logic\event">
+      <UniqueIdentifier>{10647def-47b4-4934-a151-696369f29b03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gxo\file_system.h">
       <Filter>system</Filter>
     </ClInclude>
     <ClInclude Include="net_system.h">
-      <Filter>system</Filter>
-    </ClInclude>
-    <ClInclude Include="state_mechine.h">
-      <Filter>support</Filter>
-    </ClInclude>
-    <ClInclude Include="event_system.h">
       <Filter>system</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\resource_manager.h">
@@ -142,9 +160,6 @@
     <ClInclude Include="ui_node.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
-    <ClInclude Include="image.h">
-      <Filter>ecs\ui\2d\nodes</Filter>
-    </ClInclude>
     <ClInclude Include="textblock.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
@@ -157,15 +172,51 @@
     <ClInclude Include="work_system.h">
       <Filter>system</Filter>
     </ClInclude>
-    <ClInclude Include="config.h">
-      <Filter>engine</Filter>
-    </ClInclude>
     <ClInclude Include="application.h" />
     <ClInclude Include="..\..\..\depence\sol\forward.hpp">
       <Filter>lua</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\depence\sol\sol.hpp">
       <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="event_system.h">
+      <Filter>system\event_system</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_event_queue.h">
+      <Filter>system\event_system</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_event.h">
+      <Filter>system\event_system</Filter>
+    </ClInclude>
+    <ClInclude Include="tree_manager.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="state_mechine.h">
+      <Filter>logic\state_machine</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler.h">
+      <Filter>support</Filter>
+    </ClInclude>
+    <ClInclude Include="trigger.h">
+      <Filter>logic\event</Filter>
+    </ClInclude>
+    <ClInclude Include="message.h">
+      <Filter>logic\event</Filter>
+    </ClInclude>
+    <ClInclude Include="action.h">
+      <Filter>logic\event</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>support</Filter>
+    </ClInclude>
+    <ClInclude Include="property_name_def.h">
+      <Filter>ecs\property</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_view.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_image.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -179,5 +230,8 @@
     <ClCompile Include="async_system.cpp">
       <Filter>system</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

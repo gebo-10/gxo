@@ -76,14 +76,14 @@
     <Filter Include="core\metadata">
       <UniqueIdentifier>{29e3b5cb-7047-48cd-afb7-784316f10a73}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core\system">
-      <UniqueIdentifier>{e9d8da91-41e1-4e7f-9c77-a502d3c6ab55}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\vg">
       <UniqueIdentifier>{768dc489-7cbc-44ad-b9fb-025418c85a41}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\animation\ik">
       <UniqueIdentifier>{65ae48ff-567c-4556-af7a-1eb3b921ef98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\math">
+      <UniqueIdentifier>{7f14ce29-596d-47d9-a380-70ddf6c0a276}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -174,12 +174,6 @@
     <ClInclude Include="sample.h">
       <Filter>core\animation\key</Filter>
     </ClInclude>
-    <ClInclude Include="file.h">
-      <Filter>core\system</Filter>
-    </ClInclude>
-    <ClInclude Include="time.h">
-      <Filter>core\system</Filter>
-    </ClInclude>
     <ClInclude Include="log.h">
       <Filter>core\base</Filter>
     </ClInclude>
@@ -200,6 +194,15 @@
     </ClInclude>
     <ClInclude Include="core.h">
       <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="curve.h">
+      <Filter>core\animation\key</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_math.h">
+      <Filter>core\math</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_meta.h">
+      <Filter>core\metadata</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

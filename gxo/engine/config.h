@@ -10,6 +10,12 @@ namespace gxo {
 	{
 	public:
 		sol::table data;
+
+		static Config& instacne() {
+			static Config config;
+			return config;
+		}
+
 		Config(){}
 		~Config(){}
 		bool init() {
