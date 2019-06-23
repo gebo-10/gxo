@@ -1,8 +1,9 @@
 #ifndef _GXO_TYPE_H
 #define _GXO_TYPE_H
-#include <stdint.h>
 #include<string>
 #include<string_view>
+#include <cstdint>
+
 namespace gxo {
 	typedef unsigned char byte;
 	typedef std::string string;

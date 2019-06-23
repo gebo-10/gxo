@@ -16,6 +16,7 @@ namespace gxo {
 		//	DESTORIED,
 		//};
 		//Status status;
+		
 		TreeNode* parent;
 		std::list<TreeNode*> children;
 		
@@ -25,6 +26,16 @@ namespace gxo {
 
 		~TreeNode()
 		{
+		}
+
+		void add_child(TreeNode * node) {
+			children.push_back(node);
+		}
+
+
+		virtual bool on_render() {
+
+			return true;
 		}
 
 	private:

@@ -36,8 +36,8 @@ namespace gxo {
 
 		}
 
-		bool init() {
-			return true;
+		void init() {
+			return;
 		}
 
 		void update() {

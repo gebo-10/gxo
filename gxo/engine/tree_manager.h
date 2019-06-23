@@ -1,7 +1,7 @@
 #ifndef _GXO_TREE_MANAGER_H
 #define _GXO_TREE_MANAGER_H
 #include "tree_node.h"
-//#include"tree.hpp"
+#include"ui_node.h"
 namespace gxo {
 	class TreeManager
 	{
@@ -15,6 +15,7 @@ namespace gxo {
 			return true;
 		}
 
+		
 		void visit_preorder(std::function<bool (TreeNode*)> visitor, TreeNode * root) {
 			if (root == nullptr) return;
 			if (visitor(root)) {
@@ -26,6 +27,13 @@ namespace gxo {
 		void visit_preorder(std::function<bool(TreeNode*)> visitor) {
 			visit_preorder(visitor, &tree);
 		}
+
+		
+		enum VisitContinue {
+
+		};
+		//search()
+
 	private:
 		
 	};

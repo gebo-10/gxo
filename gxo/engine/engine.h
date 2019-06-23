@@ -1,14 +1,15 @@
 #ifndef _GXO_ENGINE_H
 #define _GXO_ENGINE_H
 #include"config.h"
-#include"window_system.h"
+
 #include"async_system.h"
 #include"render_system.h"
 #include"event_system.h"
 #include"tree_manager.h"
 #include"profiler.h"
 #include"log.h"
-
+#include"application.h"
+#include"window_system.h"
 namespace gxo {
 	class Engine
 	{
@@ -31,25 +32,32 @@ namespace gxo {
 		
 		TreeManager tree_manager;
 
+		Application* app;
+
 		static Engine& instacne() {
 			static Engine engine;
 			return engine;
 		}
 		Engine()
 		{
-			
+			app = gxo_create_application();
 		}
 		~Engine()
 		{
 
 		}
-		bool init() {
+		void init() {
 			Config::instacne().init();
 			Profiler::instacne().init();
 			window_system.init();
 			event_system.init();
 			async_system.init();
-			return true;
+			render_system.init();
+
+			app->on_config();
+			app->on_project_loaded();
+
+			return;
 		}
 
 		bool start() {
@@ -61,13 +69,17 @@ namespace gxo {
 		void stop();
 
 		void update() {
-			//TODO 帧率控制 根据配置文件
 			//TODO 性能检测 benchmarking 
 			if (!Profiler::instacne().fps()) return;
 			window_system.update();
 			event_system.update();
+
+			app->on_update();
+
 			render_system.update();
 		}
+
+		//void on_resize(int width,int height) {} 写进event系统 事件传输
 
 		void clear(){
 		

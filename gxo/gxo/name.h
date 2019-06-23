@@ -7,7 +7,7 @@ namespace gxo {
 	public:
 		Name(): name_id(0) {}
 
-		Name(std::string name) {
+		Name(string name) {
 			name_id = NameMap::instance().add(name);
 		}
 		UID ID() {

@@ -19,25 +19,27 @@ namespace gxo {
 		
 		Profiler() :fps_limit(0),interval(0), last_time(0){}
 		~Profiler() {}
-		bool init() {
+		void init() {
 			last_time= uv_hrtime();
 			fps_limit = Config::instacne().data["max_fps"];
 			if(fps_limit != 0)
-				interval = 1000000000.0 / fps_limit;
-			return true;
+				interval = 1000000000.0f / fps_limit;
+			return;
 		}
 		bool fps() {
 			auto now = uv_hrtime();
-			int fps=1000000000.0 / (now - last_time)+1;
+			auto elapsed = now - last_time;
+			int fps=(int) (1000000000.0f / elapsed +1);
 
-			if (now - last_time > interval) {
+			if (elapsed > interval) {
 				last_time = now;
 				info("fps: {}", fps);
 				return true;
 			}
-
+			auto micro =(long long) ( (interval - elapsed)/1050.0f);
+			std::this_thread::sleep_for(std::chrono::microseconds(micro));
 			return false;
-		}
+		} 
 	private:
 
 	};

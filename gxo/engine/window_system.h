@@ -1,5 +1,6 @@
 #ifndef _GXO_WINDOW_SYSTEM_H
 #define _GXO_WINDOW_SYSTEM_H
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include<iostream>
@@ -8,6 +9,7 @@ namespace gxo {
 	{
 	public:
 		GLFWwindow * window;
+		Rect rect;
 		WindowSystem()
 		{
 		}
@@ -17,25 +19,45 @@ namespace gxo {
 			glfwTerminate();
 		}
 
-		bool init() {
+		void init() {
 			if (!glfwInit())
-				return false;
+				return;
+
+			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+			//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+
+			glfwWindowHint(GLFW_SAMPLES, 0);
+			glfwWindowHint(GLFW_RED_BITS, 8);
+			glfwWindowHint(GLFW_GREEN_BITS, 8);
+			glfwWindowHint(GLFW_BLUE_BITS, 8);
+			glfwWindowHint(GLFW_ALPHA_BITS, 8);
+			glfwWindowHint(GLFW_STENCIL_BITS, 8);
+			glfwWindowHint(GLFW_DEPTH_BITS, 24);
+			glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
+
+
 			/* Create a windowed mode window and its OpenGL context */
 			std::string name = Config::instacne().data["name"];
-			window = glfwCreateWindow(Config::instacne().data["width"], Config::instacne().data["height"], name.c_str(), NULL, NULL);
+			rect.width = Config::instacne().data["width"];
+			rect.height = Config::instacne().data["height"];
+			window = glfwCreateWindow(rect.width, rect.height , name.c_str(), NULL, NULL);
 			if (!window)
 			{
 				glfwTerminate();
-				return false;
+				return;
 			}
 
 			/* Make the window's context current */
 			glfwMakeContextCurrent(window);
 
 			glfwSetMouseButtonCallback(window, mouse_button_callback);
+			return;
 		}
 
 		void swap_buffer() {
+			//glfwSwapInterval(16);
 			glfwSwapBuffers(window);
 		}
 

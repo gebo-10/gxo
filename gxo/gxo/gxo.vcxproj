@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C8691A70-E6FB-48FA-B6C7-9FB7FBB57E0B}</ProjectGuid>
     <RootNamespace>gxo</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>core</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\gxo\master\gxo\3rdpart\spdlog\include;E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\3rdpart;$(IncludePath)</IncludePath>
+    <IncludePath>D:\gxo\master\gxo\3rdpart\spdlog\include;E:\gxo\master\gxo\3rdpart\glfw\include;E:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\3rdpart;D:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\gxo\master\gxo\3rdpart\glfw\lib;E:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -130,6 +130,7 @@
     <ClInclude Include="core.h" />
     <ClInclude Include="curve.h" />
     <ClInclude Include="draw_pass.h" />
+    <ClInclude Include="gpu.h" />
     <ClInclude Include="gpu_api.h" />
     <ClInclude Include="gpu_buffer.h" />
     <ClInclude Include="gpu_object.h" />
@@ -137,6 +138,7 @@
     <ClInclude Include="gpu_type.h" />
     <ClInclude Include="gxo_math.h" />
     <ClInclude Include="gxo_meta.h" />
+    <ClInclude Include="gxo_rect.h" />
     <ClInclude Include="id.h" />
     <ClInclude Include="line.h" />
     <ClInclude Include="log.h" />

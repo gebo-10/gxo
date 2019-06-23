@@ -38,5 +38,14 @@ namespace gxo {
 		
 	};
 
+
+#define APP(NAME)\
+gxo::Application * gxo::gxo_create_application() {\
+	auto * app= new NAME; \
+	return app; \
 }
+
+extern gxo::Application* gxo_create_application();
+}
+
 #endif

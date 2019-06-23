@@ -1,6 +1,6 @@
 #ifndef _GXO_RESOURCE_H
 #define _GXO_RESOURCE_H
-#include"base.h"
+#include"id.h"
 namespace gxo {
 	class Resource
 	{
@@ -23,7 +23,7 @@ namespace gxo {
 
 		int resource_type;
 		UID uid;
-		URL url;
+		//URL url;
 	public:
 		Resource()
 		{
@@ -33,6 +33,6 @@ namespace gxo {
 		{
 		}
 	};
-	typedef  std::shared_ptr<Resource> ResourcePtr;
 }
+
 #endif

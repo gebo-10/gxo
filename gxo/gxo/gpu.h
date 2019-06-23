@@ -1,6 +1,10 @@
 #ifndef _GXO_GPU_IMAGE_H
 #define _GXO_GPU_IMAGE_H
+#include <stdlib.h>
+#include <stdio.h>
 #include <GL/glew.h>
+#include"log.h"
+
 namespace gxo {
 	class GPU
 	{
@@ -15,11 +19,18 @@ namespace gxo {
 		{
 		}
 		bool init() {
-			GLenum err = glewInit();
-			if (GLEW_OK != err)
+			GLenum result = glewInit();
+			if (result != GLEW_OK )
 			{
-				//assert(true);
+				info("");
+				abort();
 			}
+		}
+		void log_device_info() {
+			info("GL_VERSION: {}", glGetString(GL_VERSION));
+			info("GL_VENDOR: {}", glGetString(GL_VENDOR));
+			info("GL_RENDERER: {}", glGetString(GL_RENDERER));
+			info("GLSL Version: {}", glGetString(GL_SHADING_LANGUAGE_VERSION));
 		}
 	private:
 

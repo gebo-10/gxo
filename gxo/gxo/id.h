@@ -1,7 +1,8 @@
 //检查index实际跑的增加率 是否需要增加到 64位
 #ifndef _GXO_ID_H
 #define _GXO_ID_H
-#include"type.h"
+//#include"type.h"
+
 namespace gxo {
 	class UID
 	{

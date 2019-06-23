@@ -82,6 +82,9 @@
     <Filter Include="logic\event">
       <UniqueIdentifier>{10647def-47b4-4934-a151-696369f29b03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="meta">
+      <UniqueIdentifier>{f00b09d5-8641-47b1-a0d9-23589bc904f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gxo\file_system.h">
@@ -119,9 +122,6 @@
     </ClInclude>
     <ClInclude Include="light.h">
       <Filter>slot</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\gpu.h">
-      <Filter>manager</Filter>
     </ClInclude>
     <ClInclude Include="gxo.h" />
     <ClInclude Include="engine.h">
@@ -218,6 +218,9 @@
     <ClInclude Include="gxo_image.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
+    <ClInclude Include="meta_id.h">
+      <Filter>meta</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -230,8 +233,6 @@
     <ClCompile Include="async_system.cpp">
       <Filter>system</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
+    <ClCompile Include="test_application.cpp" />
   </ItemGroup>
 </Project>

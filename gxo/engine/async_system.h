@@ -16,11 +16,11 @@ namespace gxo {
 		{
 		}
 
-		bool init() {
+		void init() {
 			idler.data = this;
 			uv_idle_init(uv_default_loop(), &idler);
 			uv_idle_start(&idler, idle);
-			return true;
+			return;
 		}
 		void loop() {
 			uv_run(uv_default_loop(), UV_RUN_DEFAULT);

@@ -20,15 +20,30 @@
 #pragma comment(lib, "odbc32.lib")
 #pragma comment(lib, "odbccp32.lib")
 
-#include<iostream>
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 
 #include"gxo.h"
+using namespace gxo;
+bool init() {
+	std::cout << "gxo::init" << std::endl;
+	Engine::instacne().init();
+	return true;
+}
+
+bool run() {
+	std::cout << "gxo::run" << std::endl;
+	Engine::instacne().start();
+	return true;
+}
+bool clear() {
+	std::cout << "gxo::clear" << std::endl;
+	Engine::instacne().clear();
+	return true;
+}
+
 int main(void) {
-	gxo::init();
-	gxo::run();
-	gxo::clear();
+	init();
+	run();
+	clear();
 	return 0;
 }
 
