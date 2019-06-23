@@ -5,6 +5,11 @@
 #include <cassert>
 #include "property_name_def.h"
 namespace gxo {
+
+	//class no_property_exception :public std::exception {
+	//	const char* what()  const noexcept override { return "no property!\n"; }
+	//};
+
 	typedef  int PropertyType;
 	class Entity {
 		Entity* m_base;
@@ -36,6 +41,17 @@ namespace gxo {
 			else {
 				return std::any_cast<T>(m_property[type]);
 			}
+		}
+
+		template<typename T>
+		bool get(PropertyType type, T &t) {
+			auto itr = m_property.find(type);
+			if (itr != m_property.end()) {
+				t = std::any_cast<T>(m_property[type]);
+				return true;
+			}
+			if (m_base == nullptr) return false;
+			return m_base->get(type, t);
 		}
 
 		template<typename T>

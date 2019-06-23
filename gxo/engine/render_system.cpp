@@ -1,9 +1,11 @@
 #include"render_system.h"
 #include"engine.h"
-
+#include"ui_node.h"
 void gxo::RenderSystem::init()
 {
 	gpu.init();
+
+
 	return ;
 }
 
@@ -26,9 +28,10 @@ void gxo::RenderSystem::update()
 	//glLoadIdentity();
 	//glOrtho(-1, 1, -1, 1, -4, 4000);
 	//glViewport(0, 0, Engine::instacne().window_system.rect.width-300, Engine::instacne().window_system.rect.height);
-	//glClearColor(0.f, 1.f, 0.f, 1.0f);
+	//glClearColor(0.f, 0.f, 0.5f, 1.0f);
 	//glClear(GL_COLOR_BUFFER_BIT);
-
+	auto rect = Rect(0, 0, 500, 500);
+	Engine::instacne().tree_manager.screen.on_layout(rect);
 
 	Engine::instacne().tree_manager.visit_preorder([](TreeNode * node) -> bool{
 		return node->on_render();

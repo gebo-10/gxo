@@ -1,11 +1,13 @@
 ﻿#ifndef _GXO_RENDER_SYSTEM_H
 #define _GXO_RENDER_SYSTEM_H
 #include"gpu.h"
+#include"color.h"
 namespace gxo {
 	class RenderSystem
 	{
 	public:
 		GPU gpu;
+
 		RenderSystem()
 		{
 		}

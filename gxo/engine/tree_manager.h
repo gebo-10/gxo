@@ -1,18 +1,17 @@
 #ifndef _GXO_TREE_MANAGER_H
 #define _GXO_TREE_MANAGER_H
 #include "tree_node.h"
-#include"ui_node.h"
+#include"ui_screen.h"
 namespace gxo {
 	class TreeManager
 	{
 	public:
 		//bool visit_break; //遍历过程可以中断整个过程
-		TreeNode tree;
-		TreeManager() {}
+		UiScreen screen;
+		TreeManager(){}
 		~TreeManager() {}
-		bool init() {
-
-			return true;
+		void init() {
+			return;
 		}
 
 		
@@ -25,7 +24,7 @@ namespace gxo {
 			}
 		}
 		void visit_preorder(std::function<bool(TreeNode*)> visitor) {
-			visit_preorder(visitor, &tree);
+			visit_preorder(visitor, &screen);
 		}
 
 		
@@ -33,7 +32,9 @@ namespace gxo {
 
 		};
 		//search()
-
+		UiScreen* get_screen() {
+			return &screen;
+		}
 	private:
 		
 	};

@@ -12,17 +12,17 @@ namespace gxo {
 		UiRoot():mouse_focus(nullptr),key_focus(nullptr){
 
 		}
-		bool on_render() {
-			auto size = get<ivec2>(LAYOUT_SIZE);
-			glViewport(0, 0, size.x, size.y);
-			for (auto child : children) {
-				Engine::instacne().tree_manager.visit_preorder([](TreeNode* node) -> bool {
-					return node->on_render();
-					}, child);
-			}
-			
-			return false;
-		}
+		//bool on_render() {
+		//	auto size = get<ivec2>(LAYOUT_SIZE);
+		//	glViewport(0, 0, size.x, size.y);
+		//	for (auto child : children) {
+		//		Engine::instacne().tree_manager.visit_preorder([](TreeNode* node) -> bool {
+		//			return node->on_render();
+		//			}, child);
+		//	}
+		//	
+		//	return false;
+		//}
 
 		Rect on_layout(Rect& rect_parent) {
 			Rect rect_self;

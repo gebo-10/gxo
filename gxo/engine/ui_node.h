@@ -7,14 +7,13 @@
 #include"renderpass.h"
 #include"log.h"
 #include"gpu_api.h"
+#include"concept.h"
 namespace gxo {
 	class UiNode :public TreeNode
 	{
 	public:
-		//ivec2  size;
-		//vec2  position;
-		//vec2  rotate;
-		//vec2  scale;
+		ivec2 size;
+		ivec2  position;
 
 		UiNode()
 		{
@@ -26,19 +25,74 @@ namespace gxo {
 		
 		}
 		virtual bool on_render() {
-			auto render_pass= get<RenderPass*>(RENDER_PASS);
+		/*	auto render_pass= get<RenderPass*>(RENDER_PASS);
 			if (render_pass == nullptr) return true;
 			switch (render_pass->type) {
 			case 0: return true;
 			case 1: draw_image(); break;
 			case 2: draw_text(); break;
 			case 3: draw_color(); break;
-			}
+			}*/
+			draw_rect();
 			return true;
 		}
 
 		Rect on_layout(Rect &rect_parent) {
+			{
+				position.x = rect_parent.x;
+				position.y = rect_parent.y;
+				size.x = rect_parent.width;
+				size.y = rect_parent.height;
+
+				ivec2 layout_size;
+				if (get<ivec2>(LAYOUT_SIZE, layout_size)) {
+					size = layout_size;
+				}
+
+				ivec2 pos;
+				Align align_x;
+				Align align_y;
+				if (get<ivec2>(POSITION, pos)) {
+					position = pos;
+				}
+				else {
+					if (get<Align>(ALIGN_X, align_x)) {
+						switch (align_x)
+						{
+						case gxo::ALIGN_LEFT:
+							break;
+						case gxo::ALIGN_CENTER:
+							position.x += (int) (rect_parent.width/2.0f - size.x / 2.0f);
+							break;
+						case gxo::ALIGN_REIGHT:
+							position.x += rect_parent.width  - size.x ;
+							break;
+						}
+					}
+
+					if (get<Align>(ALIGN_Y, align_y)) {
+						switch (align_y)
+						{
+						case gxo::ALIGN_CENTER:
+							position.y += (int)(rect_parent.height / 2.0f - size.y / 2.0f);
+							break;
+						case gxo::ALIGN_TOP:
+							break;
+						case gxo::ALIGN_BOTTOM:
+							position.x += rect_parent.height - size.y;
+							break;
+						default:
+							break;
+						}
+					}
+				}
+			}
 			Rect rect_self;
+			rect_self.set(position, size);
+			for (auto child : children) {
+				auto ui_node = dynamic_cast<UiNode*>(child);
+				ui_node->on_layout(rect_self);
+			}
 			return rect_self;
 		}
 /////////////////////////////////////////////////////////////////////////////////
@@ -51,37 +105,49 @@ namespace gxo {
 		}
 
 		void draw_color() {
-			/*info("draw_color");
-			glClearColor(0.2f, 0.5f, 0.6f,1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);*/
-			glDisable(GL_DEPTH_TEST);
-			glClearDepth(1.0);
-			glEnable(GL_BLEND);
-			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	/*		info("draw_color");
 			glEnable(GL_SCISSOR_TEST);
-			glScissor(0, 0, 400, 400);
-			
-			glClearColor(0.2f, 0.5f, 0.6f, 0.5f);
-			glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
-			//glDepthMask(GL_FALSE);
+			glScissor(position.x, position.y, size.x, size.y);
+			glClearColor(position.x/ 1000.0f, 0.5f, size.y/1000.0f,1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);*/
 
-			glScissor(200, 350, 100, 100);
-			glClearColor(0.8f, 0.5f, 0.6f, 0.50f);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			//glDepthMask(GL_TRUE);
-			glScissor(0, 0, 800, 800);
-			glBegin(GL_TRIANGLES);
+	//		glDisable(GL_DEPTH_TEST);
+	//		glClearDepth(1.0);
+	//		glEnable(GL_BLEND);
+	//		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//		glEnable(GL_SCISSOR_TEST);
+	//		glScissor(50, 50, 400, 400);
+	//		
+	//		glClearColor(0.2f, 0.5f, 0.6f, 0.5f);
+	//		glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
+	//		//glDepthMask(GL_FALSE);
 
-	glColor3f(1.0, 0.0, 0.0);    // Red
-	glVertex3f(0.0, 1.0, 0.0);
+	//		glScissor(200, 350, 100, 100);
+	//		glClearColor(0.8f, 0.5f, 0.6f, 0.50f);
+	//		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//		//glDepthMask(GL_TRUE);
+	//		glScissor(0, 0, 800, 800);
+	//		glBegin(GL_TRIANGLES);
 
-	glColor3f(0.0, 1.0, 0.0);    // Green
-	glVertex3f(-1.0, -1.0, 0.0);
+	//glColor4f(1.0, 0.0, 0.0,0.5);    // Red
+	//glVertex3f(0.0, 1.0, 0.0);
 
-	glColor3f(0.0, 0.0, 1.0);    // Blue
-	glVertex3f(1.0, -1.0, 0.0);
+	//glColor3f(0.0, 1.0, 0.0);    // Green
+	//glVertex3f(-1.0, -1.0, 0.0);
 
-	glEnd();
+	//glColor3f(0.0, 0.0, 1.0);    // Blue
+	//glVertex3f(1.0, -1.0, 0.0);
+
+	//glEnd();
+		}
+
+
+		void draw_rect() {
+			glEnable(GL_SCISSOR_TEST);
+			glScissor(position.x, position.y, size.x, size.y);
+			//glViewport(position.x, position.y, size.x, size.y);
+			glClearColor(position.x / 1000.0f, 0.5f, size.y / 1000.0f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
 		}
 
 /////////////////////////////////////////////////////////////////////

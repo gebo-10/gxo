@@ -1,7 +1,7 @@
-#ifndef _GXO_GPU_IMAGE_H
-#define _GXO_GPU_IMAGE_H
+#ifndef _GXO_GPU_H
+#define _GXO_GPU_H
 #include <stdlib.h>
-#include <stdio.h>
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include"log.h"
 
@@ -18,7 +18,7 @@ namespace gxo {
 		~GPU()
 		{
 		}
-		bool init() {
+		void init() {
 			GLenum result = glewInit();
 			if (result != GLEW_OK )
 			{

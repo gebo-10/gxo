@@ -20,19 +20,19 @@ public:
 	virtual void on_project_loaded()
 	{
 		auto ui_root = new UiRoot;
-		ui_root->add_property(gxo::LAYOUT_SIZE, ivec2(200, 200));
-		
+		ui_root->add_property(LAYOUT_SIZE, ivec2(200, 200));
+		ui_root->add_property(POSITION, ivec2(0, 0));
 
 		auto node = new UiNode();
 		RenderPass* rp = new RenderPass();
 		rp->type = 3;
 		node->add_property(RENDER_PASS, rp);
-		node->add_property(gxo::LAYOUT_SIZE, ivec2(200, 200));
-
+		node->add_property(LAYOUT_SIZE, ivec2(100, 100));
+		node->add_property(ALIGN_X, ALIGN_CENTER);
 
 		ui_root->add_child(node);
 
-		Engine::instacne().tree_manager.tree.add_child(ui_root);
+		Engine::instacne().tree_manager.screen.add_child(ui_root);
 	}
 
 
