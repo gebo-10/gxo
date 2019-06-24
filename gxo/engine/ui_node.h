@@ -8,6 +8,8 @@
 #include"log.h"
 #include"gpu_api.h"
 #include"concept.h"
+
+
 namespace gxo {
 	class UiNode :public TreeNode
 	{
@@ -15,10 +17,7 @@ namespace gxo {
 		ivec2 size;
 		ivec2  position;
 
-		UiNode()
-		{
-			
-		}
+		UiNode();
 
 		~UiNode()
 		{
@@ -55,37 +54,37 @@ namespace gxo {
 				if (get<ivec2>(POSITION, pos)) {
 					position = pos;
 				}
-				else {
-					if (get<Align>(ALIGN_X, align_x)) {
-						switch (align_x)
-						{
-						case gxo::ALIGN_LEFT:
-							break;
-						case gxo::ALIGN_CENTER:
-							position.x += (int) (rect_parent.width/2.0f - size.x / 2.0f);
-							break;
-						case gxo::ALIGN_REIGHT:
-							position.x += rect_parent.width  - size.x ;
-							break;
-						}
-					}
-
-					if (get<Align>(ALIGN_Y, align_y)) {
-						switch (align_y)
-						{
-						case gxo::ALIGN_CENTER:
-							position.y += (int)(rect_parent.height / 2.0f - size.y / 2.0f);
-							break;
-						case gxo::ALIGN_TOP:
-							break;
-						case gxo::ALIGN_BOTTOM:
-							position.x += rect_parent.height - size.y;
-							break;
-						default:
-							break;
-						}
+				
+				if (get<Align>(ALIGN_X, align_x)) {
+					switch (align_x)
+					{
+					case gxo::ALIGN_LEFT:
+						break;
+					case gxo::ALIGN_CENTER:
+						position.x += (int) (rect_parent.width/2.0f - size.x / 2.0f)+ pos.x;
+						break;
+					case gxo::ALIGN_REIGHT:
+						position.x += rect_parent.width  - size.x + pos.x;
+						break;
 					}
 				}
+
+				if (get<Align>(ALIGN_Y, align_y)) {
+					switch (align_y)
+					{
+					case gxo::ALIGN_CENTER:
+						position.y += (int)(rect_parent.height / 2.0f - size.y / 2.0f) + pos.y;
+						break;
+					case gxo::ALIGN_TOP:
+						break;
+					case gxo::ALIGN_BOTTOM:
+						position.x += rect_parent.height - size.y + pos.y;
+						break;
+					default:
+						break;
+					}
+				}
+				
 			}
 			Rect rect_self;
 			rect_self.set(position, size);
@@ -142,13 +141,7 @@ namespace gxo {
 		}
 
 
-		void draw_rect() {
-			glEnable(GL_SCISSOR_TEST);
-			glScissor(position.x, position.y, size.x, size.y);
-			//glViewport(position.x, position.y, size.x, size.y);
-			glClearColor(position.x / 1000.0f, 0.5f, size.y / 1000.0f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
-		}
+		void draw_rect();
 
 /////////////////////////////////////////////////////////////////////
 		void on_pre_render() {

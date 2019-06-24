@@ -21,14 +21,16 @@ public:
 	{
 		auto ui_root = new UiRoot;
 		ui_root->add_property(LAYOUT_SIZE, ivec2(200, 200));
-		ui_root->add_property(POSITION, ivec2(0, 0));
+		ui_root->add_property(POSITION, ivec2(20, 20));
 
 		auto node = new UiNode();
 		RenderPass* rp = new RenderPass();
 		rp->type = 3;
 		node->add_property(RENDER_PASS, rp);
 		node->add_property(LAYOUT_SIZE, ivec2(100, 100));
+		node->add_property(POSITION, ivec2(20, 00));
 		node->add_property(ALIGN_X, ALIGN_CENTER);
+		node->add_property(ALIGN_Y, ALIGN_CENTER);
 
 		ui_root->add_child(node);
 

@@ -28,8 +28,8 @@ void gxo::RenderSystem::update()
 	//glLoadIdentity();
 	//glOrtho(-1, 1, -1, 1, -4, 4000);
 	//glViewport(0, 0, Engine::instacne().window_system.rect.width-300, Engine::instacne().window_system.rect.height);
-	//glClearColor(0.f, 0.f, 0.5f, 1.0f);
-	//glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(0.f, 0.f, 0.f, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT| GL_STENCIL_BUFFER_BIT);
 	auto rect = Rect(0, 0, 500, 500);
 	Engine::instacne().tree_manager.screen.on_layout(rect);
 

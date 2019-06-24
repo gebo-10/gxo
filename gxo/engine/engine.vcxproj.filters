@@ -434,6 +434,27 @@
     <ClInclude Include="concept.h">
       <Filter>core\base</Filter>
     </ClInclude>
+    <ClInclude Include="..\3rdpart\nanovg\fontstash.h">
+      <Filter>core\vg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\nanovg\nanovg.h">
+      <Filter>core\vg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\nanovg\nanovg_gl.h">
+      <Filter>core\vg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\nanovg\nanovg_gl_utils.h">
+      <Filter>core\vg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\nanovg\stb_image.h">
+      <Filter>core\vg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\nanovg\stb_truetype.h">
+      <Filter>core\vg</Filter>
+    </ClInclude>
+    <ClInclude Include="vg.h">
+      <Filter>core\vg</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -447,5 +468,11 @@
       <Filter>system</Filter>
     </ClCompile>
     <ClCompile Include="test_application.cpp" />
+    <ClCompile Include="..\3rdpart\nanovg\nanovg.c">
+      <Filter>core\vg</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_node.cpp">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
