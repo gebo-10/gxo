@@ -1,3 +1,6 @@
+#ifndef	GXO_SHADER_
+#define	GXO_SHADER_
+#include"GL/glew.h"
 namespace gxo {
 	class Shader
 	{
@@ -11,6 +14,8 @@ namespace gxo {
 		}
 
 	private:
-
+		
 	};
 }
+
+#endif

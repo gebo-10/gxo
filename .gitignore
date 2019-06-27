@@ -70,3 +70,5 @@
 /gxo - 副本
 /gxo/engine/Debug/nanovg.obj
 /gxo/engine/Debug/ui_node.obj
+*.db
+*.opendb
