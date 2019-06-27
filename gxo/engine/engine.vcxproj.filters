@@ -169,6 +169,12 @@
     <Filter Include="core\math">
       <UniqueIdentifier>{581dcc5e-f5d1-45fe-9f9a-d60fb5b0da5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\tool">
+      <UniqueIdentifier>{e906d6df-628c-4f5f-b529-b7f95702f50a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\render\cmd">
+      <UniqueIdentifier>{40aa765c-bcdf-4804-b1a4-9915b4167887}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gxo\file_system.h">
@@ -455,6 +461,15 @@
     <ClInclude Include="vg.h">
       <Filter>core\vg</Filter>
     </ClInclude>
+    <ClInclude Include="circle_queue.h">
+      <Filter>core\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="render_commend.h">
+      <Filter>core\render\cmd</Filter>
+    </ClInclude>
+    <ClInclude Include="render_engine.h">
+      <Filter>core\render\cmd</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -474,5 +489,9 @@
     <ClCompile Include="ui_node.cpp">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClCompile>
+    <ClCompile Include="render_command.cpp">
+      <Filter>core\render\cmd</Filter>
+    </ClCompile>
+    <ClCompile Include="render_commend.cpp" />
   </ItemGroup>
 </Project>

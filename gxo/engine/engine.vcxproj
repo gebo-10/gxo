@@ -195,6 +195,7 @@
     <ClInclude Include="application.h" />
     <ClInclude Include="async_system.h" />
     <ClInclude Include="bvh.h" />
+    <ClInclude Include="circle_queue.h" />
     <ClInclude Include="concept.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="engine.h" />
@@ -203,6 +204,8 @@
     <ClInclude Include="gxo.h" />
     <ClInclude Include="gxo_event.h" />
     <ClInclude Include="gxo_event_queue.h" />
+    <ClInclude Include="render_commend.h" />
+    <ClInclude Include="render_engine.h" />
     <ClInclude Include="ui_view.h" />
     <ClInclude Include="ui_image.h" />
     <ClInclude Include="kdtree.h" />
@@ -236,6 +239,8 @@
     <ClCompile Include="async_system.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="render_command.cpp" />
+    <ClCompile Include="render_commend.cpp" />
     <ClCompile Include="render_system.cpp" />
     <ClCompile Include="test_application.cpp" />
     <ClCompile Include="ui_node.cpp" />

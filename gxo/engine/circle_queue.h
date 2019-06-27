@@ -5,7 +5,7 @@
 template<class T, size_t MAX_SIZE = 3>
 class CircleQueue
 {
-public:
+private:
 	enum BuffState {
 		WRITE_ABLE = 0,
 		READ_ABLE
