@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #define GLEW_STATIC
 #include <GL/glew.h>
-#include"log.h"
+#include"gxo_log.h"
 
 namespace gxo {
 	class GPU

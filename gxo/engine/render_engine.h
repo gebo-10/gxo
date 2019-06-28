@@ -4,12 +4,12 @@
 #include"circle_queue.h"
 namespace gxo {
 #define RENDER_COMMAND_QUEUE_SIZE 100
-	class RenderEngine
+	class Renderer
 	{
 	public:
 		bool stop;
 		bool wait;
-		RenderEngine():stop(false),wait(false){}
+		Renderer():stop(false),wait(false){}
 		CircleQueue<RenderCommand*, RENDER_COMMAND_QUEUE_SIZE> command_queue;
 
 		void push_command(RenderCommand* rcmd) {

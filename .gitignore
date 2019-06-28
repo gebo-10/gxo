@@ -72,3 +72,6 @@
 /gxo/engine/Debug/ui_node.obj
 *.db
 *.opendb
+*.log
+*.log
+gxo/3rdpart/lua/lua/Debug/lua.log

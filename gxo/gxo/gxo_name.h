@@ -1,7 +1,7 @@
 #ifndef _GXO_NAME_H
 #define _GXO_NAME_H
-#include"type.h"
-#include"id.h"
+#include"gxo_type.h"
+#include"gxo_id.h"
 namespace gxo {
 	class Name {
 	public:

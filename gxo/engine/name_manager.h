@@ -1,6 +1,6 @@
 #ifndef _GXO_NAME_MANAGER_H
 #define _GXO_NAME_MANAGER_H
-#include"name.h"
+#include"gxo_name.h"
 namespace gxo {
 	class NameManager {
 	public:

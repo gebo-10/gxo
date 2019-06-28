@@ -1,8 +1,10 @@
-#ifndef _GXO_GPU_OBJECT_H
-#define _GXO_GPU_OBJECT_H
+#ifndef GXO_GPU_OBJECT_H
+#define GXO_GPU_OBJECT_H
 #include <vector>
-#include <assert.h>
+#include <cassert>
 #include "gpu_api.h"
+#include "gpu_type.h"
+#include "gpu_buffer.h"
 namespace gxo {
 	class GPUObject
 	{

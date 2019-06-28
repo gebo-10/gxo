@@ -1,5 +1,5 @@
-#ifndef _GXO_GPU_TYPE_H
-#define _GXO_GPU_TYPE_H
+#ifndef GXO_GPU_TYPE_H
+#define GXO_GPU_TYPE_H
 namespace gxo {
 	typedef unsigned int GPUID;
 	enum GPUDataType {

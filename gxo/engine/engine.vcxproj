@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\gxo\master\gxo\3rdpart\tree;D:\gxo\master\gxo\3rdpart\lua;D:\gxo\master\gxo\3rdpart\sol;D:\gxo\master\gxo\3rdpart\spdlog\include;D:\gxo\master\gxo\3rdpart;D:\gxo\master\gxo\gxo;D:\gxo\master\gxo\3rdpart\libuv\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\gxo\master\gxo\3rdpart\tree;D:\gxo\master\gxo\3rdpart\lua;D:\gxo\master\gxo\3rdpart\sol;D:\gxo\master\gxo\3rdpart\spdlog\include;D:\gxo\master\gxo\3rdpart;D:\gxo\master\gxo\gxo;D:\gxo\master\gxo\3rdpart\libuv\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\engine;$(IncludePath)</IncludePath>
     <LibraryPath>D:\gxo\master\gxo\3rdpart\luajit\lib;D:\gxo\master\gxo\3rdpart\libuv\lib;D:\gxo\master\gxo\3rdpart\glfw\lib;D:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -143,11 +143,11 @@
     <ClInclude Include="..\3rdpart\nanovg\stb_image.h" />
     <ClInclude Include="..\3rdpart\nanovg\stb_truetype.h" />
     <ClInclude Include="..\gxo\blit_pass.h" />
-    <ClInclude Include="..\gxo\buffer.h" />
+    <ClInclude Include="..\gxo\gxo_buffer.h" />
     <ClInclude Include="..\gxo\camera.h" />
     <ClInclude Include="..\gxo\camera_node.h" />
     <ClInclude Include="..\gxo\clear_pass.h" />
-    <ClInclude Include="..\gxo\color.h" />
+    <ClInclude Include="..\gxo\gxo_color.h" />
     <ClInclude Include="..\gxo\compose_pass.h" />
     <ClInclude Include="..\gxo\compositer.h" />
     <ClInclude Include="..\gxo\core.h" />
@@ -165,16 +165,16 @@
     <ClInclude Include="..\gxo\gxo_math.h" />
     <ClInclude Include="..\gxo\gxo_meta.h" />
     <ClInclude Include="..\gxo\gxo_rect.h" />
-    <ClInclude Include="..\gxo\id.h" />
+    <ClInclude Include="..\gxo\gxo_id.h" />
     <ClInclude Include="..\gxo\layer.h" />
     <ClInclude Include="..\gxo\line.h" />
-    <ClInclude Include="..\gxo\log.h" />
+    <ClInclude Include="..\gxo\gxo_log.h" />
     <ClInclude Include="..\gxo\lua_script.h" />
     <ClInclude Include="..\gxo\manipulator.h" />
     <ClInclude Include="..\gxo\material.h" />
     <ClInclude Include="..\gxo\mesh.h" />
     <ClInclude Include="..\gxo\model.h" />
-    <ClInclude Include="..\gxo\name.h" />
+    <ClInclude Include="..\gxo\gxo_name.h" />
     <ClInclude Include="..\gxo\pass.h" />
     <ClInclude Include="..\gxo\pass_group.h" />
     <ClInclude Include="..\gxo\pipeline.h" />
@@ -186,17 +186,21 @@
     <ClInclude Include="..\gxo\resource_manager.h" />
     <ClInclude Include="..\gxo\sample.h" />
     <ClInclude Include="..\gxo\shader.h" />
-    <ClInclude Include="..\gxo\stl.h" />
+    <ClInclude Include="..\gxo\gxo_stl.h" />
     <ClInclude Include="..\gxo\texture.h" />
     <ClInclude Include="..\gxo\triangle.h" />
-    <ClInclude Include="..\gxo\type.h" />
+    <ClInclude Include="..\gxo\gxo_type.h" />
     <ClInclude Include="..\gxo\viewport.h" />
     <ClInclude Include="action.h" />
     <ClInclude Include="application.h" />
     <ClInclude Include="async_system.h" />
     <ClInclude Include="bvh.h" />
     <ClInclude Include="circle_queue.h" />
-    <ClInclude Include="concept.h" />
+    <ClInclude Include="gpu_header.h" />
+    <ClInclude Include="gpu_image.h" />
+    <ClInclude Include="gpu_pipeline.h" />
+    <ClInclude Include="gpu_view.h" />
+    <ClInclude Include="gxo_concept.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="entity.h" />
@@ -240,7 +244,6 @@
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="render_command.cpp" />
-    <ClCompile Include="render_commend.cpp" />
     <ClCompile Include="render_system.cpp" />
     <ClCompile Include="test_application.cpp" />
     <ClCompile Include="ui_node.cpp" />

@@ -3,7 +3,10 @@
 #include<string>
 #include<string_view>
 #include <cstdint>
-
+#include<vector>
+#include<map>
+#include<iostream>
+#include <memory>
 namespace gxo {
 	typedef unsigned char byte;
 	typedef std::string string;
@@ -14,5 +17,6 @@ namespace gxo {
 	typedef uint32_t uint32;
 	typedef uint64_t uint64;
 	typedef std::string URL;
+	template <typename T> using shared_ptr=std::shared_ptr;
 }
 #endif

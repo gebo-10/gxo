@@ -8,7 +8,7 @@ namespace gxo {
 	{
 	public:
 		GPU gpu;
-		RenderEngine renderer;
+		Renderer renderer;
 		RenderSystem()
 		{
 		}

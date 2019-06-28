@@ -1,28 +1,81 @@
 ﻿#ifndef GXO_RENDER_COMMAND_H
 #define GXO_RENDER_COMMAND_H
+#include"mesh.h"
+#include"gxo_math.h"
+#include"material.h"
+#include"render_target.h"
 namespace gxo {
-	class RenderEngine;
+	class Renderer;
+	enum RenderCommandType
+	{
+		RCMD_INVALD,
+		RCMD_MESH,
+		RCMD_MATERIAL,
+		RCMD_RENDER_TARGET,
+		RCMD_LIGHT,
+		RCMD_UI_BEGIN,
+		RCMD_UI_END,
+		RCMD_CAMERA,
+	};
+////////////////////////////////////////////////////////////////////////
 	class RenderCommand
 	{
 	public:
-		enum RenderCommandType
-		{
-			RCMD_EMPTY,
-			RCMD_BIND_VAO,
-			RCMD_DRAW_MESH,
-			RCMD_DRAW_LINES,
-			RCMD_LIGHT,
-			RCMD_GEOMETRY,
-			RCMD_MATERIAL,
-			RCMD_CAMERA,
-		};
 		int type;
-		RenderCommand() :type(RCMD_EMPTY) {};
+		RenderCommand() :type(RCMD_INVALD) {};
 		RenderCommand(int type) :type(type) {};
 		virtual ~RenderCommand() {};
-
-		virtual void process(RenderEngine* render);
+		virtual void process(Renderer* render);
 	};
+	typedef std::shared_ptr<RenderCommand> RenderCommandPtr;
+////////////////////////////////////////////////////////////////////////
+	class RcmdMesh :public RenderCommand
+	{
+	public:
+		int		shadow_type;//0 表示没阴影， 1 表示硬阴影，  2 表示软阴影
+		MeshPtr	mesh;
+		mat4	transform;
+
+	public:
+		RcmdMesh() :RenderCommand(RCMD_MESH) { };
+		~RcmdMesh() {};
+
+		void Init(MeshPtr mesh);
+		virtual void process(Renderer* render);
+
+	};
+	typedef std::shared_ptr<RcmdMesh> RcmdMeshPtr;
+///////////////////////////////////////////////////////////////////////////
+	class RcmdMaterial :public RenderCommand
+	{
+	public:
+		MaterialPtr	material;
+
+	public:
+		RcmdMaterial() :RenderCommand(RCMD_MATERIAL) { };
+		~RcmdMaterial() {};
+
+		void Init(MaterialPtr material);
+		virtual void process(Renderer* render);
+
+	};
+	typedef std::shared_ptr<RcmdMaterial> RcmdMaterialPtr;
+	///////////////////////////////////////////////////////////////////////////
+	class RcmdRenderTarget :public RenderCommand
+	{
+	public:
+		RenderTargetPtr	render_target;
+
+	public:
+		RcmdRenderTarget() :RenderCommand(RCMD_RENDER_TARGET) { };
+		~RcmdRenderTarget() {};
+
+		void Init(MaterialPtr material);
+		virtual void process(Renderer* render);
+
+	};
+	typedef std::shared_ptr<RcmdRenderTarget> RcmdRenderTargetPtr;
+	///////////////////////////////////////////////////////////////////////////
 
 }
 #endif

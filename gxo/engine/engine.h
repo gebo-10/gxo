@@ -7,7 +7,7 @@
 #include"event_system.h"
 #include"tree_manager.h"
 #include"profiler.h"
-#include"log.h"
+#include"gxo_log.h"
 #include"application.h"
 #include"window_system.h"
 namespace gxo {

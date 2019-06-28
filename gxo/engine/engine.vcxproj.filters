@@ -332,31 +332,10 @@
     <ClInclude Include="..\gxo\texture.h">
       <Filter>core\resource</Filter>
     </ClInclude>
-    <ClInclude Include="..\gxo\color.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
     <ClInclude Include="..\gxo\gxo_rect.h">
       <Filter>core\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\gxo\id.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\log.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\name.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
     <ClInclude Include="..\gxo\domain.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\buffer.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\stl.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\type.h">
       <Filter>core\base</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\gpu.h">
@@ -404,9 +383,6 @@
     <ClInclude Include="..\gxo\render.h">
       <Filter>core\render\render</Filter>
     </ClInclude>
-    <ClInclude Include="..\gxo\render_target.h">
-      <Filter>core\render\render</Filter>
-    </ClInclude>
     <ClInclude Include="..\gxo\line.h">
       <Filter>core\render\renderable\primitive</Filter>
     </ClInclude>
@@ -436,9 +412,6 @@
     </ClInclude>
     <ClInclude Include="ui_screen.h">
       <Filter>ecs\ui\2d\nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="concept.h">
-      <Filter>core\base</Filter>
     </ClInclude>
     <ClInclude Include="..\3rdpart\nanovg\fontstash.h">
       <Filter>core\vg</Filter>
@@ -470,6 +443,45 @@
     <ClInclude Include="render_engine.h">
       <Filter>core\render\cmd</Filter>
     </ClInclude>
+    <ClInclude Include="..\gxo\gxo_buffer.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\gxo_color.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_concept.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\gxo_type.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\gxo_stl.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\gxo_name.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\gxo_id.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\gxo_log.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_image.h">
+      <Filter>core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_view.h">
+      <Filter>core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_pipeline.h">
+      <Filter>core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_header.h">
+      <Filter>core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\render_target.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -492,6 +504,5 @@
     <ClCompile Include="render_command.cpp">
       <Filter>core\render\cmd</Filter>
     </ClCompile>
-    <ClCompile Include="render_commend.cpp" />
   </ItemGroup>
 </Project>

@@ -1,15 +1,15 @@
-#ifndef _MESH_H
-#define _MESH_H
+#ifndef GXO_MESH_H
+#define GXO_MESH_H
+#include"gpu_type.h"
+#include"gxo_buffer.h"
 #include"resource.h"
 #include"gpu.h"
-#include"name_manager.h"
+
+#include"gxo_name.h"
 #include <vector>
-#ifndef _GXO_MESH_H
-#define _GXO_MESH_H
-#include"base.h"
-#include"gpu.h"
+#include"gpu_object.h"
 namespace gxo {
-	class Mesh
+	class Mesh:public Resource
 	{
 	public:
 		struct VertexAttr
@@ -19,19 +19,15 @@ namespace gxo {
 		};
 		std::vector<VertexAttr> vertex_attr;
 		Buffer vertex;
-		Buffer indices;  //如果大于65536 需要 用 uint32来索引
+		Buffer indices;
 		GPUObject gpu_object;
 	public:
-		Mesh()
-		{
-		}
-
-		~Mesh()
-		{
-		}
+		Mesh(){}
+		~Mesh(){}
 
 	private:
 
 	};
+	typedef std::shared_ptr<Mesh> MeshPtr;
 }
 #endif

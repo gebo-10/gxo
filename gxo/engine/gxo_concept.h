@@ -1,5 +1,5 @@
-#ifndef _GXO_CONCEPT_H
-#define _GXO_CONCEPT_H
+#ifndef GXO_CONCEPT_H
+#define GXO_CONCEPT_H
 namespace gxo {
 	enum Align {
 		ALIGN_LEFT,

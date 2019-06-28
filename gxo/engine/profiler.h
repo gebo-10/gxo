@@ -2,7 +2,7 @@
 #define _GXO_PROFILER_H
 #include"uv.h"
 #include <chrono>
-#include"log.h"
+#include"gxo_log.h"
 namespace gxo {
 	class Profiler
 	{

@@ -5,7 +5,7 @@
 #include"gxo_rect.h"
 #include"resource.h"
 #include"renderpass.h"
-#include"log.h"
+#include"gxo_log.h"
 #include"gpu_api.h"
 #include"concept.h"
 
