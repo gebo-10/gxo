@@ -75,3 +75,4 @@
 *.log
 *.log
 gxo/3rdpart/lua/lua/Debug/lua.log
+*.obj

@@ -1,7 +1,6 @@
 #ifndef _GXO_WINDOW_SYSTEM_H
 #define _GXO_WINDOW_SYSTEM_H
 
-#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include<iostream>
 namespace gxo {
@@ -54,13 +53,17 @@ namespace gxo {
 				return;
 			}
 
+	
+
 			/* Make the window's context current */
-			glfwMakeContextCurrent(window);
+			//glfwMakeContextCurrent(window);
 
 			glfwSetMouseButtonCallback(window, mouse_button_callback);
 			return;
 		}
-
+		void make_current() {
+			glfwMakeContextCurrent(window);
+		}
 		void swap_buffer() {
 			//glfwSwapInterval(16);
 			glfwSwapBuffers(window);

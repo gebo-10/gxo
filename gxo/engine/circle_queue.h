@@ -55,7 +55,7 @@ public:
 		read(&(item->data));
 		item->state = WRITE_ABLE;
 		read_sign += 1;
-		read_sign = write_sign % MAX_SIZE;
+		read_sign = read_sign % MAX_SIZE;
 		return true;
 	}
 

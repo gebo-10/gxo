@@ -380,9 +380,6 @@
     <ClInclude Include="..\gxo\pipeline.h">
       <Filter>core\render\render</Filter>
     </ClInclude>
-    <ClInclude Include="..\gxo\render.h">
-      <Filter>core\render\render</Filter>
-    </ClInclude>
     <ClInclude Include="..\gxo\line.h">
       <Filter>core\render\renderable\primitive</Filter>
     </ClInclude>
@@ -440,9 +437,6 @@
     <ClInclude Include="render_commend.h">
       <Filter>core\render\cmd</Filter>
     </ClInclude>
-    <ClInclude Include="render_engine.h">
-      <Filter>core\render\cmd</Filter>
-    </ClInclude>
     <ClInclude Include="..\gxo\gxo_buffer.h">
       <Filter>core\base</Filter>
     </ClInclude>
@@ -482,6 +476,9 @@
     <ClInclude Include="..\gxo\render_target.h">
       <Filter>core\resource</Filter>
     </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>core\render\cmd</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -502,6 +499,9 @@
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClCompile>
     <ClCompile Include="render_command.cpp">
+      <Filter>core\render\cmd</Filter>
+    </ClCompile>
+    <ClCompile Include="render.cpp">
       <Filter>core\render\cmd</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,5 @@
-#ifndef _GXO_GPU_BUFFER_H
-#define _GXO_GPU_BUFFER_H
+#ifndef GXO_GPU_BUFFER_H
+#define GXO_GPU_BUFFER_H
 
 #include"gpu_type.h"
 namespace gxo {

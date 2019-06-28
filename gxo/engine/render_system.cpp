@@ -3,8 +3,8 @@
 #include"ui_node.h"
 void gxo::RenderSystem::init()
 {
-	gpu.init();
-
+	
+	renderer.init();
 
 	return ;
 }
@@ -28,16 +28,24 @@ void gxo::RenderSystem::update()
 	//glLoadIdentity();
 	//glOrtho(-1, 1, -1, 1, -4, 4000);
 	//glViewport(0, 0, Engine::instacne().window_system.rect.width-300, Engine::instacne().window_system.rect.height);
-	glClearColor(0.f, 0.f, 0.f, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT| GL_STENCIL_BUFFER_BIT);
-	auto rect = Rect(0, 0, 500, 500);
-	Engine::instacne().tree_manager.screen.on_layout(rect);
 
-	Engine::instacne().tree_manager.visit_preorder([](TreeNode * node) -> bool{
-		return node->on_render();
-	});
 
-	Engine::instacne().window_system.swap_buffer();
+
+	//glClearColor(0.f, 0.f, 0.f, 1.0f);
+	//glClear(GL_COLOR_BUFFER_BIT| GL_STENCIL_BUFFER_BIT);
+	//auto rect = Rect(0, 0, 500, 500);
+	//Engine::instacne().tree_manager.screen.on_layout(rect);
+
+	//Engine::instacne().tree_manager.visit_preorder([](TreeNode * node) -> bool{
+	//	return node->on_render();
+	//});
+
+	//Engine::instacne().window_system.swap_buffer();
+
+	auto cmdclear = std::make_shared<RcmdClear>();
+	auto cmd_swap = std::make_shared<RcmdSwapBuffer>();
+	renderer.push_command(cmdclear);
+	renderer.push_command(cmd_swap);
 	
 }
 

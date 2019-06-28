@@ -9,7 +9,7 @@ namespace gxo {
 	public:
 		int fps_limit;
 		double interval;
-
+		int fps_num;
 		uint64_t last_time;
 
 		static Profiler& instacne() {
@@ -34,6 +34,7 @@ namespace gxo {
 			if (elapsed > interval) {
 				last_time = now;
 				info("fps: {}", fps);
+				fps_num = fps;
 				return true;
 			}
 			auto micro =(long long) ( (interval - elapsed)/1050.0f);

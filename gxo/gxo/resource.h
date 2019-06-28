@@ -1,6 +1,6 @@
 #ifndef _GXO_RESOURCE_H
 #define _GXO_RESOURCE_H
-#include"id.h"
+#include"gxo_id.h"
 namespace gxo {
 	class Resource
 	{

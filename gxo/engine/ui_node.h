@@ -7,7 +7,7 @@
 #include"renderpass.h"
 #include"gxo_log.h"
 #include"gpu_api.h"
-#include"concept.h"
+#include"gxo_concept.h"
 
 
 namespace gxo {
