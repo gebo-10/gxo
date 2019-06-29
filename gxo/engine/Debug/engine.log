@@ -1,3 +1,0 @@
-﻿  render_system.cpp
-D:\gxo\master\gxo\engine\ui_screen.h(11,1): warning C4305:  “参数”: 从“double”到“float”截断
-  engine.vcxproj -> D:\gxo\master\gxo\Debug\engine.exe

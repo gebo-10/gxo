@@ -24,7 +24,7 @@ namespace gxo {
 		{
 		}
 
-		~TreeNode()
+		virtual ~TreeNode()
 		{
 		}
 

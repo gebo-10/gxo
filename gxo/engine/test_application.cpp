@@ -19,9 +19,14 @@ public:
 
 	virtual void on_project_loaded()
 	{
+		
 		auto ui_root = new UiRoot;
 		ui_root->add_property(LAYOUT_SIZE, ivec2(200, 200));
 		ui_root->add_property(POSITION, ivec2(20, 20));
+
+		auto img = new UiImage();
+		ui_root->add_child(img);
+
 
 		auto node = new UiNode();
 		RenderPass* rp = new RenderPass();
@@ -33,6 +38,11 @@ public:
 		node->add_property(ALIGN_Y, ALIGN_CENTER);
 
 		ui_root->add_child(node);
+
+
+		auto text = new UiText();
+		node->add_child(text);
+
 
 		Engine::instacne().tree_manager.screen.add_child(ui_root);
 	}

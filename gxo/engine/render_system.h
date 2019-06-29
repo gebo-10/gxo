@@ -6,7 +6,7 @@ namespace gxo {
 	class RenderSystem
 	{
 	public:
-		Render renderer;
+		Render render;
 
 		RenderSystem()
 		{

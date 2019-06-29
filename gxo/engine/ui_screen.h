@@ -2,7 +2,8 @@
 #define ENGINE_UI_SCREEN_H
 #include<vector>
 #include"ui_node.h"
-#include"engine.h"
+#include"gxo_color.h"
+
 namespace gxo {
 	class UiScreen :public UiNode
 	{
@@ -12,17 +13,8 @@ namespace gxo {
 			
 		}
 
-		//bool on_render() {
-
-		//	auto color = get<Color>(CLEAR_COLOR);
-
-		//	//todo 转化为命令或接口 交给gpu模块 
-		//	glClearColor(color.r, color.g, color.b, color.a);
-		//	glClear(GL_COLOR_BUFFER_BIT);
-
-		//	return true;
-		//}
-
+		virtual void on_render_begin();
+		virtual void on_rendre_end();
 
 		void set_size() {
 		}

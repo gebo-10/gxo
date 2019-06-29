@@ -1,1 +1,8 @@
 #include"engine.h"
+#include"env.h"
+gxo::Environment env;
+void gxo::Engine::init_env()
+{
+	env.engine = this;
+	env.render = &render_system.render;
+}

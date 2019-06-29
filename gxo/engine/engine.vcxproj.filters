@@ -250,9 +250,6 @@
     <ClInclude Include="ui_node.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
-    <ClInclude Include="textblock.h">
-      <Filter>ecs\ui\2d\nodes</Filter>
-    </ClInclude>
     <ClInclude Include="viewport.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
@@ -449,9 +446,6 @@
     <ClInclude Include="..\gxo\gxo_type.h">
       <Filter>core\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\gxo\gxo_stl.h">
-      <Filter>core\base</Filter>
-    </ClInclude>
     <ClInclude Include="..\gxo\gxo_name.h">
       <Filter>core\base</Filter>
     </ClInclude>
@@ -479,6 +473,18 @@
     <ClInclude Include="render.h">
       <Filter>core\render\cmd</Filter>
     </ClInclude>
+    <ClInclude Include="ui_canvas.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_param.h">
+      <Filter>core\base</Filter>
+    </ClInclude>
+    <ClInclude Include="env.h">
+      <Filter>support</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_text.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -503,6 +509,15 @@
     </ClCompile>
     <ClCompile Include="render.cpp">
       <Filter>core\render\cmd</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_image.cpp">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_screen.cpp">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_text.cpp">
+      <Filter>ecs\ui\2d\nodes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

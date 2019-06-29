@@ -4,7 +4,7 @@
 void gxo::RenderSystem::init()
 {
 	
-	renderer.init();
+	render.init();
 
 	return ;
 }
@@ -41,12 +41,10 @@ void gxo::RenderSystem::update()
 	//});
 
 	//Engine::instacne().window_system.swap_buffer();
-
-	auto cmdclear = std::make_shared<RcmdClear>();
-	auto cmd_swap = std::make_shared<RcmdSwapBuffer>();
-	renderer.push_command(cmdclear);
-	renderer.push_command(cmd_swap);
-	
+	auto rect = Rect(0, 0, 500, 500);
+	Engine::instacne().tree_manager.screen.on_layout(rect);
+	Engine::instacne().tree_manager.screen.on_render();
+	render.rcmd(RCMD_SWAPBUFFER);
 }
 
 

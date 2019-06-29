@@ -7,6 +7,8 @@
 #include<map>
 #include<iostream>
 #include <memory>
+#include<any>
+#include<functional>
 namespace gxo {
 	typedef unsigned char byte;
 	typedef std::string string;

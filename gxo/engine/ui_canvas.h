@@ -1,20 +1,19 @@
-#ifndef GXO_ENGINE_UI_VIEW_H
-#define GXO_ENGINE_UI_VIEW_H
+#ifndef GXO_ENGINE_UI_CANVAS_H
+#define GXO_ENGINE_UI_CANVAS_H
 #include"ui_node.h"
 #include"render_target.h"
-
 namespace gxo {
-	class UiView :public UiNode
+	class UiCanvas :public UiNode
 	{
 	public:
 		RenderTargetPtr render_target;
+
+		UiCanvas() {
 		
-		UiView() {
-			
 		}
 
 	private:
 
 	};
 }
-#endif 
+#endif

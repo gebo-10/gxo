@@ -3,4 +3,6 @@
 #include"engine.h"
 #include"application.h"
 #include "ui_root.h"
+#include"ui_text.h"
+#include"ui_image.h"
 #endif

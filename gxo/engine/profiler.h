@@ -33,7 +33,7 @@ namespace gxo {
 
 			if (elapsed > interval) {
 				last_time = now;
-				info("fps: {}", fps);
+				//info("fps: {}", fps);
 				fps_num = fps;
 				return true;
 			}

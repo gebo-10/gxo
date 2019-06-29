@@ -9,7 +9,7 @@
 #include"gpu_api.h"
 #include"gxo_concept.h"
 
-
+class Render;
 namespace gxo {
 	class UiNode :public TreeNode
 	{
@@ -32,9 +32,24 @@ namespace gxo {
 			case 2: draw_text(); break;
 			case 3: draw_color(); break;
 			}*/
-			draw_rect();
+			on_render_begin();
+			for (auto child : children) {
+				child->on_render();
+			}
+			on_rendre_end();
 			return true;
+
 		}
+
+
+		virtual void on_render_begin() {
+			draw_rect();
+		}
+
+		virtual void on_rendre_end() {
+			//结束fbo（fboend 。。。）
+		}
+
 
 		Rect on_layout(Rect &rect_parent) {
 			{
@@ -165,9 +180,9 @@ namespace gxo {
 
 			//可以给渲染器 添加自定义或系统自带的渲染工作
 		}
-		void on_rendre_end() {
-			//结束fbo（fboend 。。。）
-		}
+		//void on_rendre_end() {
+		//	//结束fbo（fboend 。。。）
+		//}
 
 		void on_post_render() { //性能  todo 把post render整合进render过程
 

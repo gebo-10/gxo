@@ -54,11 +54,15 @@ namespace gxo {
 			async_system.init();
 			render_system.init();
 
+			init_env();
+
 			app->on_config();
 			app->on_project_loaded();
 
 			return;
 		}
+
+		void init_env();
 
 		bool start() {
 			async_system.loop();

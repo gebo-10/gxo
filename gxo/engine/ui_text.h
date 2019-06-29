@@ -1,11 +1,11 @@
-#ifndef GXO_UI_IMAGE_H
-#define GXO_UI_IMAGE_H
+#ifndef GXO_UI_TEXT_H
+#define GXO_UI_TEXT_H
 #include"ui_node.h"
 namespace gxo {
-	class UiImage :public UiNode
+	class UiText :public UiNode
 	{
 	public:
-		UiImage() {
+		UiText() {
 
 		}
 
