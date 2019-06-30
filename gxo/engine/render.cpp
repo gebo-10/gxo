@@ -106,8 +106,9 @@ void gxo::Render::register_all_cmd()
 		});
 
 
-	register_cmd<string, Rect>(RCMD_IMAGE, [&](string text, Rect rect) {
-		auto image = nvgCreateImage(vg, text.c_str(), 0);
+	register_cmd<TexturePtr, Rect>(RCMD_IMAGE, [&](TexturePtr tex, Rect rect) {
+		//auto image = nvgCreateImage(vg, text.c_str(), 0);
+		auto image = nvgCreateImageMem(vg, 0, tex->ram.data, tex->ram.size);
 		if (image == 0) {
 			error("Could not load image\n");
 		}

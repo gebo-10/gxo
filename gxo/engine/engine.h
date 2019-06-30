@@ -10,6 +10,8 @@
 #include"gxo_log.h"
 #include"application.h"
 #include"window_system.h"
+#include"resource_manager.h"
+#include"file_system.h"
 namespace gxo {
 	class Engine
 	{
@@ -30,7 +32,10 @@ namespace gxo {
 		RenderSystem render_system;
 		EventSystem event_system;
 		
+		FileSystem	file_system;
 		TreeManager tree_manager;
+		
+		ResourceManager resource_manager;
 
 		Application* app;
 
@@ -49,11 +54,13 @@ namespace gxo {
 		void init() {
 			Config::instacne().init();
 			Profiler::instacne().init();
+			file_system.init();
 			window_system.init();
 			event_system.init();
 			async_system.init();
 			render_system.init();
-
+			
+			resource_manager.init();
 			init_env();
 
 			app->on_config();

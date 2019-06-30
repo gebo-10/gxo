@@ -2,6 +2,7 @@
 #include"env.h"
 void gxo::UiImage::on_render_begin()
 {
-	string path="1.jpeg";
-	env.render->rcmd(RCMD_IMAGE, path, Rect(0, 0, 640, 510));
+	string id = "main/texture/1";
+	auto tex = env.engine->resource_manager.get<Texture>(id);
+	//env.render->rcmd(RCMD_IMAGE, tex, Rect(0, 0, 640, 510));
 }

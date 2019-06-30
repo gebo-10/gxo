@@ -9,8 +9,9 @@ namespace gxo {
 	class Config
 	{
 	public:
+		
 		sol::table data;
-
+		sol::state lua; //析构后会释放luatable
 		static Config& instacne() {
 			static Config config;
 			return config;
@@ -26,7 +27,7 @@ namespace gxo {
 		//int get_window_height();
 		//int get_frame_limit();
 	private:
-		sol::state lua; //析构后会释放luatable
+		
 	};
 
 }

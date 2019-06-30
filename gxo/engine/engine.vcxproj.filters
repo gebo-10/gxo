@@ -177,9 +177,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\gxo\file_system.h">
-      <Filter>system</Filter>
-    </ClInclude>
     <ClInclude Include="net_system.h">
       <Filter>system</Filter>
     </ClInclude>
@@ -485,6 +482,9 @@
     <ClInclude Include="ui_text.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
+    <ClInclude Include="file_system.h">
+      <Filter>system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -519,5 +519,9 @@
     <ClCompile Include="ui_text.cpp">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClCompile>
+    <ClCompile Include="..\gxo\resource_manager.cpp">
+      <Filter>manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gxo\shader.cpp" />
   </ItemGroup>
 </Project>

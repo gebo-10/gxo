@@ -4,6 +4,7 @@
 #include"gxo_name.h"
 #include"gpu_header.h"
 #include<any>
+#include"resource.h"
 namespace gxo {
 	class Uniform
 	{
@@ -28,11 +29,15 @@ namespace gxo {
 
 
 
-	class Shader
+	class Shader:public Resource
 	{
 	public:
-		GLuint id;
 		std::vector<Uniform> uniforms;
+		GPUID vertex_shader;
+		GPUID frag_shader;
+
+		Buffer vs_source;
+		Buffer fs_source;
 		Shader()
 		{
 		}
@@ -40,9 +45,16 @@ namespace gxo {
 		~Shader()
 		{
 		}
-
-	private:
 		
+	private:
+		void load_to_gpu() {
+			BuildVertexShader((char *)vs_source.data);
+			BuildVertexShader((char*)fs_source.data);
+			BuildProgram();
+		}
+		bool BuildVertexShader(char* source);
+		bool BuildFragShader(char* source);
+		bool BuildProgram();
 	};
 	typedef shared_ptr<Shader> ShaderPtr;
 }
