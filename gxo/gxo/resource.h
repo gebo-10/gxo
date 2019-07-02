@@ -27,7 +27,7 @@ namespace gxo {
 		//UID uid;
 
 		string url;
-		GPUID gpu_id;
+		
 		Buffer ram;
 		
 	public:

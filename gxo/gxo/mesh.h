@@ -21,7 +21,7 @@ namespace gxo {
 		Buffer vertex;
 		Buffer indices;
 		GPUObject gpu_object;
-	public:
+
 		Mesh(){}
 		~Mesh(){}
 

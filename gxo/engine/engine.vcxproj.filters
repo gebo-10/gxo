@@ -175,6 +175,15 @@
     <Filter Include="core\render\cmd">
       <UniqueIdentifier>{40aa765c-bcdf-4804-b1a4-9915b4167887}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdpart">
+      <UniqueIdentifier>{52a0f7c2-ee52-4c88-8a06-32c04f6186b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdpart\tinygltf">
+      <UniqueIdentifier>{437bb3c2-4c72-4aae-a07c-0e7a341f00f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tool">
+      <UniqueIdentifier>{f64642ce-9b68-46ba-a79b-febd749f8fef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="net_system.h">
@@ -452,9 +461,6 @@
     <ClInclude Include="..\gxo\gxo_log.h">
       <Filter>core\base</Filter>
     </ClInclude>
-    <ClInclude Include="gpu_image.h">
-      <Filter>core\gpu</Filter>
-    </ClInclude>
     <ClInclude Include="gpu_view.h">
       <Filter>core\gpu</Filter>
     </ClInclude>
@@ -484,6 +490,24 @@
     </ClInclude>
     <ClInclude Include="file_system.h">
       <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_texture.h">
+      <Filter>core\gpu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\tinygltf\json.hpp">
+      <Filter>3rdpart\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\tinygltf\stb_image.h">
+      <Filter>3rdpart\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\tinygltf\stb_image_write.h">
+      <Filter>3rdpart\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdpart\tinygltf\tiny_gltf.h">
+      <Filter>3rdpart\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="model_load.h">
+      <Filter>tool</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
