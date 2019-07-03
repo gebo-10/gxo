@@ -23,15 +23,16 @@ namespace gxo {
 	class GPUDataTypeInfo
 	{
 	public:
-		int size;
 		int type;
+		int num;
+		int size;
 
 		GPUDataTypeInfo()
 		{
 			//info[GPU_BYTE] = GPUDataTypeInfo(1, GL_BYTE);
 			//info[GPU_VEC3] = GPUDataTypeInfo(3, GL_FLOAT);
 		}
-		GPUDataTypeInfo(int data_size, int data_type):size(data_size),type(data_type)
+		GPUDataTypeInfo(int data_type, int data_size, int data_num):type(data_type), num(data_num), size(data_size)
 		{
 		}
 
@@ -59,8 +60,9 @@ namespace gxo {
 	};
 	std::pair<GPUDataType, GPUDataTypeInfo> pairArray[] =
 	{
-		std::make_pair(GPU_BYTE,GPUDataTypeInfo(1, GL_BYTE)),
-		std::make_pair(GPU_VEC3,GPUDataTypeInfo(3, GL_FLOAT)),
+		std::make_pair(GPU_BYTE,GPUDataTypeInfo(GL_BYTE,1, 8)),
+		std::make_pair(GPU_VEC3,GPUDataTypeInfo(GL_FLOAT, 3, 3*sizeof(float) )),
+		std::make_pair(GPU_VEC2,GPUDataTypeInfo(GL_FLOAT, 2, 2 * sizeof(float))),
 	};
 	std::map<GPUDataType, GPUDataTypeInfo> GPUDataTypeInfo::info(pairArray, pairArray + sizeof(pairArray) / sizeof(pairArray[0]));
 	

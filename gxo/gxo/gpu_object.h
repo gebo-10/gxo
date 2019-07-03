@@ -27,18 +27,17 @@ namespace gxo {
 
 			int trip_size=0;
 			for (auto type : vertex_attr) {
-				trip_size += GPUDataTypeInfo::get_size();
+				auto info=GPUDataTypeInfo::get_size(type);
+				trip_size += info.size;
 			}
-
+			int offset = 0;
 			for (int i = 0; i < vertex_attr.size(); i++)
 			{
 				GPUDataType type = vertex_attr[i];
+				auto info = GPUDataTypeInfo::get_size(type);
 				glEnableVertexAttribArray(i);
-				switch (type) {
-				case GPU_VEC3:
-					glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, false, trip_size, 0);
-				}
-				
+				glVertexAttribPointer((GLuint)i, info.num, info.type, false, trip_size, (const GLvoid*)offset);
+				offset += info.size;
 			}
 			
 		}
@@ -49,6 +48,10 @@ namespace gxo {
 		void unbind(void) {
 			glBindVertexArray(0);
 		}
+		void destroy() {
+			glDeleteVertexArrays(1, &gpu_id);
+		}
+
 	};
 
 }

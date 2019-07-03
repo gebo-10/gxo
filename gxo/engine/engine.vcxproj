@@ -212,9 +212,18 @@
     <ClInclude Include="gxo_event.h" />
     <ClInclude Include="gxo_event_queue.h" />
     <ClInclude Include="gxo_param.h" />
+    <ClInclude Include="orbit_manipulator.h" />
+    <ClInclude Include="scene_camera.h" />
+    <ClInclude Include="scene_cube.h" />
+    <ClInclude Include="scene_model.h" />
     <ClInclude Include="model_load.h" />
     <ClInclude Include="render_commend.h" />
     <ClInclude Include="render.h" />
+    <ClInclude Include="scene_light.h" />
+    <ClInclude Include="scene_plane.h" />
+    <ClInclude Include="scene_sphere.h" />
+    <ClInclude Include="scene_ui.h" />
+    <ClInclude Include="trackball_manipulator.h" />
     <ClInclude Include="ui_canvas.h" />
     <ClInclude Include="ui_view.h" />
     <ClInclude Include="ui_image.h" />
@@ -233,14 +242,13 @@
     <ClInclude Include="render_system.h" />
     <ClInclude Include="scene_node.h" />
     <ClInclude Include="scene_manager.h" />
-    <ClInclude Include="scene_root.h" />
+    <ClInclude Include="scene.h" />
     <ClInclude Include="state_mechine.h" />
     <ClInclude Include="time_system.h" />
     <ClInclude Include="trigger.h" />
     <ClInclude Include="ui_node.h" />
     <ClInclude Include="ui_root.h" />
     <ClInclude Include="vg.h" />
-    <ClInclude Include="viewport.h" />
     <ClInclude Include="window_system.h" />
     <ClInclude Include="work_system.h" />
   </ItemGroup>

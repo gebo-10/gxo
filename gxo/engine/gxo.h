@@ -5,4 +5,5 @@
 #include "ui_root.h"
 #include"ui_text.h"
 #include"ui_image.h"
+#include"scene.h"
 #endif

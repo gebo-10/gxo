@@ -29,10 +29,23 @@ namespace gxo {
 		void update(void * data) {
 
 		}
+
+		void bind(int index) {
+			//glEnable(GL_TEXTURE_2D);
+			glActiveTexture(GL_TEXTURE0 + index);
+			glBindTexture(GL_TEXTURE_2D, gpu_id);
+		}
+		void unbind(void) {
+			glBindTexture(GL_TEXTURE_2D, 0);
+		}
+
 		void destroy() {
 			glDeleteTextures(1, &gpu_id);
 		}
 
+		void set_param(int target, int name, int param) {
+			glTexParameteri(target, name, param);
+		}
 	private:
 
 	};

@@ -184,6 +184,9 @@
     <Filter Include="tool">
       <UniqueIdentifier>{f64642ce-9b68-46ba-a79b-febd749f8fef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\render\manipulator">
+      <UniqueIdentifier>{994a4ff3-a1cf-4a90-a0fa-94d9bc3a8c5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="net_system.h">
@@ -238,9 +241,6 @@
     <ClInclude Include="ui_root.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
-    <ClInclude Include="scene_root.h">
-      <Filter>ecs\scene\entity</Filter>
-    </ClInclude>
     <ClInclude Include="scene_node.h">
       <Filter>ecs\scene\entity</Filter>
     </ClInclude>
@@ -254,9 +254,6 @@
       <Filter>ecs</Filter>
     </ClInclude>
     <ClInclude Include="ui_node.h">
-      <Filter>ecs\ui\2d\nodes</Filter>
-    </ClInclude>
-    <ClInclude Include="viewport.h">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClInclude>
     <ClInclude Include="process_node.h">
@@ -508,6 +505,36 @@
     </ClInclude>
     <ClInclude Include="model_load.h">
       <Filter>tool</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_light.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_model.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_plane.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_cube.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_sphere.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_ui.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_camera.h">
+      <Filter>ecs\scene\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="trackball_manipulator.h">
+      <Filter>core\render\manipulator</Filter>
+    </ClInclude>
+    <ClInclude Include="orbit_manipulator.h">
+      <Filter>core\render\manipulator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
