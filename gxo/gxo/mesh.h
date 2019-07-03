@@ -12,12 +12,12 @@ namespace gxo {
 	class Mesh:public Resource
 	{
 	public:
-		struct VertexAttr
-		{
-			Name name;
-			GPUDataType data_type;
-		};
-		std::vector<VertexAttr> vertex_attr;
+		//struct VertexAttr
+		//{
+		//	Name name;
+		//	GPUDataType data_type;
+		//};
+		std::vector<GPUDataType> vertex_attr;
 		Buffer vertex;
 		Buffer indices;
 		GPUObject gpu_object;

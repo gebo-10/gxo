@@ -32,7 +32,7 @@ namespace gxo {
 		}
 
 
-		int gpu_type_size(GPUDataType type) {
+		static int gpu_type_size(GPUDataType type) {
 			switch (type)
 			{
 			case gxo::GPU_BYTE:
