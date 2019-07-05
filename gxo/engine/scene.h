@@ -1,11 +1,13 @@
-#ifndef SCENE_NODE_H
-#define SCENE_NODE_H
-#include"ui_node.h"
-#include "gxo_math.h"
+#ifndef GXO_SCENE_H
+#define GXO_SCENE_H
+#include"tree_node.h"
+#include"gxo_math.h"
 namespace gxo {
-	class Scene :public UiNode
+	class Scene :public TreeNode
 	{
 	public:
+		//scene_manager;
+		//bvh  kdtree
 		Scene()
 		{
 		}
@@ -28,9 +30,14 @@ namespace gxo {
 
 			return false;
 		}
-		virtual void on_event() {
-			//manipulator.event(); --> camera
+
+		void render_scene() {
+			for (auto child: children)
+			{
+				child->on_render();
+			}
 		}
+
 	private:
 
 	};

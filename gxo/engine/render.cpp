@@ -119,6 +119,10 @@ void gxo::Render::register_all_cmd()
 		nvgFillPaint(vg, imgPaint);
 		nvgFill(vg);
 
-;		//nvgDeleteImage(vg, image);
+		//nvgDeleteImage(vg, image);
 		});
+
+	register_cmd<Camera, Rect>(RCMD_CAMERA, [&](Camera cam) {
+	
+	});
 }

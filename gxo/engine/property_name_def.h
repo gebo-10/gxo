@@ -14,6 +14,10 @@ namespace gxo {
 		ALIGN_X,	//enum Align
 		ALIGN_Y,	//enum Align
 
+		REF, //TreeNode path
+		PTR, //TreeNode *
+		TRANSFORM2D,		//Transform2d
+		TRANSFORM3D			//Transform3d
 	};
 }
 #endif

@@ -6,11 +6,13 @@ namespace gxo {
 	class SceneNode :public TreeNode
 	{
 	public:
-		vec3  position;
-		vec3  rotate;
-		vec3  scale;
+		//vec3  position;
+		//vec3  rotate;
+		//vec3  scale;
 		SceneNode()
 		{
+			Transform3d transform;
+			add_property(TRANSFORM3D, transform);
 		}
 
 		~SceneNode()

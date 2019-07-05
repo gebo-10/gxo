@@ -3,12 +3,14 @@
 #include<vector>
 #include"ui_node.h"
 #include"engine.h"
+#include"camera.h"
 namespace gxo {
 	class UiRoot :public UiNode
 	{
 	public:
 		UiNode* mouse_focus;//有问题 当节点删除的时候 要同时把这个null
 		UiNode* key_focus;
+		Camera camera;
 		UiRoot():mouse_focus(nullptr),key_focus(nullptr){
 
 		}

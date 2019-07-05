@@ -139,9 +139,6 @@
     <Filter Include="core\render">
       <UniqueIdentifier>{e9273f83-feff-4aec-9af5-4e9ad6adba5b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core\render\render">
-      <UniqueIdentifier>{6cc89cb2-90d9-43fd-b808-3fa72338cab2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\render\renderable">
       <UniqueIdentifier>{988ff9b2-a05c-407e-9da7-71405df878c0}</UniqueIdentifier>
     </Filter>
@@ -186,6 +183,9 @@
     </Filter>
     <Filter Include="core\render\manipulator">
       <UniqueIdentifier>{994a4ff3-a1cf-4a90-a0fa-94d9bc3a8c5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\render\render_pass">
+      <UniqueIdentifier>{6cc89cb2-90d9-43fd-b808-3fa72338cab2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -357,28 +357,22 @@
       <Filter>core\gpu</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\blit_pass.h">
-      <Filter>core\render\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\camera.h">
-      <Filter>core\render\render</Filter>
+      <Filter>core\render\render_pass</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\clear_pass.h">
-      <Filter>core\render\render</Filter>
+      <Filter>core\render\render_pass</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\compose_pass.h">
-      <Filter>core\render\render</Filter>
+      <Filter>core\render\render_pass</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\draw_pass.h">
-      <Filter>core\render\render</Filter>
+      <Filter>core\render\render_pass</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\pass.h">
-      <Filter>core\render\render</Filter>
+      <Filter>core\render\render_pass</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\pass_group.h">
-      <Filter>core\render\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\pipeline.h">
-      <Filter>core\render\render</Filter>
+      <Filter>core\render\render_pass</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\line.h">
       <Filter>core\render\renderable\primitive</Filter>
@@ -536,6 +530,24 @@
     <ClInclude Include="orbit_manipulator.h">
       <Filter>core\render\manipulator</Filter>
     </ClInclude>
+    <ClInclude Include="ui_viewport.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_camera.h">
+      <Filter>ecs\ui\2d\UiRender</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_mesh.h">
+      <Filter>ecs\ui\2d\UiRender</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\pipeline.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>core\math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -573,6 +585,8 @@
     <ClCompile Include="..\gxo\resource_manager.cpp">
       <Filter>manager</Filter>
     </ClCompile>
-    <ClCompile Include="..\gxo\shader.cpp" />
+    <ClCompile Include="..\gxo\shader.cpp">
+      <Filter>core\resource</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
