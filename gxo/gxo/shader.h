@@ -32,6 +32,7 @@ namespace gxo {
 	class Shader:public Resource
 	{
 	public:
+		GPUID gpu_id;
 		std::vector<Uniform> uniforms;
 		GPUID vertex_shader;
 		GPUID frag_shader;

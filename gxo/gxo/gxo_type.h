@@ -2,13 +2,15 @@
 #define _GXO_TYPE_H
 #include<string>
 #include<string_view>
-#include <cstdint>
+#include<cstdint>
 #include<vector>
 #include<map>
 #include<iostream>
-#include <memory>
+#include<memory>
 #include<any>
+#include<stack>
 #include<functional>
+#include<cassert>
 namespace gxo {
 	typedef unsigned char byte;
 	typedef std::string string;
@@ -23,3 +25,5 @@ namespace gxo {
 	template <typename T> using shared_ptr=std::shared_ptr<T>;
 }
 #endif
+
+#pragma warning ( disable : 4244 )

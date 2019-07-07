@@ -51,7 +51,7 @@ namespace gxo {
 		}
 
 
-		Rect on_layout(Rect &rect_parent) {
+		virtual Rect on_layout(Rect &rect_parent) {
 			{
 				position.x = rect_parent.x;
 				position.y = rect_parent.y;

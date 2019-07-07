@@ -1,6 +1,7 @@
 #include "resource_manager.h"
 #include"file_system.h"
 #include"env.h"
+#include"texture.h"
 void gxo::ResourceManager::load_package(string& package)
 {
 	sol::state& lua = Config::instacne().lua;
@@ -8,8 +9,9 @@ void gxo::ResourceManager::load_package(string& package)
 	lua.script_file(p);
 	sol::table resource_config = lua["Resource"];
 
-	load_shader(package, resource_config["Shader"]);
+ 	
 	load_texture(package, resource_config["Texture"]);
+	load_shader(package, resource_config["Shader"]);
 	
 }
 void gxo::ResourceManager::load_texture(string package,sol::table textures)
@@ -32,9 +34,9 @@ void gxo::ResourceManager::load_texture(string package,sol::table textures)
 
 }
 
-void gxo::ResourceManager::load_shader(string package, sol::table textures)
+void gxo::ResourceManager::load_shader(string package, sol::table shader)
 {
-	for (auto config : textures) {
+	for (auto config : shader) {
 		auto item = config.second.as<sol::table>();
 		string name = item["name"];
 		string vs = item["vs"];

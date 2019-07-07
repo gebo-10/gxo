@@ -23,8 +23,8 @@ public:
 		ui_root->add_property(LAYOUT_SIZE, ivec2(200, 200));
 		ui_root->add_property(POSITION, ivec2(20, 20));
 
-		auto scene = new Scene();
-		ui_root->add_child(scene);
+		//auto scene = new Scene();
+		//ui_root->add_child(scene);
 
 		auto img = new UiImage();
 		ui_root->add_child(img);

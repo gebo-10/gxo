@@ -1,5 +1,6 @@
 #include "ui_image.h"
 #include"env.h"
+#include"texture.h"
 void gxo::UiImage::on_render_begin()
 {
 	string id = "main/texture/1";

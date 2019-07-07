@@ -1,5 +1,5 @@
-#ifndef _GXO_RESOURCE_H
-#define _GXO_RESOURCE_H
+#ifndef GXO_RESOURCE_H
+#define GXO_RESOURCE_H
 #include"gxo_id.h"
 #include"gxo_buffer.h"
 #include"gpu_header.h"

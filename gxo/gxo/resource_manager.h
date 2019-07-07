@@ -8,12 +8,12 @@ namespace gxo {
 	class ResourceManager
 	{
 	private:
-		struct ResourceItem {
-			//std::weak_ptr<Resource> resource;
-			ResourcePtr resource;
-			int timeout;
-			int freqment;
-		};
+		//struct ResourceItem {
+		//	//std::weak_ptr<Resource> resource;
+		//	ResourcePtr resource;
+		//	int timeout;
+		//	int freqment;
+		//};
 	public:
 		std::map<string, ResourcePtr> resource_map;
 	public:

@@ -27,14 +27,14 @@ namespace gxo {
 
 			int trip_size=0;
 			for (auto type : vertex_attr) {
-				auto info=GPUDataTypeInfo::get_size(type);
+				auto info= gpu_data_type_info[type];
 				trip_size += info.size;
 			}
 			int offset = 0;
-			for (int i = 0; i < vertex_attr.size(); i++)
+			for (size_t i = 0; i < vertex_attr.size(); i++)
 			{
 				GPUDataType type = vertex_attr[i];
-				auto info = GPUDataTypeInfo::get_size(type);
+				auto info = gpu_data_type_info[type];
 				glEnableVertexAttribArray(i);
 				glVertexAttribPointer((GLuint)i, info.num, info.type, false, trip_size, (const GLvoid*)offset);
 				offset += info.size;

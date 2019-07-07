@@ -166,12 +166,6 @@
     <Filter Include="core\math">
       <UniqueIdentifier>{581dcc5e-f5d1-45fe-9f9a-d60fb5b0da5d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core\tool">
-      <UniqueIdentifier>{e906d6df-628c-4f5f-b529-b7f95702f50a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="core\render\cmd">
-      <UniqueIdentifier>{40aa765c-bcdf-4804-b1a4-9915b4167887}</UniqueIdentifier>
-    </Filter>
     <Filter Include="3rdpart">
       <UniqueIdentifier>{52a0f7c2-ee52-4c88-8a06-32c04f6186b6}</UniqueIdentifier>
     </Filter>
@@ -186,6 +180,15 @@
     </Filter>
     <Filter Include="core\render\render_pass">
       <UniqueIdentifier>{6cc89cb2-90d9-43fd-b808-3fa72338cab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\util">
+      <UniqueIdentifier>{e906d6df-628c-4f5f-b529-b7f95702f50a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\render_system">
+      <UniqueIdentifier>{5fa7f6fc-c13f-4892-9a8d-0466b5f08a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\render\render">
+      <UniqueIdentifier>{40aa765c-bcdf-4804-b1a4-9915b4167887}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -426,10 +429,7 @@
       <Filter>core\vg</Filter>
     </ClInclude>
     <ClInclude Include="circle_queue.h">
-      <Filter>core\tool</Filter>
-    </ClInclude>
-    <ClInclude Include="render_commend.h">
-      <Filter>core\render\cmd</Filter>
+      <Filter>core\util</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\gxo_buffer.h">
       <Filter>core\base</Filter>
@@ -463,9 +463,6 @@
     </ClInclude>
     <ClInclude Include="..\gxo\render_target.h">
       <Filter>core\resource</Filter>
-    </ClInclude>
-    <ClInclude Include="render.h">
-      <Filter>core\render\cmd</Filter>
     </ClInclude>
     <ClInclude Include="ui_canvas.h">
       <Filter>ecs\ui\2d\nodes</Filter>
@@ -539,14 +536,23 @@
     <ClInclude Include="ui_mesh.h">
       <Filter>ecs\ui\2d\UiRender</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>core\render</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\pipeline.h">
-      <Filter>core\render</Filter>
-    </ClInclude>
     <ClInclude Include="transform.h">
       <Filter>core\math</Filter>
+    </ClInclude>
+    <ClInclude Include="render_parser.h">
+      <Filter>system\render_system</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>core\render\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\gxo\pipeline.h">
+      <Filter>core\render\render</Filter>
+    </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>core\render\render</Filter>
+    </ClInclude>
+    <ClInclude Include="render_commend.h">
+      <Filter>core\render\render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -567,12 +573,6 @@
     <ClCompile Include="ui_node.cpp">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClCompile>
-    <ClCompile Include="render_command.cpp">
-      <Filter>core\render\cmd</Filter>
-    </ClCompile>
-    <ClCompile Include="render.cpp">
-      <Filter>core\render\cmd</Filter>
-    </ClCompile>
     <ClCompile Include="ui_image.cpp">
       <Filter>ecs\ui\2d\nodes</Filter>
     </ClCompile>
@@ -587,6 +587,12 @@
     </ClCompile>
     <ClCompile Include="..\gxo\shader.cpp">
       <Filter>core\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="gpu_type.cpp">
+      <Filter>core\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="render.cpp">
+      <Filter>core\render\render</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

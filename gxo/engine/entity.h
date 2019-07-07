@@ -103,6 +103,11 @@ namespace gxo {
 			return true;
 		}
 
+		void add_or_set_property(PropertyType type, std::any property) {
+			m_property[type] = property;
+			return;
+		}
+
 	};
 }
 #endif // ENTRY

@@ -1,10 +1,6 @@
 ﻿#ifndef GXO_RENDER_COMMAND_H
 #define GXO_RENDER_COMMAND_H
-#include"mesh.h"
-#include"gxo_math.h"
-#include"material.h"
-#include"render_target.h"
-#include"gxo_rect.h"
+#include"gxo_type.h"
 #include"gxo_param.h"
 namespace gxo {
 	enum RenderCommandType
@@ -14,6 +10,8 @@ namespace gxo {
 		RCMD_CLEAR,
 		RCMD_SET_PIPELINE,
 		RCMD_SET_PIPELINE_STATE,
+		RCMD_PUSH_PIPELINE,
+		RCMD_POP_PIPELINE,
 		RCMD_CAMERA,
 		RCMD_MESH,
 		RCMD_MATERIAL,
@@ -25,6 +23,7 @@ namespace gxo {
 		RCMD_TEXT,
 		RCMD_VG,
 		RCMD_RECT,
+		RCMD_LOAD_RESOURCE_TO_GPU,
 	};
 
 	class RenderCommand
@@ -36,6 +35,6 @@ namespace gxo {
 		RenderCommand(RenderCommandType type) :type(type) {}
 		RenderCommand(RenderCommandType type, Params &params) :type(type), params(params){}
 	};
-	typedef std::shared_ptr<RenderCommand> RenderCommandPtr;
+	typedef shared_ptr<RenderCommand> RenderCommandPtr;
 }
 #endif

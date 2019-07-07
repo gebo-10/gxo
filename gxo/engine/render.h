@@ -1,5 +1,6 @@
 #ifndef GXO_RENDERER_H
 #define GXO_RENDERER_H
+
 #include"render_commend.h"
 #include"circle_queue.h"
 #include"pipeline.h"
@@ -23,6 +24,9 @@ namespace gxo {
 		std::thread render_thread;
 
 		GPU gpu;
+
+		std::stack<PipelinePtr> pipeline_stack;
+		PipelinePtr pipeline=nullptr;
 
 
 		NVGcontext* vg;

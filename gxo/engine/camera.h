@@ -44,15 +44,16 @@ namespace gxo {
 			return projection;
 		}
 
-		void Camera::update_matrix() {
+		void update_matrix() {
 			switch (type)
 			{
-			case gxo::Camera::ORTHO:
+			case gxo::Camera::ORTHO:{
 				float half_w = width / 2.0f;
 				//float aspect = (float)height / (float)width;
 				float half_h = height / 2.0f;
 				projection = ortho(-half_w, half_w, -half_h, half_h, znear, zfar);
 				break;
+			}
 			case gxo::Camera::PERSPECTIVE:
 				projection = perspective(radians(fov), (float)width / (float)height, znear, zfar);
 				break;
@@ -73,15 +74,15 @@ namespace gxo {
 			dirty = true;
 		}
 
-		void set_near(float near) {
-			this->znear = near;
-			dirty = true;
-		}
+		//void set_near(float near) {
+		//	this->znear = near;
+		//	dirty = true;
+		//}
 
-		void set_far(float far) {
-			this->znear = far;
-			dirty = true;
-		}
+		//void set_far(float far) {
+		//	this->zfar = far;
+		//	dirty = true;
+		//}
 
 	};
 

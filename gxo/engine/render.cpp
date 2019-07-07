@@ -1,7 +1,9 @@
 #include "render.h"
 #include"engine.h"
 #include"vg.h"
-
+#include"camera.h"
+#include"gxo_math.h"
+#include"texture.h"
 void gxo::Render::init()
 {
 	register_all_cmd();
@@ -122,7 +124,32 @@ void gxo::Render::register_all_cmd()
 		//nvgDeleteImage(vg, image);
 		});
 
-	register_cmd<Camera, Rect>(RCMD_CAMERA, [&](Camera cam) {
-	
+	register_cmd<mat4, mat4>(RCMD_CAMERA, [&](mat4 V, mat4 P) {
+		pipeline->V = V;
+		pipeline->P = P;
 	});
+
+	register_cmd<PipelinePtr>(RCMD_SET_PIPELINE, [&](PipelinePtr pipeline) {
+		this->pipeline = pipeline;
+		pipeline->use();
+	});
+
+
+	register_cmd<PipelinePtr>(RCMD_PUSH_PIPELINE, [&](PipelinePtr pipeline) {
+		pipeline_stack.push(pipeline);
+		this->pipeline = pipeline;
+		pipeline->use();
+		});
+
+	register_cmd(RCMD_POP_PIPELINE, [&]() {
+		this->pipeline = pipeline_stack.top();
+		pipeline_stack.pop();
+		this->pipeline->use();
+	});
+
+
+	register_cmd<MeshPtr, mat4>(RCMD_MESH, [&](MeshPtr mesh, mat4 M) {
+		
+		});
+
 }

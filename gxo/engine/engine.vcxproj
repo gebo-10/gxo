@@ -213,6 +213,7 @@
     <ClInclude Include="gxo_event_queue.h" />
     <ClInclude Include="gxo_param.h" />
     <ClInclude Include="orbit_manipulator.h" />
+    <ClInclude Include="render_parser.h" />
     <ClInclude Include="scene_camera.h" />
     <ClInclude Include="scene_cube.h" />
     <ClInclude Include="scene_model.h" />
@@ -262,9 +263,9 @@
     <ClCompile Include="..\gxo\shader.cpp" />
     <ClCompile Include="async_system.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="gpu_type.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="render.cpp" />
-    <ClCompile Include="render_command.cpp" />
     <ClCompile Include="render_system.cpp" />
     <ClCompile Include="test_application.cpp" />
     <ClCompile Include="ui_image.cpp" />

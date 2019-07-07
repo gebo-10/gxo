@@ -30,6 +30,9 @@ namespace gxo {
 
 			return false;
 		}
+		Rect on_layout(Rect& rect_parent) {
+			return Rect(0, 0, 0, 0);
+		}
 
 		void render_scene() {
 			for (auto child: children)
