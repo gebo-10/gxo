@@ -21,6 +21,9 @@ namespace gxo {
 		RboType rbo_type;
 		int rbo_id;
 
+		void use() {
+
+		}
 	};
 	typedef shared_ptr<RenderTarget> RenderTargetPtr;
 }

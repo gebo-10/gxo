@@ -39,12 +39,19 @@ void gxo::RenderSystem::update()
 	//Engine::instacne().tree_manager.visit_preorder([](TreeNode * node) -> bool{
 	//	return node->on_render();
 	//});
-
 	//Engine::instacne().window_system.swap_buffer();
-	auto rect = Rect(0, 0, 500, 500);
-	Engine::instacne().tree_manager.screen.on_layout(rect);
-	Engine::instacne().tree_manager.screen.on_render();
-	render.rcmd(RCMD_SWAPBUFFER);
+
+
+
+
+	//auto rect = Rect(0, 0, 500, 500);
+	//Engine::instacne().tree_manager.screen.on_layout(rect);
+	//Engine::instacne().tree_manager.screen.on_render();
+	//render.rcmd(RCMD_SWAPBUFFER);
+
+
+
+
 }
 
 

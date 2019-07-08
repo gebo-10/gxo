@@ -42,20 +42,9 @@ void gxo::Render::process()
 
 	init_vg();
 
-	RenderCommandPtr cmd;
-	while (!stop)
-	{
-		cmd = pop_command();
-		if (cmd != nullptr) {
-			deal_cmd(cmd);
-		}
-		else {
-			std::unique_lock <std::mutex> lck(lock);
-			wait = true;
-			cv.wait(lck);
-			
-		}
-	}
+	command_pipe.process([&](RenderCommandPtr cmd) {
+		deal_cmd(cmd);
+	});
 }
 
 void gxo::Render::register_all_cmd()

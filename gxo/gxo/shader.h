@@ -46,9 +46,12 @@ namespace gxo {
 		~Shader()
 		{
 		}
+		void use() {
+
+		}
 		
 	private:
-		void load_to_gpu() {
+		void gpu_load() {
 			BuildVertexShader((char *)vs_source.data);
 			BuildVertexShader((char*)fs_source.data);
 			BuildProgram();

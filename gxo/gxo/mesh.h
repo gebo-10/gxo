@@ -24,7 +24,8 @@ namespace gxo {
 
 		Mesh(){}
 		~Mesh(){}
-
+		uint primitive= GL_TRIANGLE_STRIP;
+		uint size ;
 	private:
 
 	};

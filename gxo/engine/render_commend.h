@@ -23,7 +23,8 @@ namespace gxo {
 		RCMD_TEXT,
 		RCMD_VG,
 		RCMD_RECT,
-		RCMD_LOAD_RESOURCE_TO_GPU,
+		RCMD_LOAD_GPU_RESOURCE,
+		RCMD_UNLOAD_GPU_RESOURCE,
 	};
 
 	class RenderCommand

@@ -1,5 +1,6 @@
 #ifndef GXO_METARIAL_H
 #define GXO_METARIAL_H
+#include"gxo_math.h"
 #include"resource.h"
 #include"shader.h"
 namespace gxo {
@@ -15,7 +16,12 @@ namespace gxo {
 		~Material()
 		{
 		}
+		void use() {
+			shader->use();
+		}
+		void mvp(mat4 M, mat4 V, mat4 P) {
 
+		}
 	private:
 
 	};

@@ -1,0 +1,5 @@
+#ifndef GXO_CONST_DEFINE_H
+#define GXO_CONST_DEFINE_H
+#define RENDER_COMMAND_QUEUE_SIZE 100
+
+#endif

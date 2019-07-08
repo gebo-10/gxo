@@ -1,7 +1,7 @@
 //thread safe circle memery pool
 #ifndef CIRCLE_QUEUE
 #define CIRCLE_QUEUE
-
+#include<atomic>
 template<class T, size_t MAX_SIZE = 3>
 class CircleQueue
 {
@@ -32,38 +32,67 @@ public:
 		}
 	}
 
-	bool write(std::function<void(T *)> write) {
+	bool push(std::function<void(T *)> fun) {
 		QueueItem *item = &m_pool[write_sign];
 		if (item->state == READ_ABLE)
 		{
 			return false;
 		}
-		write(&(item->data));
+		fun(&(item->data));
 		item->state = READ_ABLE;
-		write_sign += 1;
+		write_sign ++;
 		write_sign = write_sign % MAX_SIZE;
 		return true;
 	}
 
-	bool read(std::function<void(T *)> read) {
+	bool pop(std::function<void(T *)> fun) {
 		QueueItem *item = &(m_pool[read_sign]);
 		if (item->state == WRITE_ABLE)
 		{
 			return false;
 		}
-		//read(NULL);
-		read(&(item->data));
+		fun(&(item->data));
 		item->state = WRITE_ABLE;
-		read_sign += 1;
+		read_sign ++;
 		read_sign = read_sign % MAX_SIZE;
 		return true;
 	}
 
+	//bool write_sync(std::function<void(T *)> fun) {
+	//	QueueItem *item = &m_pool[write_sign];
+	//	if (item->state == READ_ABLE)
+	//	{
+	//		return false;
+	//	}
+	//	while(item->state == READ_ABLE)
+
+	//	fun(&(item->data));
+	//	item->state = READ_ABLE;
+	//	write_sign++;
+	//	write_sign = write_sign % MAX_SIZE;
+	//	return true;
+	//}
+
+	//void read_sync(std::function<void(T *)> fun) {
+	//	QueueItem *item = &(m_pool[read_sign]);
+	//	if (item->state == WRITE_ABLE)
+	//	{
+	//		return false;
+	//	}
+	//	fun(&(item->data));
+	//	item->state = WRITE_ABLE;
+	//	read_sign++;
+	//	read_sign = read_sign % MAX_SIZE;
+	//	return true;
+	//}
+
 
 private:
-	QueueItem m_pool[MAX_SIZE];
 	int write_sign;
 	int read_sign;
+	//std::atomic<int> write_sign;
+	//std::atomic<int> read_sign;
+	QueueItem m_pool[MAX_SIZE];
 };
 
 

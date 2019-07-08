@@ -197,6 +197,8 @@
     <ClInclude Include="bvh.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="circle_queue.h" />
+    <ClInclude Include="command_pipe.h" />
+    <ClInclude Include="const_define.h" />
     <ClInclude Include="env.h" />
     <ClInclude Include="file_system.h" />
     <ClInclude Include="gpu_header.h" />

@@ -30,6 +30,8 @@ namespace gxo {
 		
 		Buffer ram;
 		
+		bool lock; //提交状态 设置为true cmd处理完成设置为false 并且notify_all resource manager  如果修改需要循环判断是否锁定 如果锁定就wait resource manager
+
 	public:
 		Resource()
 		{
@@ -48,12 +50,21 @@ namespace gxo {
 
 		}
 
-		virtual void unload_gpu() {
+
+		virtual void gpu_load() {
 
 		}
-		virtual void unload_ram() {
+
+		virtual void gpu_unload() {
 
 		}
+		virtual void ram_load() {
+
+		}
+		virtual void ram_unload() {
+
+		}
+		
 	};
 	typedef  shared_ptr<Resource> ResourcePtr;
 }
