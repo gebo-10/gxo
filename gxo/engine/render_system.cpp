@@ -1,6 +1,7 @@
 #include"render_system.h"
 #include"engine.h"
 #include"ui_node.h"
+#include"evn.h"
 void gxo::RenderSystem::init()
 {
 	
@@ -51,6 +52,18 @@ void gxo::RenderSystem::update()
 
 
 
+	auto pipe = std::make_shared<Pipeline>();
+
+	string name = "main/material/Default";
+	pipe->material = * env.engine->resource_manager.get<Material>(name);
+	pipe->viewport = Rect(0, 0, 500, 500);
+	pipe->target = std::make_shared<RenderTarget>();
+
+	render.rcmd(RCMD_SET_PIPELINE, pipe);
+	static float r = 0.0f;
+	r += 0.001;
+	render.rcmd(RCMD_CLEAR, Color(r,1-r,1.0,1.0));
+	render.rcmd(RCMD_SWAPBUFFER);
 
 }
 

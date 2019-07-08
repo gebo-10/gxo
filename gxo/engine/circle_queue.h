@@ -2,6 +2,7 @@
 #ifndef CIRCLE_QUEUE
 #define CIRCLE_QUEUE
 #include<atomic>
+#include<functional>
 template<class T, size_t MAX_SIZE = 3>
 class CircleQueue
 {

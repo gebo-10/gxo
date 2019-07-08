@@ -232,9 +232,6 @@
     <ClInclude Include="async_system.h">
       <Filter>system</Filter>
     </ClInclude>
-    <ClInclude Include="render_system.h">
-      <Filter>system</Filter>
-    </ClInclude>
     <ClInclude Include="time_system.h">
       <Filter>system</Filter>
     </ClInclude>
@@ -554,14 +551,20 @@
     <ClInclude Include="render_commend.h">
       <Filter>core\render\render</Filter>
     </ClInclude>
+    <ClInclude Include="render_system.h">
+      <Filter>system\render_system</Filter>
+    </ClInclude>
+    <ClInclude Include="command_pipe.h">
+      <Filter>system\render_system</Filter>
+    </ClInclude>
+    <ClInclude Include="const_define.h">
+      <Filter>engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="engine.cpp">
       <Filter>engine</Filter>
-    </ClCompile>
-    <ClCompile Include="render_system.cpp">
-      <Filter>system</Filter>
     </ClCompile>
     <ClCompile Include="async_system.cpp">
       <Filter>system</Filter>
@@ -593,6 +596,9 @@
     </ClCompile>
     <ClCompile Include="render.cpp">
       <Filter>core\render\render</Filter>
+    </ClCompile>
+    <ClCompile Include="render_system.cpp">
+      <Filter>system\render_system</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

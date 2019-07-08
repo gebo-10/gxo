@@ -56,6 +56,11 @@ namespace gxo {
 			return std::dynamic_pointer_cast<T>( resource_map[url]);
 		}
 
+		//template<class T>
+		//shared_ptr<T> get(string url, bool sync = true) {
+		//	return std::dynamic_pointer_cast<T>(resource_map[url]);
+		//}
+
 	private:
 		//static void resource_deleter(Resource * resource) {
 		//	std::cout << "resource_deleter " << resource->url<< std::endl;
@@ -66,6 +71,7 @@ namespace gxo {
 		////////////////////////////////////////////////////////////////////////////
 		void load_texture(string package, sol::table textures);
 		void load_shader(string package, sol::table textures);
+		void load_material(string package, sol::table materials);
 	};
 }
 #endif

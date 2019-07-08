@@ -138,7 +138,7 @@ void gxo::Render::register_all_cmd()
 
 
 	register_cmd<MeshPtr, mat4>(RCMD_MESH, [&](MeshPtr mesh, mat4 M) {
-		
+		this->pipeline->push(mesh, M);
 		});
 
 }

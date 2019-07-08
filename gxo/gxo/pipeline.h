@@ -14,7 +14,7 @@ namespace gxo {
 		Rect viewport;
 		mat4 V{1.0f};
 		mat4 P{ 1.0f };
-
+		//Color clear_color;
 		//int depth_type;
 		//int blend_type;
 		//int scenil_type;

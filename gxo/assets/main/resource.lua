@@ -1,4 +1,5 @@
 Resource={
+	Name="main",
 	SubResource={
 		{"main1","main2"},
 	},
@@ -41,7 +42,12 @@ Resource={
 	},
 	Material={
 		{
-
+			name="Default",
+			shader="main/shader/Default",
+			uniform={
+				{"time",0},
+				{"mvp",2},
+			},
 		},
 	},
 	Mesh={

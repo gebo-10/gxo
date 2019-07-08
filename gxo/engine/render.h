@@ -80,6 +80,7 @@ namespace gxo {
 			gen_params(params, rest...);
 		}
 
+	public:
 		void rcmd(RenderCommandType type) {
 			auto cmd = std::make_shared<RenderCommand>(type);
 			push_command(cmd);

@@ -12,7 +12,7 @@ void gxo::ResourceManager::load_package(string& package)
  	
 	load_texture(package, resource_config["Texture"]);
 	load_shader(package, resource_config["Shader"]);
-	
+	load_material(package, resource_config["Material"]);
 }
 void gxo::ResourceManager::load_texture(string package,sol::table textures)
 {
@@ -56,3 +56,19 @@ void gxo::ResourceManager::load_shader(string package, sol::table shader)
 
 }
 
+void gxo::ResourceManager::load_material(string package, sol::table materials)
+{
+	for (auto config : materials) {
+		auto item = config.second.as<sol::table>();
+		string name = item["name"];
+		string shader = item["shader"];
+
+
+		auto material = std::make_shared<Material>();
+		material->shader = get<Shader>(shader);
+
+		name = package + "/material/" + name;
+		resource_map[name] = material;
+	}
+
+}
