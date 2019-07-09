@@ -24,7 +24,9 @@ namespace gxo {
 			auto pbuf = filestr.rdbuf();
 			auto size = pbuf->pubseekoff(0, std::ios::end, std::ios::in);
 			pbuf->pubseekpos(0, std::ios::in);
-			buffer.malloc(size);
+			buffer.malloc((uint32)size+1);
+			buffer.data[(uint32)size] = 0;
+			buffer.size--;
 			pbuf->sgetn((char *)buffer.data, size);
 			filestr.close();
 		}

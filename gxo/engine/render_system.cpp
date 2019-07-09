@@ -2,6 +2,8 @@
 #include"engine.h"
 #include"ui_node.h"
 #include"evn.h"
+#include"camera.h"
+#include "gpu_type.h"
 void gxo::RenderSystem::init()
 {
 	
@@ -50,19 +52,61 @@ void gxo::RenderSystem::update()
 	//Engine::instacne().tree_manager.screen.on_render();
 	//render.rcmd(RCMD_SWAPBUFFER);
 
+	Camera a;
+	a.set_type(Camera::PERSPECTIVE);
+	a.set_ortho(500, 500);
+	a.set_fov(60);
+	a.lookat(vec3(0, 0, 1), vec3(0, 0, 0), vec3(0, 0, 1));
+	auto p = a.get_p();
+	auto v = a.get_v();
 
+
+	static float vertices[] = {
+		// Positions         // Colors
+		0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,  // Bottom Right
+		-0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,  // Bottom Left
+		0.0f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f   // Top 
+	};
+	static byte index[] = { 0, 1, 2 };
+	auto mesh = std::make_shared<Mesh>();
+	mesh->vertex.data = (byte*)vertices;
+	mesh->vertex.size = sizeof(vertices);
+
+	mesh->indices.data = (byte*)index;
+	mesh->indices.size = sizeof(index);
+	mesh->size = 3;
+
+	mesh->vertex_attr.push_back(GPU_VEC3);
+	mesh->vertex_attr.push_back(GPU_VEC3);
+
+	render.gpu_load(mesh);
+
+
+	string name = "main/material/Default";
+	auto material = env.engine->resource_manager.get<Material>(name);
+	render.gpu_load(material);
 
 	auto pipe = std::make_shared<Pipeline>();
 
-	string name = "main/material/Default";
-	pipe->material = * env.engine->resource_manager.get<Material>(name);
+	
+	pipe->material = *material;
 	pipe->viewport = Rect(0, 0, 500, 500);
 	pipe->target = std::make_shared<RenderTarget>();
 
+	pipe->P = p;
+	pipe->V = v;
+
 	render.rcmd(RCMD_SET_PIPELINE, pipe);
+
+	render.rcmd(RCMD_MESH, mesh, mat4{ 1.0 });
+
+
 	static float r = 0.0f;
 	r += 0.001;
 	render.rcmd(RCMD_CLEAR, Color(r,1-r,1.0,1.0));
+
+
+
 	render.rcmd(RCMD_SWAPBUFFER);
 
 }

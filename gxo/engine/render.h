@@ -38,6 +38,10 @@ namespace gxo {
 			stop = true;
 		}
 
+		void gpu_load(ResourcePtr res ) {
+			rcmd(RCMD_LOAD_GPU_RESOURCE, res);
+		}
+
 	private:
 		void register_all_cmd();
 		void process();

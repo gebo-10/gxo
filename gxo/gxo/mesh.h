@@ -22,10 +22,15 @@ namespace gxo {
 		Buffer indices;
 		GPUObject gpu_object;
 
-		Mesh(){}
-		~Mesh(){}
 		uint primitive= GL_TRIANGLE_STRIP;
 		uint size ;
+		Mesh(){}
+		~Mesh(){}
+		
+		void gpu_load() override {
+			gpu_object.create(vertex_attr,vertex,indices);
+		}
+
 	private:
 
 	};

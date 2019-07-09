@@ -39,7 +39,7 @@ namespace gxo {
 				glVertexAttribPointer((GLuint)i, info.num, info.type, false, trip_size, (const GLvoid*)offset);
 				offset += info.size;
 			}
-			
+			glBindVertexArray(0);
 		}
 		void bind(void) {
 			assert(gpu_id != -1);

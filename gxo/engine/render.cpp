@@ -127,7 +127,7 @@ void gxo::Render::register_all_cmd()
 	register_cmd<PipelinePtr>(RCMD_PUSH_PIPELINE, [&](PipelinePtr pipeline) {
 		pipeline_stack.push(pipeline);
 		this->pipeline = pipeline;
-		pipeline->use();
+		this->pipeline->use();
 		});
 
 	register_cmd(RCMD_POP_PIPELINE, [&]() {
@@ -139,6 +139,12 @@ void gxo::Render::register_all_cmd()
 
 	register_cmd<MeshPtr, mat4>(RCMD_MESH, [&](MeshPtr mesh, mat4 M) {
 		this->pipeline->push(mesh, M);
-		});
+	});
+
+
+	register_cmd<ResourcePtr>(RCMD_LOAD_GPU_RESOURCE, [&](ResourcePtr resource) {
+		resource->gpu_load();
+		resource->lock = false;
+	});
 
 }

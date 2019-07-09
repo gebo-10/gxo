@@ -37,11 +37,15 @@ namespace gxo {
 			return projection * view_matrix;
 		}
 
-		mat4 get_projectionx(){
+		mat4 get_p(){
 			if (dirty) {
 				update_matrix();
 			}
 			return projection;
+		}
+
+		mat4 get_v() {
+			return view_matrix;
 		}
 
 		void update_matrix() {
@@ -72,6 +76,10 @@ namespace gxo {
 			this->width = width;
 			this->height = height;
 			dirty = true;
+		}
+
+		void set_type(CameraType type) {
+			this->type = type;
 		}
 
 		//void set_near(float near) {

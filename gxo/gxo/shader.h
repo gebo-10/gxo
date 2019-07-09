@@ -33,7 +33,7 @@ namespace gxo {
 	{
 	public:
 		GPUID gpu_id;
-		std::vector<Uniform> uniforms;
+		//std::vector<Uniform> uniforms;
 		GPUID vertex_shader;
 		GPUID frag_shader;
 
@@ -46,16 +46,14 @@ namespace gxo {
 		~Shader()
 		{
 		}
-		void use() {
-
-		}
 		
-	private:
-		void gpu_load() {
+		
+		void gpu_load() override {
 			BuildVertexShader((char *)vs_source.data);
 			BuildVertexShader((char*)fs_source.data);
 			BuildProgram();
 		}
+	private:
 		bool BuildVertexShader(char* source);
 		bool BuildFragShader(char* source);
 		bool BuildProgram();

@@ -45,8 +45,8 @@ Resource={
 			name="Default",
 			shader="main/shader/Default",
 			uniform={
-				{"time",0},
-				{"mvp",2},
+				{"time","float",0},
+				{"mvp","mat4",2},
 			},
 		},
 	},
