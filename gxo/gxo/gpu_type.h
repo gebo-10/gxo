@@ -25,7 +25,7 @@ namespace gxo {
 		int num;
 		int size;
 		GPUDataTypeInfo(){}
-		GPUDataTypeInfo(int data_type, int data_size, int data_num) :type(data_type), num(data_num), size(data_size){}
+		GPUDataTypeInfo(int data_type,int data_num ,int data_size ) :type(data_type), num(data_num), size(data_size){}
 	};
 	extern std::map < GPUDataType, GPUDataTypeInfo > gpu_data_type_info;
 }

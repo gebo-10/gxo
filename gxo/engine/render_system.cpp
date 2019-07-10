@@ -51,6 +51,10 @@ void gxo::RenderSystem::update()
 	//Engine::instacne().tree_manager.screen.on_layout(rect);
 	//Engine::instacne().tree_manager.screen.on_render();
 	//render.rcmd(RCMD_SWAPBUFFER);
+	static float r = 0.0f;
+	r += 0.001;
+	render.rcmd(RCMD_CLEAR, Color(r, 1 - r, 1.0, 1.0));
+
 
 	Camera a;
 	a.set_type(Camera::PERSPECTIVE);
@@ -67,7 +71,7 @@ void gxo::RenderSystem::update()
 		-0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,  // Bottom Left
 		0.0f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f   // Top 
 	};
-	static byte index[] = { 0, 1, 2 };
+	static unsigned short index[] = { 2, 1, 0 };
 	auto mesh = std::make_shared<Mesh>();
 	mesh->vertex.data = (byte*)vertices;
 	mesh->vertex.size = sizeof(vertices);
@@ -101,14 +105,12 @@ void gxo::RenderSystem::update()
 	render.rcmd(RCMD_MESH, mesh, mat4{ 1.0 });
 
 
-	static float r = 0.0f;
-	r += 0.001;
-	render.rcmd(RCMD_CLEAR, Color(r,1-r,1.0,1.0));
+	
 
 
 
 	render.rcmd(RCMD_SWAPBUFFER);
-
+	//Sleep(100);
 }
 
 

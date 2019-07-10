@@ -37,7 +37,7 @@ namespace gxo {
 		void push(MeshPtr mesh, mat4 M ) {
 			material.mvp(M,V,P);
 			mesh->gpu_object.bind();
-			glDrawElements(mesh->primitive, mesh->size, GL_UNSIGNED_BYTE, 0);
+			glDrawElements(mesh->primitive, mesh->size, GL_UNSIGNED_SHORT, 0);
 		}
 
 		void set_vp(mat4 V, mat4 P) {

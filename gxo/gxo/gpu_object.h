@@ -22,7 +22,7 @@ namespace gxo {
 		void create(std::vector<GPUDataType> &vertex_attr, Buffer & vertex_buffer, Buffer &index_buffer) {
 			glGenVertexArrays(1, &gpu_id);
 			glBindVertexArray(gpu_id);
-			index.create(index_buffer, GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW);
+			
 			vertex.create(vertex_buffer, GL_ARRAY_BUFFER, GL_STATIC_DRAW);
 
 			int trip_size=0;
@@ -39,6 +39,8 @@ namespace gxo {
 				glVertexAttribPointer((GLuint)i, info.num, info.type, false, trip_size, (const GLvoid*)offset);
 				offset += info.size;
 			}
+
+			index.create(index_buffer, GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW);
 			glBindVertexArray(0);
 		}
 		void bind(void) {

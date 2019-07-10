@@ -96,11 +96,11 @@ bool Shader::BuildProgram()
 	
 	glLinkProgram(program);
 
-	int block_index = glGetUniformBlockIndex(program, "Global");
-	glUniformBlockBinding(program, block_index, 0);
+	//int block_index = glGetUniformBlockIndex(program, "Global");
+	//glUniformBlockBinding(program, block_index, 0);
 
-	block_index = glGetUniformBlockIndex(program, "Light");
-	glUniformBlockBinding(program, block_index, 1);
+	//block_index = glGetUniformBlockIndex(program, "Light");
+	//glUniformBlockBinding(program, block_index, 1);
 
 
 	GLint linkStatus;
