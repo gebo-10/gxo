@@ -11,8 +11,10 @@ namespace gxo {
 		CameraType type = ORTHO;
 		int width=100;
 		int height=100;
+		//Rectf ortho_rect;
+		vec4 ortho_rect;
 		float fov = 45.f;
-		float znear = 0.001f;
+		float znear = 0.0f;
 		float zfar = 1000.f;
 
 		vec3 position{ 4.f };
@@ -27,7 +29,8 @@ namespace gxo {
 		void lookat(vec3 position, vec3 target,vec3 up) {
 			position = position;
 			target = target;
-			view_matrix=lookAt(position, target, up);
+			view_matrix=glm::lookAt(position, target, up);
+
 		}
 
 		mat4 matrix() {
@@ -52,14 +55,14 @@ namespace gxo {
 			switch (type)
 			{
 			case gxo::Camera::ORTHO:{
-				float half_w = width / 2.0f;
-				//float aspect = (float)height / (float)width;
-				float half_h = height / 2.0f;
-				projection = ortho(-half_w, half_w, -half_h, half_h, znear, zfar);
+				//float half_w = width / 2.0f;
+				//float half_h = height / 2.0f;
+				//projection = ortho(-half_w, half_w, -half_h, half_h, znear, zfar);
+				projection = ortho(ortho_rect.x, ortho_rect.y, ortho_rect.z, ortho_rect.w, znear, zfar);
 				break;
 			}
 			case gxo::Camera::PERSPECTIVE:
-				projection = perspective(radians(fov), (float)width / (float)height, znear, zfar);
+				projection = perspective(radians(fov), (ortho_rect.y- ortho_rect.x) / (ortho_rect.w - ortho_rect.z), znear, zfar);
 				break;
 			default:
 				break;
@@ -72,25 +75,27 @@ namespace gxo {
 			dirty = true;
 		}
 
-		void set_ortho(int width, int height) {
-			this->width = width;
-			this->height = height;
+		void set_ortho(float left,float right, float bottom, float top) {
+			ortho_rect.x = left;
+			ortho_rect.y = right;
+			ortho_rect.z = bottom;
+			ortho_rect.w = top;
 			dirty = true;
 		}
 
 		void set_type(CameraType type) {
 			this->type = type;
 		}
+		
+		void set_near(float in_near) {
+			this->znear = in_near;
+			dirty = true;
+		}
 
-		//void set_near(float near) {
-		//	this->znear = near;
-		//	dirty = true;
-		//}
-
-		//void set_far(float far) {
-		//	this->zfar = far;
-		//	dirty = true;
-		//}
+		void set_far(float in_far) {
+			this->zfar = in_far;
+			dirty = true;
+		}
 
 	};
 

@@ -9,10 +9,10 @@ namespace gxo {
 	class GPUObject
 	{
 	public:
-		GPUID gpu_id;
+		GPUID gpu_id=0;
 		GPUBuffer vertex;
 		GPUBuffer index;
-		GPUObject():gpu_id(-1)
+		GPUObject():gpu_id(0)
 		{
 		}
 
@@ -44,7 +44,7 @@ namespace gxo {
 			glBindVertexArray(0);
 		}
 		void bind(void) {
-			assert(gpu_id != -1);
+			assert(gpu_id != 0);
 			glBindVertexArray(gpu_id);
 		}
 		void unbind(void) {

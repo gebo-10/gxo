@@ -23,6 +23,14 @@ namespace gxo {
 		};
 		MemeryType memery_type;
 
+		//enum CacheState
+		//{
+		//	DYNAMIC,
+		//	ALWAYS,
+		//	NEWER,
+		//};
+		//CacheState cache_type;
+
 		int resource_type;
 		//UID uid;
 

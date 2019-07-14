@@ -190,6 +190,9 @@
     <Filter Include="core\render\render">
       <UniqueIdentifier>{40aa765c-bcdf-4804-b1a4-9915b4167887}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\render\render_object">
+      <UniqueIdentifier>{3d2609f2-e9e8-4f23-a870-7442b139b7e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="net_system.h">
@@ -307,9 +310,6 @@
     </ClInclude>
     <ClInclude Include="..\gxo\core.h">
       <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gxo\material.h">
-      <Filter>core\resource</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\mesh.h">
       <Filter>core\resource</Filter>
@@ -559,6 +559,13 @@
     </ClInclude>
     <ClInclude Include="const_define.h">
       <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_concept.h" />
+    <ClInclude Include="..\gxo\material.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="plane.h">
+      <Filter>core\render\render_object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

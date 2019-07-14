@@ -17,20 +17,21 @@ namespace gxo {
 		~GPUTexture()
 		{
 		}
-		bool create(int width, int height, void * data) {
+		bool create(int width, int height, void * data, int format) {
 			glGenTextures(1, &gpu_id);
 			glBindTexture(GL_TEXTURE_2D, gpu_id);
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, format, GL_UNSIGNED_BYTE, data);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+			return true;
 		}
 		void update(void * data) {
 
 		}
 
-		void bind(int index) {
+		void use(int index) {
 			//glEnable(GL_TEXTURE_2D);
 			glActiveTexture(GL_TEXTURE0 + index);
 			glBindTexture(GL_TEXTURE_2D, gpu_id);

@@ -8,7 +8,7 @@
 #include"gxo_log.h"
 #include"gpu_api.h"
 #include"gxo_concept.h"
-
+#include"ui_mesh.h"
 class Render;
 namespace gxo {
 	class UiNode :public TreeNode
@@ -16,7 +16,6 @@ namespace gxo {
 	public:
 		ivec2 size;
 		ivec2  position;
-
 		UiNode();
 
 		~UiNode()
@@ -99,8 +98,9 @@ namespace gxo {
 						break;
 					}
 				}
-				
 			}
+			
+
 			Rect rect_self;
 			rect_self.set(position, size);
 			for (auto child : children) {

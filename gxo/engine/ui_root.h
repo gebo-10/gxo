@@ -26,10 +26,17 @@ namespace gxo {
 		//	return false;
 		//}
 
-		Rect on_layout(Rect& rect_parent) {
-			Rect rect_self;
-			return rect_self;
+		virtual void on_render_begin() {
+			auto size = get<ivec2>(LAYOUT_SIZE);
+			camera.set_type(Camera::CameraType::ORTHO);
+			camera.set_ortho(0, 0, size.x, size.y);
+			camera.lookat(vec3(0, 0, 1), vec3(0, 0, 0), vec3(0, 1, 0));
 		}
+
+		//Rect on_layout(Rect& rect_parent) {
+		//	Rect rect_self;
+		//	return rect_self;
+		//}
 
 		void set_size() {
 		}

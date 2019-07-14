@@ -52,6 +52,7 @@ namespace gxo {
 
 		}
 		void init() {
+			init_env();
 			Config::instacne().init();
 			Profiler::instacne().init();
 			file_system.init();
@@ -61,7 +62,7 @@ namespace gxo {
 			render_system.init();
 			
 			resource_manager.init();
-			init_env();
+			
 
 			app->on_config();
 			app->on_project_loaded();

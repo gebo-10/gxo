@@ -47,7 +47,10 @@ namespace gxo {
 		{
 		}
 		
-		
+		void use() {
+			glUseProgram(gpu_id);
+		}
+
 		void gpu_load() override {
 			BuildVertexShader((char *)vs_source.data);
 			BuildFragShader((char*)fs_source.data);

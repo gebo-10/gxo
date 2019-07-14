@@ -3,7 +3,7 @@
 #include"resource.h"
 #include"gxo_type.h"
 #include"config.h"
-
+#include"gxo_log.h"
 namespace gxo {
 	class ResourceManager
 	{
@@ -26,6 +26,7 @@ namespace gxo {
 		{
 		}
 		void init() {
+			register_default();
 			load_resource();
 		}
 		void load_resource() {
@@ -39,8 +40,13 @@ namespace gxo {
 		}
 		void load_package(string& path);
 
-		bool add_resource(Resource * res) {
-
+		bool add_resource(const string& url, ResourcePtr res) {
+			if (resource_map.find(url) != resource_map.end()) {
+				error("add same resource");
+				return false;
+			}
+			resource_map[url] = res;
+			return true;
 		}
 
 		//void check_res
@@ -52,7 +58,7 @@ namespace gxo {
 			return resource_map[url];
 		}
 		template<class T>
-		shared_ptr<T> get(string& url, bool sync = true) {
+		shared_ptr<T> get(const string& url, bool sync = true) {
 			return std::dynamic_pointer_cast<T>( resource_map[url]);
 		}
 
@@ -67,11 +73,12 @@ namespace gxo {
 		//}
 
 
-
+		void register_default();
 		////////////////////////////////////////////////////////////////////////////
 		void load_texture(string package, sol::table textures);
 		void load_shader(string package, sol::table textures);
 		void load_material(string package, sol::table materials);
+		std::any load_uniform_value(GPUDataType type, sol::table unifrom);
 	};
 }
 #endif

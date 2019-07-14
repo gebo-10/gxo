@@ -1,5 +1,6 @@
 #include"ui_node.h"
 #include"engine.h"
+#include"env.h"
 gxo::UiNode::UiNode()
 {
 	
@@ -41,5 +42,29 @@ void gxo::UiNode::draw_rect() {
 	////glViewport(position.x, position.y, size.x, size.y);
 	//glClearColor(position.x / 1000.0f, 0.5f, size.y / 1000.0f, 1.0f);
 	//glClear(GL_COLOR_BUFFER_BIT);
-	Engine::instacne().render_system.render.rcmd(RCMD_RECT, Rect(position.x, position.y, size.x, size.y));
+
+
+
+	//Engine::instacne().render_system.render.rcmd(RCMD_RECT, Rect(position.x, position.y, size.x, size.y));
+
+
+	auto material = env.engine->resource_manager.get<Material>("main/material/Texture");
+	if (material->shader->gpu_id <= 0) {
+		env.render->gpu_load(material);
+	}
+	env.render->rcmd(RCMD_MATERIAL, *material);
+
+	auto ui_mesh = env.resource->get<Mesh>("default/plane");
+	//ui_mesh->build(size.x, size.y);
+	//ui_mesh->build(100, 100);
+
+		
+	Transform3d t;
+	t.position = vec3(position.x, position.y, 0);
+	t.scale = vec3(size.x, size.y, 1);
+	t.rotate = vec3(0, 0, 0);
+
+
+	env.render->rcmd(RCMD_MESH, ui_mesh, t.matrix());
+
 }

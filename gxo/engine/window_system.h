@@ -30,7 +30,7 @@ namespace gxo {
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
 			glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
+			glfwWindowHint(GLFW_SAMPLES, 32);
 
 			//glfwWindowHint(GLFW_SAMPLES, 0);
 			//glfwWindowHint(GLFW_RED_BITS, 8);

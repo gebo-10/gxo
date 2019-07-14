@@ -23,11 +23,14 @@ namespace gxo {
 
 		}
 
-		void load_to_gpu() {
-			gpu_texture.create(width, height, ram.data);
+		void gpu_load() override{
+			gpu_texture.create(width, height, ram.data, format);
 		}
 		
+		void use(int texture_index) {
+			gpu_texture.use(texture_index);
 
+		}
 	private:
 
 	};

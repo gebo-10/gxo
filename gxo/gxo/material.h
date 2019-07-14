@@ -3,6 +3,7 @@
 #include"gxo_math.h"
 #include"resource.h"
 #include"shader.h"
+#include"texture.h"
 namespace gxo {
 	class Material :public Resource
 	{
@@ -17,23 +18,38 @@ namespace gxo {
 		{
 		}
 		void use() {
-			glUseProgram(shader->gpu_id);
-			for (auto uniform: uniforms)
+			shader->use();
+			for (auto uniform : uniforms)
 			{
 				set_uniform(uniform);
 			}
 		}
+
+		void set_shader(ShaderPtr  shader) {
+			this->shader = shader;
+		}
+
 		void mvp(mat4 M, mat4 V, mat4 P) {
-			//mat4 m4 = std::any_cast<mat4>(uniform.value);
-			//glUniformMatrix4fv(uniform.location, 1, false, &m4[0][0]);
+			int location = glGetUniformLocation(shader->gpu_id, "M");
+			glUniformMatrix4fv(location, 1, false, &M[0][0]);
+
+			location = glGetUniformLocation(shader->gpu_id, "V");
+			glUniformMatrix4fv(location, 1, false, &V[0][0]);
+
+			location = glGetUniformLocation(shader->gpu_id, "P");
+			glUniformMatrix4fv(location, 1, false, &P[0][0]);
 		}
 
 		void gpu_load() override {
 			shader->gpu_load();
+			for (auto uniform : uniforms)
+			{
+				set_uniform(uniform);
+			}
 		}
 
 
-		void set_uniform(Uniform uniform) {
+		void set_uniform(Uniform &uniform) {
 			switch (uniform.data_type)
 			{
 			case gxo::GPU_BYTE:
@@ -74,6 +90,14 @@ namespace gxo {
 			case gxo::GPU_MAT4:{
 				mat4 m4 = std::any_cast<mat4>(uniform.value);
 				glUniformMatrix4fv(uniform.location, 1, false, &m4[0][0]);
+				break;
+			}
+			case gxo::GPU_SAMPLE2D: {
+				auto tex= std::any_cast<TexturePtr>(uniform.value);
+				int texture_index = std::atoi(uniform.name.to_string().c_str());
+				int location = glGetUniformLocation(shader->gpu_id, uniform.name.to_string().c_str());
+				tex->use(texture_index);
+				glUniform1i(location, texture_index);
 				break;
 			}
 			default:

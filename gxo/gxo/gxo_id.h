@@ -7,22 +7,20 @@ namespace gxo {
 	class UID
 	{
 	public:
-		static unsigned int index;
+		
 		unsigned int id;
 		UID()
 		{
-			id = ++index;
+			id = gen().id;
 		}
 		UID(unsigned int id)
 		{
 			id = id;
 		}
-		unsigned int current() {
-			return index;
-		}
 
 		static UID gen() {
-			return UID();
+			static unsigned int index = 0;
+			return UID(index++);
 		}
 
 	};

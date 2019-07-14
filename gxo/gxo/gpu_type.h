@@ -18,6 +18,7 @@ namespace gxo {
 		GPU_VEC4,
 		GPU_MAT3,
 		GPU_MAT4,
+		GPU_SAMPLE2D,
 	};
 	struct GPUDataTypeInfo
 	{

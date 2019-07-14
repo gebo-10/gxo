@@ -39,7 +39,7 @@ namespace gxo {
 
 			uint32 add(std::string name) {
 				auto itr = name_to_id.find(name);
-				if (itr == name_to_id.end()) {
+				if (itr != name_to_id.end()) {
 					return itr->second;
 				};
 

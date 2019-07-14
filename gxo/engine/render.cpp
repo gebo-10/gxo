@@ -42,6 +42,11 @@ void gxo::Render::process()
 
 	init_vg();
 
+	glEnable(GL_MULTISAMPLE);
+	glEnable(GL_TEXTURE_2D);
+	glDisable(GL_CULL_FACE);
+	glFrontFace(GL_CW);
+
 	command_pipe.process([&](RenderCommandPtr cmd) {
 		deal_cmd(cmd);
 	});
@@ -56,8 +61,8 @@ void gxo::Render::register_all_cmd()
 	});
 
 	register_cmd<Color>(RCMD_CLEAR, [&](Color color) {
-		glClearColor(color.r, color.g, color.b, color.a);
-		glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		pipeline->set_clear_color(color);
+		pipeline->clear();
 	});
 
 	register_cmd(RCMD_UI_BEGIN, [&]() {
@@ -136,6 +141,10 @@ void gxo::Render::register_all_cmd()
 		this->pipeline->use();
 	});
 
+
+	register_cmd<Material>(RCMD_MATERIAL, [&](Material material) {
+		this->pipeline->set_material(material);
+		});
 
 	register_cmd<MeshPtr, mat4>(RCMD_MESH, [&](MeshPtr mesh, mat4 M) {
 		this->pipeline->push(mesh, M);

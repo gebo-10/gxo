@@ -201,6 +201,7 @@
     <ClInclude Include="const_define.h" />
     <ClInclude Include="env.h" />
     <ClInclude Include="file_system.h" />
+    <ClInclude Include="gpu_concept.h" />
     <ClInclude Include="gpu_header.h" />
     <ClInclude Include="gpu_texture.h" />
     <ClInclude Include="gpu_pipeline.h" />
@@ -215,6 +216,7 @@
     <ClInclude Include="gxo_event_queue.h" />
     <ClInclude Include="gxo_param.h" />
     <ClInclude Include="orbit_manipulator.h" />
+    <ClInclude Include="plane.h" />
     <ClInclude Include="render_parser.h" />
     <ClInclude Include="scene_camera.h" />
     <ClInclude Include="scene_cube.h" />
