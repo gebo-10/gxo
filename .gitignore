@@ -78,3 +78,5 @@ gxo/3rdpart/lua/lua/Debug/lua.log
 *.obj
 /gxo/3rdpart/lua/lua/Debug
 /gxo/engine/Debug
+/test/transparency/Debug/transparency.tlog
+/test/transparency/Debug

@@ -21,7 +21,7 @@ namespace gxo {
 			shader->use();
 			for (auto uniform : uniforms)
 			{
-				set_uniform(uniform);
+				upload_uniform(uniform);
 			}
 		}
 
@@ -44,12 +44,22 @@ namespace gxo {
 			shader->gpu_load();
 			for (auto uniform : uniforms)
 			{
-				set_uniform(uniform);
+				upload_uniform(uniform);
 			}
 		}
 
+		bool set_uniform(Uniform& uniform) {
+			for (unsigned int i=0;i<uniforms.size();i++)
+			{
+				if (uniforms[i].name == uniform.name) {
+					uniforms[i] = uniform;
+					return true;
+				}
+			}
+			return false;
+		}
 
-		void set_uniform(Uniform &uniform) {
+		void upload_uniform(Uniform &uniform) {
 			switch (uniform.data_type)
 			{
 			case gxo::GPU_BYTE:

@@ -21,6 +21,10 @@ namespace gxo {
 			return UID(NameMap::instance().to_id(name));
 		}
 
+		bool operator == (Name& other) {
+			return name_id == other.name_id;
+		}
+
 	private:
 		uint32 name_id;
 		class NameMap {

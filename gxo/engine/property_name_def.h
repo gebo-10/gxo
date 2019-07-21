@@ -17,7 +17,10 @@ namespace gxo {
 		REF, //TreeNode path
 		PTR, //TreeNode *
 		TRANSFORM2D,		//Transform2d
-		TRANSFORM3D			//Transform3d
+		TRANSFORM3D,			//Transform3d
+
+		RESOURCE_PTR,
+		TEXTURE_PTR,
 	};
 }
 #endif

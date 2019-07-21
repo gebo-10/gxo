@@ -232,7 +232,8 @@
     <ClInclude Include="transform.h" />
     <ClInclude Include="ui_camera.h" />
     <ClInclude Include="ui_canvas.h" />
-    <ClInclude Include="ui_mesh.h" />
+    <ClInclude Include="ui_frame.h" />
+    <ClInclude Include="ui_grid_mesh.h" />
     <ClInclude Include="ui_view.h" />
     <ClInclude Include="ui_image.h" />
     <ClInclude Include="kdtree.h" />
@@ -274,6 +275,7 @@
     <ClCompile Include="test_application.cpp" />
     <ClCompile Include="ui_image.cpp" />
     <ClCompile Include="ui_node.cpp" />
+    <ClCompile Include="ui_root.cpp" />
     <ClCompile Include="ui_screen.cpp" />
     <ClCompile Include="ui_text.cpp" />
   </ItemGroup>
@@ -284,6 +286,9 @@
     <ProjectReference Include="..\gxo\gxo.vcxproj">
       <Project>{c8691a70-e6fb-48fa-b6c7-9fb7fbb57e0b}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="code_snap.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

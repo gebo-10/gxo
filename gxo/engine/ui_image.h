@@ -5,9 +5,7 @@ namespace gxo {
 	class UiImage :public UiNode
 	{
 	public:
-		UiImage() {
-
-		}
+		UiImage();
 
 		void on_render_begin();
 	private:

@@ -36,18 +36,37 @@ Resource={
 		{
 			name="1",
 			image="texture/1.jpeg",
-			width=640,
-			height=510;
 			min_filter=0,
 			mag_filter=0,
 			mipmip=0,
 			warp_mode=0,
 			anisotropy=0,
-
 			cache_type=0,
 			memery_type=0,
 		},
-
+		{
+			name="Default",
+			image="texture/default.png",
+			min_filter=0,
+			mag_filter=0,
+			mipmip=0,
+			warp_mode=0,
+			anisotropy=0,
+			cache_type=0,
+			memery_type=0,
+		},
+		{
+			name="photo",
+			image="texture/photo.jpg",
+		},
+		{
+			name="home",
+			image="texture/home_click.png",
+		},
+		{
+			name="house",
+			image="texture/house.jpg",
+		},
 	},
 	RenderTarget={
 		{

@@ -530,9 +530,6 @@
     <ClInclude Include="ui_camera.h">
       <Filter>ecs\ui\2d\UiRender</Filter>
     </ClInclude>
-    <ClInclude Include="ui_mesh.h">
-      <Filter>ecs\ui\2d\UiRender</Filter>
-    </ClInclude>
     <ClInclude Include="transform.h">
       <Filter>core\math</Filter>
     </ClInclude>
@@ -543,9 +540,6 @@
       <Filter>core\render\render</Filter>
     </ClInclude>
     <ClInclude Include="..\gxo\pipeline.h">
-      <Filter>core\render\render</Filter>
-    </ClInclude>
-    <ClInclude Include="render.h">
       <Filter>core\render\render</Filter>
     </ClInclude>
     <ClInclude Include="render_commend.h">
@@ -566,6 +560,15 @@
     </ClInclude>
     <ClInclude Include="plane.h">
       <Filter>core\render\render_object</Filter>
+    </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>system\render_system</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_grid_mesh.h">
+      <Filter>ecs\ui\2d\UiRender</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -601,11 +604,17 @@
     <ClCompile Include="gpu_type.cpp">
       <Filter>core\gpu</Filter>
     </ClCompile>
-    <ClCompile Include="render.cpp">
-      <Filter>core\render\render</Filter>
-    </ClCompile>
     <ClCompile Include="render_system.cpp">
       <Filter>system\render_system</Filter>
     </ClCompile>
+    <ClCompile Include="render.cpp">
+      <Filter>system\render_system</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_root.cpp">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="code_snap.txt" />
   </ItemGroup>
 </Project>
