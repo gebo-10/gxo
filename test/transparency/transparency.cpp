@@ -163,7 +163,7 @@ int WINAPI WinMain(HINSTANCE hThisInst, HINSTANCE hPrevInst, LPSTR str, int nWin
 	}
 
 	HWND hWnd = CreateWindowEx(WS_EX_APPWINDOW, szAppName, wcWndName,
-		WS_VISIBLE | WS_POPUP, 1920, 720, w, h,
+		WS_VISIBLE | WS_POPUP, 0, 0, w, h,
 		NULL, NULL, hThisInst, NULL);
 
 	if (!hWnd) {

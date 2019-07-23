@@ -29,6 +29,7 @@ void gxo::ResourceManager::load_package(string& package)
 
 void gxo::ResourceManager::load_texture(string package,sol::table textures)
 {
+	stbi_set_flip_vertically_on_load(true);
 	for (auto config : textures) {
 		auto item=config.second.as<sol::table>();
 		string image=item["image"];

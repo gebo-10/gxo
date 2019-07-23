@@ -20,8 +20,8 @@ public:
 	virtual void on_project_loaded()
 	{
 		auto ui_root = new UiRoot;
-		ui_root->add_property(LAYOUT_SIZE, ivec2(200, 200));
-		ui_root->add_property(POSITION, ivec2(20, 20));
+		//ui_root->add_property(LAYOUT_SIZE, ivec2(200, 200));
+		//ui_root->add_property(POSITION, ivec2(20, 20));
 
 		//auto scene = new Scene();
 		//ui_root->add_child(scene);
@@ -35,9 +35,9 @@ public:
 		rp->type = 3;
 		node->add_property(RENDER_PASS, rp);
 		node->add_property(LAYOUT_SIZE, ivec2(100, 100));
-		node->add_property(POSITION, ivec2(20, 00));
+		node->add_property(POSITION, ivec2(20, 10));
 		node->add_property(ALIGN_X, ALIGN_CENTER);
-		node->add_property(ALIGN_Y, ALIGN_CENTER);
+		node->add_property(ALIGN_Y, ALIGN_TOP);
 
 		ui_root->add_child(node);
 
