@@ -61,8 +61,8 @@ void gxo::UiNode::draw_rect() {
 
 		
 	Transform3d t;
-	t.position = vec3(position.x,600- size.y- position.y, 0);
-	t.scale = vec3(size.x, size.y, 1);
+	t.position = vec3(position.x,- position.y, 0);
+	t.scale = vec3(size.x, -size.y, 1);
 	t.rotate = vec3(0, 0, 0);
 
 

@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\gxo\master\gxo\gxo;D:\gxo\master\gxo\3rdpart\tree;D:\gxo\master\gxo\3rdpart\lua;D:\gxo\master\gxo\3rdpart\sol;D:\gxo\master\gxo\3rdpart\spdlog\include;D:\gxo\master\gxo\3rdpart;D:\gxo\master\gxo\3rdpart\libuv\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\engine;D:\gxo\master\gxo\3rdpart\tinygltf;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\gxo\master\gxo\3rdpart\luajit\lib;D:\gxo\master\gxo\3rdpart\libuv\lib;D:\gxo\master\gxo\3rdpart\glfw\lib;D:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\gxo\master\gxo\3rdpart\freetype\include;D:\gxo\master\gxo\gxo;D:\gxo\master\gxo\3rdpart\tree;D:\gxo\master\gxo\3rdpart\lua;D:\gxo\master\gxo\3rdpart\sol;D:\gxo\master\gxo\3rdpart\spdlog\include;D:\gxo\master\gxo\3rdpart;D:\gxo\master\gxo\3rdpart\libuv\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\engine;D:\gxo\master\gxo\3rdpart\tinygltf;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\gxo\master\gxo\3rdpart\freetype\lib;D:\gxo\master\gxo\3rdpart\luajit\lib;D:\gxo\master\gxo\3rdpart\libuv\lib;D:\gxo\master\gxo\3rdpart\glfw\lib;D:\gxo\master\gxo\3rdpart\glew\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>D:\gxo\master\gxo\3rdpart\libuv\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\glew\include;$(IncludePath)</IncludePath>
@@ -142,6 +142,7 @@
     <ClInclude Include="..\3rdpart\nanovg\nanovg_gl_utils.h" />
     <ClInclude Include="..\3rdpart\nanovg\stb_image.h" />
     <ClInclude Include="..\3rdpart\nanovg\stb_truetype.h" />
+    <ClInclude Include="..\3rdpart\stb\stb_truetype.h" />
     <ClInclude Include="..\3rdpart\tinygltf\json.hpp" />
     <ClInclude Include="..\3rdpart\tinygltf\stb_image.h" />
     <ClInclude Include="..\3rdpart\tinygltf\stb_image_write.h" />
@@ -214,6 +215,7 @@
     <ClInclude Include="gxo.h" />
     <ClInclude Include="gxo_event.h" />
     <ClInclude Include="gxo_event_queue.h" />
+    <ClInclude Include="gxo_font.h" />
     <ClInclude Include="gxo_param.h" />
     <ClInclude Include="orbit_manipulator.h" />
     <ClInclude Include="plane.h" />
@@ -269,6 +271,7 @@
     <ClCompile Include="async_system.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="gpu_type.cpp" />
+    <ClCompile Include="gxo_font.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="render.cpp" />
     <ClCompile Include="render_system.cpp" />

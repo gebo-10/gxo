@@ -48,7 +48,7 @@ namespace gxo {
 		virtual ~Resource()
 		{
 		}
-		void create(string &in_url,Buffer& in_ram) {
+		void create(const string &in_url,Buffer& in_ram) {
 			url = in_url;
 			ram = in_ram;
 			on_load();

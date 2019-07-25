@@ -34,7 +34,7 @@ namespace gxo {
 
 		virtual void on_layout_end() {
 			//auto size = get<ivec2>(LAYOUT_SIZE);
-			camera.set_ortho(0, size.x, 0, size.y);
+			camera.set_ortho(0, size.x,  -size.y,0);
 
 			//pipe->material = *material;
 			pipeline->viewport = Rect(0, 0, size.x, size.y);

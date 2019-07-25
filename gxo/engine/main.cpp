@@ -19,7 +19,7 @@
 #pragma comment(lib, "uuid.lib")
 #pragma comment(lib, "odbc32.lib")
 #pragma comment(lib, "odbccp32.lib")
-
+#pragma comment(lib, "freetype.lib")
 
 #include"gxo.h"
 using namespace gxo;

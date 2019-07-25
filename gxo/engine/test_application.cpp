@@ -35,7 +35,7 @@ public:
 		rp->type = 3;
 		node->add_property(RENDER_PASS, rp);
 		node->add_property(LAYOUT_SIZE, ivec2(100, 100));
-		node->add_property(POSITION, ivec2(20, 10));
+		node->add_property(POSITION, ivec2(100, 10));
 		node->add_property(ALIGN_X, ALIGN_CENTER);
 		node->add_property(ALIGN_Y, ALIGN_TOP);
 

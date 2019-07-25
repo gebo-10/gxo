@@ -570,6 +570,12 @@
     <ClInclude Include="ui_grid_mesh.h">
       <Filter>ecs\ui\2d\UiRender</Filter>
     </ClInclude>
+    <ClInclude Include="..\3rdpart\stb\stb_truetype.h">
+      <Filter>3rdpart\tinygltf</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_font.h">
+      <Filter>core\font</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -612,6 +618,9 @@
     </ClCompile>
     <ClCompile Include="ui_root.cpp">
       <Filter>ecs\ui\2d\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="gxo_font.cpp">
+      <Filter>core\font</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
