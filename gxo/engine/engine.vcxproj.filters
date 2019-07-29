@@ -576,6 +576,9 @@
     <ClInclude Include="gxo_font.h">
       <Filter>core\font</Filter>
     </ClInclude>
+    <ClInclude Include="gxo_input_define.h">
+      <Filter>system\event_system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

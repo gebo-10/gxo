@@ -1,34 +1,39 @@
-#ifndef _GXO_EVENT_SYSTEM_H
-#define _GXO_EVENT_SYSTEM_H
+#ifndef GXO_EVENT_SYSTEM_H
+#define GXO_EVENT_SYSTEM_H
 #include "gxo_event_queue.h"
+#include "gxo_input_define.h"
 #include <functional>
 namespace gxo {
-	class MouseStatus {
-		int button;
-		int button_status;
+	class PointerStatus {
 		int x;
 		int y;
+		bool hover;
+		bool button1;
+		bool button2;
+		bool button3; //center
 	};
-	class Action {
-		int delay;
-		std::function<void(Event*)> fun;
+	//scrool
+	class KeyStatus {
+		int key;
+		char c;
+		bool ctrl;
+		bool alt;
+		bool shift;
 	};
-	class Trigger
-	{
-	public:
-		std::vector<std::function<void (Event*)>> actions;
-		
-	private:
-	};
+
+	
+	
 	class EventSystem
 	{
 	public:
-		MouseStatus mouse_status;
+		PointerStatus pointer_status;
+		KeyStatus	key_status;
 		EventQueue event_queue;
 		
 
 		EventSystem()
 		{
+		
 		}
 
 		~EventSystem()

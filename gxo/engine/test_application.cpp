@@ -39,6 +39,15 @@ public:
 		node->add_property(ALIGN_X, ALIGN_CENTER);
 		node->add_property(ALIGN_Y, ALIGN_TOP);
 
+		Transform3d t;
+		t.position = vec3(0, 0, 0);
+		t.scale = vec3(1, 2, 1);
+		t.rotate = vec3(0, 0, 10);
+		node->add_property(TRANSFORM3D, t);
+
+		node->add_property(ANCHOR, vec2(0.5,0));
+
+
 		ui_root->add_child(node);
 
 

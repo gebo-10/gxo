@@ -216,6 +216,7 @@
     <ClInclude Include="gxo_event.h" />
     <ClInclude Include="gxo_event_queue.h" />
     <ClInclude Include="gxo_font.h" />
+    <ClInclude Include="gxo_input_define.h" />
     <ClInclude Include="gxo_param.h" />
     <ClInclude Include="orbit_manipulator.h" />
     <ClInclude Include="plane.h" />

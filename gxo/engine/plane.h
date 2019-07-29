@@ -8,10 +8,10 @@ namespace gxo {
 	public:
 		float vertices[20] = {
 			// Positions			// coord
-			0.0f, 0.0f,0.0f,		0.0f, 0.0f,
-			1.0f, 0.0f,0.0f,		1.0f, 0.0f,
-			0.0f, 1.0f,0.0f,		0.0f, 1.0f,
-			1.0f, 1.0f,0.0f,		1.0f, 1.0f,
+			0.0f, 0.0f,0.0f,		0.0f, 1.0f,
+			1.0f, 0.0f,0.0f,		1.0f, 1.0f,
+			0.0f, 1.0f,0.0f,		0.0f, 0.0f,
+			1.0f, 1.0f,0.0f,		1.0f, 0.0f,
 		};
 		unsigned short index[6] = { 0,1,2, 2,3,1 };
 		Plane()

@@ -27,11 +27,6 @@ void gxo::UiImage::on_render_begin()
 
 	auto ui_mesh = env.resource->get<Mesh>("default/plane");
 
-	Transform3d t;
-	t.position = vec3(position.x, position.y, 0);
-	t.scale = vec3(size.x, size.y, 1);
-	t.rotate = vec3(0, 0, 0);
 
-
-	env.render->rcmd(RCMD_MESH, ui_mesh, t.matrix());
+	env.render->rcmd(RCMD_MESH, ui_mesh, get_box_transform());
 }

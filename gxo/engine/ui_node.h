@@ -199,6 +199,24 @@ namespace gxo {
 		void on_post_render() { //性能  todo 把post render整合进render过程
 
 		}
+
+		//mat4 get_anchor_transform() {
+		//	Transform3d t;
+		//	t.position = vec3(0, 0, 0);
+		//	t.scale = vec3(size.x, -size.y, 1);
+		//	t.rotate = vec3(0, 0, 0);
+		//	return t.matrix();
+		//}
+
+		mat4 get_box_transform() {
+			Transform3d t;
+			t.position = vec3(position.x, -position.y, 0);
+			t.scale = vec3(size.x, -size.y, 1);
+			t.rotate = vec3(0, 0, 0);
+			return t.matrix();
+		}
+
+
 	private:
 
 	};

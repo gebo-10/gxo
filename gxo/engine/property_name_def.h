@@ -18,9 +18,11 @@ namespace gxo {
 		PTR, //TreeNode *
 		TRANSFORM2D,		//Transform2d
 		TRANSFORM3D,			//Transform3d
+		ANCHOR,				//vec2
 
 		RESOURCE_PTR,
 		TEXTURE_PTR,
+
 	};
 }
 #endif
