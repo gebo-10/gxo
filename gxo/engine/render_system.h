@@ -21,6 +21,7 @@ namespace gxo {
 
 		void update();
 		
+		void stop();
 	private:
 
 	};

@@ -12,19 +12,14 @@ void gxo::RenderSystem::init()
 
 void gxo::RenderSystem::update()
 {
-	auto rect = Rect(0, 0, 600, 600);
-	
-	auto pipe = std::make_shared<Pipeline>();
-	pipe->viewport = rect;
-	pipe->target = std::make_shared<RenderTarget>();
-	pipe->cull_face = CULL_NULL;
-	render.rcmd(RCMD_SET_PIPELINE, pipe);
-
-	
-	Engine::instacne().tree_manager.screen.on_layout(rect);
-	Engine::instacne().tree_manager.screen.on_render();
+	env.engine->tree_manager.screen.on_render();
 
 	render.rcmd(RCMD_SWAPBUFFER);
+}
+
+void gxo::RenderSystem::stop()
+{
+	render.quit();
 }
 
 

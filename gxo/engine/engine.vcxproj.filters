@@ -554,7 +554,6 @@
     <ClInclude Include="const_define.h">
       <Filter>engine</Filter>
     </ClInclude>
-    <ClInclude Include="gpu_concept.h" />
     <ClInclude Include="..\gxo\material.h">
       <Filter>core\resource</Filter>
     </ClInclude>
@@ -578,6 +577,12 @@
     </ClInclude>
     <ClInclude Include="gxo_input_define.h">
       <Filter>system\event_system</Filter>
+    </ClInclude>
+    <ClInclude Include="safe_queue.h">
+      <Filter>core\util</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_concept.h">
+      <Filter>core\gpu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -624,6 +629,12 @@
     </ClCompile>
     <ClCompile Include="gxo_font.cpp">
       <Filter>core\font</Filter>
+    </ClCompile>
+    <ClCompile Include="tree_manager.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="window_system.cpp">
+      <Filter>system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

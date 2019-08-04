@@ -11,8 +11,12 @@ namespace gxo {
 		TreeManager(){}
 		~TreeManager() {}
 		void init() {
+			screen.init();
 			return;
 		}
+
+		void update();
+
 
 		
 		void visit_preorder(std::function<bool (TreeNode*)> visitor, TreeNode * root) {

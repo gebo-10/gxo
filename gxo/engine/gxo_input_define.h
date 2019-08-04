@@ -1,6 +1,6 @@
 #ifndef GXO_INPUT_DEFINE
 #define GXO_INPUT_DEFINE
-namespace gxo {
+
 #define GXO_RELEASE                0
 
 #define GXO_PRESS                  1
@@ -173,5 +173,5 @@ namespace gxo {
 #define GXO_MOUSE_BUTTON_LEFT      GXO_MOUSE_BUTTON_1
 #define GXO_MOUSE_BUTTON_RIGHT     GXO_MOUSE_BUTTON_2
 #define GXO_MOUSE_BUTTON_MIDDLE    GXO_MOUSE_BUTTON_3
-}
+
 #endif // !GXO_INPUT_DEFINE

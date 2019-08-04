@@ -8,16 +8,12 @@ namespace gxo {
 	class UiScreen :public UiNode
 	{
 	public:
-		UiScreen() {
-			add_property(CLEAR_COLOR, color_darkolivegreen);
-			
-		}
-
+		UiScreen();
+		void init();
 		virtual void on_render_begin();
 		virtual void on_rendre_end();
 
-		void set_size() {
-		}
+		void on_size(int width, int height);
 	private:
 
 	};

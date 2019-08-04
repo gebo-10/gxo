@@ -4,6 +4,7 @@
 #include <thread>              
 #include <mutex>                
 #include <condition_variable>
+#include <chrono>
 #include"render_commend.h"
 #include"const_define.h"
 
@@ -13,12 +14,23 @@ namespace gxo {
 	public:
 		CommandPipe()
 		{
+	
 		}
 
 		~CommandPipe()
 		{
 		}
-
+		bool quit_sign = false;
+		bool quit_succ = false;
+		void quit() {
+			quit_sign = true;
+			cv.notify_all();
+			while (quit_succ)
+			{
+				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+				break;
+			}
+		}
 
 		void push(RenderCommandPtr rcmd) {
 			while (true)
@@ -40,6 +52,11 @@ namespace gxo {
 
 		void process(std::function<void(RenderCommandPtr)> deal) {
 			while (true) {
+				if (quit_sign)
+				{
+					break;
+				}
+
 				auto succ = command_queue.pop([&](RenderCommandPtr* cmd) {
 					deal(*cmd);
 				});
@@ -52,6 +69,7 @@ namespace gxo {
 					cv.wait(lck);
 				}
 			}
+			quit_succ = true;
 		}
 
 	private:

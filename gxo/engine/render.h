@@ -25,7 +25,18 @@ namespace gxo {
 		NVGcontext* vg;
 
 		Render():stop(false){}
-
+		~Render() {
+			//vg = nullptr;
+			//render_thread.~thread();
+			//command_pipe.~CommandPipe();
+			//
+			//while (!pipeline_stack.empty())
+			//{
+			//	pipeline_stack.pop();
+			//}
+			//pipeline = nullptr;
+			
+		}
 		void init();
 
 		void init_vg();
@@ -36,6 +47,7 @@ namespace gxo {
 
 		void quit() {
 			stop = true;
+			command_pipe.quit();
 		}
 
 		void gpu_load(ResourcePtr res ) {

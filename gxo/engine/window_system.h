@@ -1,8 +1,10 @@
-#ifndef _GXO_WINDOW_SYSTEM_H
-#define _GXO_WINDOW_SYSTEM_H
-
+#ifndef GXO_WINDOW_SYSTEM_H
+#define GXO_WINDOW_SYSTEM_H
+#include "gpu_header.h"
 #include <GLFW/glfw3.h>
 #include<iostream>
+#include "gxo_rect.h"
+#include "config.h"
 namespace gxo {
 	class WindowSystem
 	{
@@ -59,6 +61,9 @@ namespace gxo {
 			//glfwMakeContextCurrent(window);
 
 			glfwSetMouseButtonCallback(window, mouse_button_callback);
+			glfwSetWindowSizeCallback(window, window_size_callback);
+			glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+			glfwSetWindowCloseCallback(window, window_close_callback);
 			return;
 		}
 		void make_current() {
@@ -76,7 +81,11 @@ namespace gxo {
 			//	glfwPollEvents();
 			//}
 		}
-
+		
+		void stop() {
+			glfwDestroyWindow(window);
+			glfwTerminate();
+		}
 	private:
 		static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 		{
@@ -84,6 +93,11 @@ namespace gxo {
 				std::cout << "right button press" << std::endl;
 				//popup_menu();
 		}
+
+		static void window_size_callback(GLFWwindow* window, int width, int height);
+		static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+		static void window_close_callback(GLFWwindow* window);
+
 	};
 
 }

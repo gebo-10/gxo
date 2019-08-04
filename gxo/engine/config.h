@@ -9,16 +9,16 @@ namespace gxo {
 	class Config
 	{
 	public:
-		
-		sol::table data;
 		sol::state lua; //析构后会释放luatable
+		sol::table data;
+		
 		static Config& instacne() {
 			static Config config;
 			return config;
 		}
 
 		Config(){}
-		~Config(){}
+		~Config() {}
 		void init() {
 			//lua.open_libraries(sol::lib::base);
 			lua.script_file("config.lua");

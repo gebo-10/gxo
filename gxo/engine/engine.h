@@ -24,12 +24,14 @@ namespace gxo {
 		};
 		int width;
 		int height;
+		
 		EngineStatus status;
 		//uint32 last_tick;
 		WindowSystem window_system;
-		AsyncSystem async_system;
-
+		
 		RenderSystem render_system;
+		
+		AsyncSystem async_system;
 		EventSystem event_system;
 		
 		FileSystem	file_system;
@@ -38,7 +40,7 @@ namespace gxo {
 		ResourceManager resource_manager;
 
 		Application* app;
-
+		
 		static Engine& instacne() {
 			static Engine engine;
 			return engine;
@@ -47,10 +49,7 @@ namespace gxo {
 		{
 			app = gxo_create_application();
 		}
-		~Engine()
-		{
 
-		}
 		void init() {
 			init_env();
 			Config::instacne().init();
@@ -62,7 +61,7 @@ namespace gxo {
 			render_system.init();
 			
 			resource_manager.init();
-			
+			tree_manager.init();
 
 			app->on_config();
 			app->on_project_loaded();
@@ -73,14 +72,31 @@ namespace gxo {
 		void init_env();
 
 		bool start() {
+			status = ES_RUN;
+			//排版第一次 window的第一个resize 没捉到
+			auto rect = Rect(0, 0, Config::instacne().data["width"], Config::instacne().data["height"]);
+			tree_manager.screen.on_layout(rect);
+
 			async_system.loop();
 			return true;
 		}
 		void pause();
 		void resume();
-		void stop();
+		void stop() {
+			status = ES_STOP;
+			render_system.stop();
+
+			window_system.stop();
+			info("Engine: Stop");
+		}
 
 		void update() {
+			if (status == ES_STOP)
+			{
+				async_system.stop();
+				return;
+			}
+
 			//TODO 性能检测 benchmarking 
 			if (!Profiler::instacne().fps()) return;
 			window_system.update();
@@ -88,6 +104,7 @@ namespace gxo {
 
 			app->on_update();
 
+			tree_manager.update();
 			render_system.update();
 		}
 

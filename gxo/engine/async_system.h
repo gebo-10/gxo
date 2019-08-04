@@ -29,7 +29,10 @@ namespace gxo {
 		//void destory() {
 		//	uv_idle_stop(handle);
 		//}
-
+		void stop() {
+			//uv_stop()
+			uv_idle_stop(&idler);
+		}
 		static void idle(uv_idle_t* handle);
 
 	};

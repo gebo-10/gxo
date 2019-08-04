@@ -15,6 +15,8 @@ namespace gxo {
 	typedef unsigned char byte;
 	typedef std::string string;
 	typedef std::string_view string_view;
+	typedef int8_t int8;
+	typedef uint8_t uint8;
 	typedef int16_t int16;
 	typedef uint16_t uint16;
 	typedef int32_t int32;

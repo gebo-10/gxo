@@ -221,6 +221,7 @@
     <ClInclude Include="orbit_manipulator.h" />
     <ClInclude Include="plane.h" />
     <ClInclude Include="render_parser.h" />
+    <ClInclude Include="safe_queue.h" />
     <ClInclude Include="scene_camera.h" />
     <ClInclude Include="scene_cube.h" />
     <ClInclude Include="scene_model.h" />
@@ -277,11 +278,13 @@
     <ClCompile Include="render.cpp" />
     <ClCompile Include="render_system.cpp" />
     <ClCompile Include="test_application.cpp" />
+    <ClCompile Include="tree_manager.cpp" />
     <ClCompile Include="ui_image.cpp" />
     <ClCompile Include="ui_node.cpp" />
     <ClCompile Include="ui_root.cpp" />
     <ClCompile Include="ui_screen.cpp" />
     <ClCompile Include="ui_text.cpp" />
+    <ClCompile Include="window_system.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\3rdpart\lua\lua\lua.vcxproj">

@@ -4,10 +4,28 @@
 #include"camera.h"
 #include"gxo_math.h"
 #include"texture.h"
+#include "config.h"
+
+//gxo::Render::~Render()
+//{
+//	//nvgDeleteGL3(vg);
+//}
+
 void gxo::Render::init()
 {
 	register_all_cmd();
+
+	auto rect = Rect(0, 0, Config::instacne().data["width"], Config::instacne().data["height"]);//初始化大小从配置拿
+	auto pipe = std::make_shared<Pipeline>();
+	pipe->viewport = rect;
+	pipe->target = std::make_shared<RenderTarget>();
+	pipe->cull_face = CULL_NULL;
+
+	pipeline = pipe;
+
+
 	render_thread = std::thread(thread_main, this);
+	render_thread.detach();
 }
 
 void gxo::Render::init_vg()
@@ -40,7 +58,7 @@ void gxo::Render::process()
 	gpu.init();
 	gpu.log_device_info();
 
-	init_vg();
+	//init_vg();
 
 	glEnable(GL_MULTISAMPLE);
 	glEnable(GL_TEXTURE_2D);

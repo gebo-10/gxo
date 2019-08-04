@@ -9,6 +9,7 @@ namespace gxo {
 		Engine* engine=nullptr;
 		Render* render = nullptr;
 		ResourceManager* resource = nullptr;
+		EventSystem* event = nullptr;
 	};
 	
 }
