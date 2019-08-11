@@ -3,9 +3,10 @@
 #include"env.h"
 #include"texture.h"
 #include"plane.h"
+#include"cube.h"
 #include"engine.h"
 
-
+//#define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 void gxo::ResourceManager::register_default()
@@ -13,6 +14,11 @@ void gxo::ResourceManager::register_default()
 	auto plane = std::make_shared<Plane>();
 	add_resource("default/plane", plane );
 	env.render->gpu_load(plane);
+
+	auto cube = std::make_shared<Cube>();
+	add_resource("default/cube", cube);
+	env.render->gpu_load(cube);
+	
 }
 void gxo::ResourceManager::load_package(string& package)
 {

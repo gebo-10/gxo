@@ -4,37 +4,38 @@
 #include"gxo_math.h"
 #include"scene_camera.h"
 #include"scene.h"
+#include"pipeline.h"
 namespace gxo {
 	class UiViewPort :public UiNode
 	{
 	public:
-		Scene *scene;
-		SceneCamera *scene_camera;
-
+		SceneRef scene = nullptr;
+		SceneCameraRef scene_camera = nullptr;
+		PipelinePtr pipeline;
+		RenderPass passgroup;
 		UiViewPort()
 		{
+			pipeline = std::make_shared<Pipeline>();
 		}
 
 		~UiViewPort()
 		{
 		}
-		virtual bool on_render() {
-			//lookAt()
-			//glViewport();
-			//cameranode;
+		virtual bool on_render();
 
-			//mvp
-			//bvh kdtree
-			//oit
-			//pre-z
-			//dof
-			//post-process
+		virtual void on_layout_end() {
+			//auto size = get<ivec2>(LAYOUT_SIZE);
+			scene_camera->camera.set_ortho(-size.x/2.0, size.x/2.0, -size.y / 2.0, size.y / 2.0);
 
-			scene->render_scene();
-			return true; 
-		}
-		virtual void on_event() {
-			//manipulator.event(); --> camera
+			//pipe->material = *material;
+			pipeline->viewport = Rect(position.x, get_screen_coord().y, size.x, size.y);
+			pipeline->target = std::make_shared<RenderTarget>();
+
+			pipeline->P = scene_camera->camera.get_p();
+			pipeline->V = scene_camera->camera.get_v();
+
+			pipeline->depth_enable = true;
+			pipeline->cull_face = CULL_NULL;
 		}
 	private:
 

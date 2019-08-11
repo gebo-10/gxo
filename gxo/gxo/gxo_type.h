@@ -25,6 +25,7 @@ namespace gxo {
 	typedef uint64_t uint64;
 	typedef std::string URL;
 	template <typename T> using shared_ptr=std::shared_ptr<T>;
+	template <typename T> using weak_ptr=std::weak_ptr<T>;
 }
 #endif
 

@@ -11,18 +11,15 @@ namespace gxo {
 
 		SceneCamera()
 		{
+			camera.set_type(Camera::CameraType::PERSPECTIVE);
+			camera.lookat(vec3(0, 0, 5), vec3(0, 0, 0), vec3(0, 1, 0));
 		}
 
 		~SceneCamera()
 		{
 		}
 	
-		mat4 get_vp() {
-			auto transform=get<Transform3d>(TRANSFORM3D);
-			auto mat = transform.matrix();
-			return camera.get_projectionx() * mat;
-		}
-
 	};
+	REG_NODE(SceneCamera)
 }
 #endif

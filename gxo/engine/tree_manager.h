@@ -1,5 +1,5 @@
-#ifndef _GXO_TREE_MANAGER_H
-#define _GXO_TREE_MANAGER_H
+#ifndef GXO_TREE_MANAGER_H
+#define GXO_TREE_MANAGER_H
 #include "tree_node.h"
 #include"ui_screen.h"
 namespace gxo {
@@ -19,15 +19,15 @@ namespace gxo {
 
 
 		
-		void visit_preorder(std::function<bool (TreeNode*)> visitor, TreeNode * root) {
+		void visit_preorder(std::function<bool (Node*)> visitor, Node * root) {
 			if (root == nullptr) return;
 			if (visitor(root)) {
 				for (auto child : root->children) {
-					visit_preorder(visitor, child);
+					visit_preorder(visitor, child.get());
 				}
 			}
 		}
-		void visit_preorder(std::function<bool(TreeNode*)> visitor) {
+		void visit_preorder(std::function<bool(Node*)> visitor) {
 			visit_preorder(visitor, &screen);
 		}
 

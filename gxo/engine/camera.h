@@ -13,11 +13,11 @@ namespace gxo {
 		int height=100;
 		//Rectf ortho_rect;
 		vec4 ortho_rect;
-		float fov = 45.f;
-		float znear = 0.0f;
-		float zfar = 1000.f;
+		float fov = 60.f;
+		float znear = 0.1f;
+		float zfar = 100.f;
 
-		vec3 position{ 4.f };
+		vec3 position{ 0.f };
 		vec3 target{ 0.f };
 		mat4 projection{ 1.f };
 		mat4 view_matrix{ 1.f };
@@ -85,6 +85,7 @@ namespace gxo {
 
 		void set_type(CameraType type) {
 			this->type = type;
+			dirty = true;
 		}
 		
 		void set_near(float in_near) {

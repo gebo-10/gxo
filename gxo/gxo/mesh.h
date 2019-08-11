@@ -22,7 +22,7 @@ namespace gxo {
 		Buffer indices;
 		GPUObject gpu_object;
 
-		uint primitive= GL_TRIANGLE_STRIP;
+		uint primitive= GL_TRIANGLES;
 		uint size ;
 		Mesh(){}
 		~Mesh(){}

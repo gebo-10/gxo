@@ -18,7 +18,7 @@ namespace gxo {
 		CullFaceType cull_face;
 		BlendMode blend_mode;
 		Color clear_color;
-		//int depth_type;
+		bool depth_enable=false;
 		//int blend_type;
 		//int scenil_type;
 		//Rect scoissor;
@@ -33,6 +33,11 @@ namespace gxo {
 
 		void use() {
 			target->use();
+			set_cullface(cull_face);
+			set_depth_test(depth_enable);
+			//glDepthRange(0.0, 1000.0);
+			//glDepthFunc(GL_EQUAL);
+			//glDepthMask(GL_FALSE);
 			glViewport(viewport.x, viewport.y, viewport.width, viewport.height);
 			if (material.shader != nullptr) {
 				material.use();
@@ -87,6 +92,17 @@ namespace gxo {
 				break;
 			default:
 				break;
+			}
+		}
+
+		void set_depth_test(bool enable) {
+			depth_enable = enable;
+			if (depth_enable)
+			{
+				glEnable(GL_DEPTH_TEST);
+			}
+			else {
+				glDisable(GL_DEPTH_TEST);
 			}
 		}
 

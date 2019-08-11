@@ -23,8 +23,6 @@ public:
 		//ui_root->add_property(LAYOUT_SIZE, ivec2(200, 200));
 		//ui_root->add_property(POSITION, ivec2(20, 20));
 
-		//auto scene = new Scene();
-		//ui_root->add_child(scene);
 
 		auto img = new UiImage();
 		ui_root->add_child(img);
@@ -55,12 +53,47 @@ public:
 		node->add_child(text);
 
 
+
+		auto viewport2d = new UiViewPort();
+		viewport2d->add_property(LAYOUT_SIZE, ivec2(300, 300));
+		viewport2d->add_property(POSITION, ivec2(100, 10));
+
+		ui_root->add_child(viewport2d);
+
+		auto scene = new Scene();
+		ui_root->add_child(scene);
+
+		
+		auto scene_camera = new SceneCamera();
+		scene->add_child(scene_camera);
+
+		{
+			 cube = new SceneCube();
+			Transform3d t;
+			t.position = vec3(0, 0, 0);
+			t.scale = vec3(1,1, 1);
+			t.rotate = vec3(60, 60, 60);
+			cube->set(TRANSFORM3D, t);
+			scene->add_child(cube);
+		}
+
+		viewport2d->scene = scene;
+		viewport2d->scene_camera = scene_camera;
+
 		Engine::instacne().tree_manager.screen.add_child(ui_root);
 	}
 
 
 	virtual void on_update() {
 		//info("Hello, {}!", "Application");
+
+		Transform3d t;
+		t.position = vec3(0, 0, 0);
+		t.scale = vec3(1, 1, 1);
+		t.rotate = vec3(degree, degree, degree);
+		//t.rotate = vec3(0, 0, 0);
+		cube->set(TRANSFORM3D, t);
+		degree += 1;
 	}
 
 	
@@ -72,6 +105,7 @@ public:
 
 
 private:
-
+	SceneCube* cube;
+	float degree=0;
 };
 APP(TestApplication);

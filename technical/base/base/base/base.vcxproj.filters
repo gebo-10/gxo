@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="demo">
+      <UniqueIdentifier>{4e80bb02-ddc4-45e9-861f-e6d921c6b2ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\clearclolor">
+      <UniqueIdentifier>{a951c6f9-a8b6-4652-ad6e-08858a83f28e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{fe4f55e7-66a7-4ca7-a2a2-cd44e616b9bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\resource">
+      <UniqueIdentifier>{9fa4dec0-43ac-4283-9de9-a449e4645a42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\render">
+      <UniqueIdentifier>{58bfc719-4deb-45fa-a541-1fe34940eace}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\cube">
+      <UniqueIdentifier>{a19b9bfb-f6df-49d0-8b1b-47d2214a894a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\blur">
+      <UniqueIdentifier>{6019642e-8547-4a5c-9209-0dd95610b4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\component">
+      <UniqueIdentifier>{2e15f369-f2f6-4ce2-9b3a-395e20cad688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core\entity">
+      <UniqueIdentifier>{f3c71c00-8b8d-4ac4-8191-b8f4b189ecbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\model_load">
+      <UniqueIdentifier>{d051f64a-5e68-4b31-8910-c61ec2c804f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\fbo">
+      <UniqueIdentifier>{31a007cf-6192-485f-8ac1-6e6c13d01c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\phong">
+      <UniqueIdentifier>{7f5f4835-4d52-4972-b052-8daac0a0b55a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\hdr">
+      <UniqueIdentifier>{1a2d7872-170d-4650-b50d-dfda31e37799}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="demo\shadow_map">
+      <UniqueIdentifier>{78bf2507-0dbb-4f28-9211-801e61563c6b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="log.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="module.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="clearcolor.h">
+      <Filter>demo\clearclolor</Filter>
+    </ClInclude>
+    <ClInclude Include="core_base.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="mmap.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_type.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="gpu_buffer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="material.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="pipeline.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="render_target.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="plane.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_manager.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="cube_module.h">
+      <Filter>demo\cube</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_material.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="blur_material.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="fbo_module.h">
+      <Filter>demo\fbo</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_plane_model.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="blur_module.h">
+      <Filter>demo\blur</Filter>
+    </ClInclude>
+    <ClInclude Include="pass_blur_material.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="blit_pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="model_load_module.h">
+      <Filter>demo\model_load</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="phong_material.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="phong_module.h">
+      <Filter>demo\phong</Filter>
+    </ClInclude>
+    <ClInclude Include="ground.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr_module.h">
+      <Filter>demo\hdr</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr_texture.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="hdr_render_target.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="screen_target.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="blur_pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_blit_pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="msaa_texture.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="msaa_render_target.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="msaa_rtt_pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="times_blur_material.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="times_blur_pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_map_module.h">
+      <Filter>demo\shadow_map</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base.cpp" />
+    <ClCompile Include="gpu_type.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

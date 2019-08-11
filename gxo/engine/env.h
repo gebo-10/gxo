@@ -10,8 +10,9 @@ namespace gxo {
 		Render* render = nullptr;
 		ResourceManager* resource = nullptr;
 		EventSystem* event = nullptr;
+
+		ivec2 get_screen_size();
 	};
-	
 }
 extern "C" gxo::Environment env;
 #endif

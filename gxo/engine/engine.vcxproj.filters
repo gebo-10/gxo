@@ -193,6 +193,9 @@
     <Filter Include="core\render\render_object">
       <UniqueIdentifier>{3d2609f2-e9e8-4f23-a870-7442b139b7e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="core\vfs">
+      <UniqueIdentifier>{1c1bb8a1-ad6f-4c59-b80e-6883e14b5207}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="net_system.h">
@@ -584,6 +587,18 @@
     <ClInclude Include="gpu_concept.h">
       <Filter>core\gpu</Filter>
     </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>core\render\render_object</Filter>
+    </ClInclude>
+    <ClInclude Include="vfs_file.h">
+      <Filter>core\vfs</Filter>
+    </ClInclude>
+    <ClInclude Include="vfs.h">
+      <Filter>core\vfs</Filter>
+    </ClInclude>
+    <ClInclude Include="node_ref.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -635,6 +650,18 @@
     </ClCompile>
     <ClCompile Include="window_system.cpp">
       <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_viewport.cpp">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_cube.cpp">
+      <Filter>ecs\scene\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="env.cpp">
+      <Filter>support</Filter>
+    </ClCompile>
+    <ClCompile Include="tree_node.cpp">
+      <Filter>ecs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -2,8 +2,9 @@
 #define GXO_SCENE_H
 #include"tree_node.h"
 #include"gxo_math.h"
+#include "scene_camera.h"
 namespace gxo {
-	class Scene :public TreeNode
+	class Scene :public Node
 	{
 	public:
 		//scene_manager;
@@ -34,7 +35,7 @@ namespace gxo {
 			return Rect(0, 0, 0, 0);
 		}
 
-		void render_scene() {
+		void render_scene(SceneCamera * camera) {
 			for (auto child: children)
 			{
 				child->on_render();
@@ -44,5 +45,6 @@ namespace gxo {
 	private:
 
 	};
+	REG_NODE(Scene)
 }
 #endif

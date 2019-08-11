@@ -1,9 +1,10 @@
 #ifndef SCENE_NODE_H
 #define SCENE_NODE_H
 #include"tree_node.h"
+#include"node_ref.h"
 #include "gxo_math.h"
 namespace gxo {
-	class SceneNode :public TreeNode
+	class SceneNode :public Node
 	{
 	public:
 		//vec3  position;
@@ -19,6 +20,11 @@ namespace gxo {
 		{
 		}
 
+		mat4 matrix() {
+			auto transform = get<Transform3d>(TRANSFORM3D);
+			auto mat = transform.matrix();
+			return  mat;
+		}
 	private:
 
 	};

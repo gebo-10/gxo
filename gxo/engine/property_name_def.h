@@ -22,7 +22,9 @@ namespace gxo {
 
 		RESOURCE_PTR,
 		TEXTURE_PTR,
-
+		NODE_PTR,
+		SCENE,
+		CAMERA,
 	};
 }
 #endif

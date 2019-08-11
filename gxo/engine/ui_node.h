@@ -8,9 +8,10 @@
 #include"gxo_log.h"
 #include"gpu_api.h"
 #include"gxo_concept.h"
+#include"node_ref.h"
 class Render;
 namespace gxo {
-	class UiNode :public TreeNode
+	class UiNode :public Node
 	{
 	public:
 		ivec2 size;
@@ -23,6 +24,9 @@ namespace gxo {
 		{
 		
 		}
+
+		int to_screen_y(int y);
+		ivec2 get_screen_coord();
 		virtual bool on_render() {
 		/*	auto render_pass= get<RenderPass*>(RENDER_PASS);
 			if (render_pass == nullptr) return true;
@@ -116,8 +120,11 @@ namespace gxo {
 			Rect rect_self;
 			rect_self.set(position, size);
 			for (auto child : children) {
-				auto ui_node = dynamic_cast<UiNode*>(child);
-				ui_node->on_layout(rect_self);
+				auto ui_node = dynamic_cast<UiNode *>(child.get());
+				if (ui_node)
+				{
+					ui_node->on_layout(rect_self);
+				}	
 			}
 			return rect_self;
 		}
@@ -220,5 +227,6 @@ namespace gxo {
 	private:
 
 	};
+	typedef shared_ptr<UiNode> UiNodePtr;
 }
 #endif 

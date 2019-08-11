@@ -31,6 +31,9 @@ void gxo::UiScreen::on_rendre_end()
 
 void gxo::UiScreen::on_size(int width, int height)
 {
+
 	auto rect = Rect(0, 0, width, height);
 	on_layout(rect);
+	size.x = width;
+	size.y = height;
 }
