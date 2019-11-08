@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{8F5C57B8-FC27-4A76-95ED-51AB69DDEC7B}</ProjectGuid>
+    <ProjectGuid>{25DDDD3A-A41C-402E-BBCB-C3659D470930}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>base</RootNamespace>
+    <RootNamespace>gltfLoader</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -30,7 +30,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -72,8 +72,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\gxo\master\gxo\3rdpart\base64\include;D:\gxo\master\gxo\3rdpart\nlohmann;D:\gxo\master\gxo\3rdpart\tinygltf;D:\gxo\master\gxo\3rdpart\fbx\include;D:\gxo\master\gxo\3rdpart\assimp\include;D:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\3rdpart\spdlog\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\stb;D:\gxo\master\gxo\3rdpart;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\gxo\master\gxo\3rdpart\fbx\lib\vs2015\x86\debug;D:\gxo\master\gxo\3rdpart\assimp\lib;D:\gxo\master\gxo\3rdpart\glew\lib;D:\gxo\master\gxo\3rdpart\glfw\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -93,7 +91,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,70 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="base.cpp" />
-    <ClCompile Include="base64.cpp" />
-    <ClCompile Include="gltf_model.cpp" />
-    <ClCompile Include="gpu_type.cpp" />
-    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="gltfLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="base64.h" />
-    <ClInclude Include="blit_pass.h" />
-    <ClInclude Include="blur_material.h" />
-    <ClInclude Include="blur_module.h" />
-    <ClInclude Include="blur_pass.h" />
-    <ClInclude Include="bone_material.h" />
-    <ClInclude Include="bone_model.h" />
-    <ClInclude Include="bone_module.h" />
-    <ClInclude Include="buffer.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="clearcolor.h" />
-    <ClInclude Include="color.h" />
-    <ClInclude Include="core_base.h" />
-    <ClInclude Include="cube.h" />
-    <ClInclude Include="cube_module.h" />
-    <ClInclude Include="depth_pass.h" />
-    <ClInclude Include="depth_render_target.h" />
-    <ClInclude Include="fbx_model.h" />
-    <ClInclude Include="gltf_model.h" />
-    <ClInclude Include="gltf_module.h" />
-    <ClInclude Include="gltf_scene.h" />
-    <ClInclude Include="ground.h" />
-    <ClInclude Include="hdr_module.h" />
-    <ClInclude Include="hdr_render_target.h" />
-    <ClInclude Include="hdr_texture.h" />
-    <ClInclude Include="msaa_render_target.h" />
-    <ClInclude Include="msaa_rtt_pass.h" />
-    <ClInclude Include="msaa_texture.h" />
-    <ClInclude Include="pass.h" />
-    <ClInclude Include="phong_module.h" />
-    <ClInclude Include="fbo_module.h" />
-    <ClInclude Include="gpu_buffer.h" />
-    <ClInclude Include="gpu_type.h" />
-    <ClInclude Include="log.h" />
-    <ClInclude Include="material.h" />
-    <ClInclude Include="mesh.h" />
-    <ClInclude Include="mmap.h" />
-    <ClInclude Include="model.h" />
-    <ClInclude Include="model_load_module.h" />
-    <ClInclude Include="module.h" />
-    <ClInclude Include="pass_blur_material.h" />
-    <ClInclude Include="phong_material.h" />
-    <ClInclude Include="pipeline.h" />
-    <ClInclude Include="plane.h" />
-    <ClInclude Include="render_target.h" />
-    <ClInclude Include="resource_manager.h" />
-    <ClInclude Include="scene.h" />
-    <ClInclude Include="screen_target.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="shader_map_module.h" />
-    <ClInclude Include="shadow_ground.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="texture_blit_pass.h" />
-    <ClInclude Include="texture_material.h" />
-    <ClInclude Include="texture_plane_model.h" />
-    <ClInclude Include="times_blur_material.h" />
-    <ClInclude Include="times_blur_pass.h" />
+    <ClInclude Include="gltf_header.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="stb_image_write.h" />
+    <ClInclude Include="tiny_gltf.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

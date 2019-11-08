@@ -20,6 +20,13 @@
 #include "msaa_render_target.h"
 #include "msaa_rtt_pass.h"
 #include "times_blur_pass.h"
+#include "depth_render_target.h"
+#include "shadow_ground.h"
+#include "bone_material.h"
+#include "bone_model.h"
+//#include "fbx_model.h"
+#include "gltf_model.h"
+
 class Module
 {
 public:

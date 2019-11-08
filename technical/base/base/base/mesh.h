@@ -8,8 +8,37 @@
 enum VertexAttrType {
 	VAT_POSITION,
 	VAT_NORMAL,
-	VAT_UV,
+	VAT_UV0,
+	VAT_UV1,
+	VAT_BONEIDS,
+	VAT_WEIGHTS,
 };
+
+struct BoneAnimation
+{
+	int duration;
+	int ticks_per_second;
+	std::vector<Transform3d> keys;
+};
+
+#define MAX_BONE_NUM 50
+struct VertexBoneData {
+	int bone_id;
+	float weight;
+};
+
+struct BoneNode
+{
+	string name;
+	int bone_id;
+	mat4 node_transform;
+	mat4 offset_matrix;
+	mat4 final_matrix;
+	std::vector<BoneNode*> children;
+	BoneAnimation animation;
+	mat4 GlobalInverseTransform;
+};
+
 class VertexAttr
 {
 public:
@@ -28,6 +57,11 @@ public:
 		Buffer vertex;
 		Buffer indices;
 
+		int bone_num=0;
+		mat4 bones[MAX_BONE_NUM];
+
+		BoneNode *bone_tree;
+
 		uint primitive = GL_TRIANGLES;
 		uint element_size;
 
@@ -36,7 +70,7 @@ public:
 		GPUBuffer gpu_index;
 
 		Mesh() {
-			
+			//memset(bones, 0, sizeof(bones));
 		}
 
 		~Mesh() {}
@@ -58,17 +92,24 @@ public:
 			for (auto attr : vertex_attr)
 			{
 				glEnableVertexAttribArray(attr.type);
-				glVertexAttribPointer((GLuint)attr.type, attr.component_num, attr.data_type, attr.need_normalized, trip_size, (const GLvoid*)offset);
+				if (attr.data_type==GL_FLOAT)
+				{
+					glVertexAttribPointer((GLuint)attr.type, attr.component_num, attr.data_type, attr.need_normalized, trip_size, (const GLvoid*)offset);
+				}
+				else if(attr.data_type == GL_INT){
+					glVertexAttribIPointer((GLuint)attr.type, attr.component_num, attr.data_type, trip_size, (const GLvoid*)offset);
+				}
 				offset += attr.size;
 			}
 
 			gpu_index.create(index_buffer, GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW);
 			glBindVertexArray(0);
 		}
-		void bind(void) {
+		void bind() {
 			assert(gpu_id != 0);
 			glBindVertexArray(gpu_id);
 		}
+
 		void unbind(void) {
 			glBindVertexArray(0);
 		}
@@ -97,11 +138,23 @@ public:
 				va.need_normalized = false;
 				va.size = sizeof(float) * 3;
 				break;
-			case VAT_UV:
+			case VAT_UV0:
 				va.component_num = 2;
 				va.data_type = GL_FLOAT;
 				va.need_normalized = false;
 				va.size = sizeof(float) * 2;
+				break;
+			case VAT_BONEIDS:
+				va.component_num = 4;
+				va.data_type = GL_FLOAT;
+				va.need_normalized = false;
+				va.size = sizeof(float) * 4;
+				break;
+			case VAT_WEIGHTS:
+				va.component_num = 4;
+				va.data_type = GL_FLOAT;
+				va.need_normalized = false;
+				va.size = sizeof(float) * 4;
 				break;
 			default:
 				break;
@@ -109,7 +162,26 @@ public:
 			add_attr(va);
 		}
 
-	private:
+
+		void update_bone_node(int key, BoneNode* node, const mat4& parent) {
+
+			//node->final_matrix = parent * node->animation.keys[key].matrix();
+
+			node->final_matrix = parent *node->node_transform;
+			//bones[node->bone_id] = glm::transpose(node->final_matrix * node->offset_matrix ) ;
+			bones[node->bone_id] = glm::transpose(node->final_matrix*node->offset_matrix) ;
+			Transform3d t;
+			t.rotate = vec3(0, 0,0);
+			bones[node->bone_id] = t.matrix();
+			for (auto item : node->children)
+			{
+				update_bone_node(key, item, node->final_matrix);
+			}
+		}
+		void update_bone(int key) {
+			key = 0;
+			update_bone_node(key,bone_tree,mat4(1.0));
+		}
 
 	};
 	typedef std::shared_ptr<Mesh> MeshPtr;

@@ -1,29 +1,29 @@
-#ifndef DIRECT_LIGHT_MODULE_H
-#define DIRECT_LIGHT_MODULE_H
+#ifndef GLTF_MODULE_H
+#define GLTF_MODULE_H
 #include "module.h"
-class PhongModule :public Module
+#include "gltf_scene.h"
+class GltfModule :public Module
 {
 public:
 	CameraPtr camera;
 	ModelPtr model;
-	
-	PhongMaterialPtr phong_material;
-
+	GltfModelPtr gltf_model;
+	vkglTF::Model scene;
 	GroundlPtr ground;
-
-
 	virtual void init() {
 		ground = std::make_shared<Ground>();
+		gltf_model = make(GltfModel,"main/mesh/CesiumMan.gltf");
+
 		TexturePtr t = std::make_shared<Texture>("main/texture/miku.png");
 
 		model = std::make_shared<Model>("main/mesh/miku.gltf");
-		//model = std::make_shared<Model>("main/mesh/plane.gltf");
+		model->material = std::make_shared<TextureMaterial>(t);
 
-		phong_material = std::make_shared<PhongMaterial>();
-		phong_material->set_texture(t);
 
-		model->material = phong_material;
+		scene.loadFromFile("main/mesh/man2.gltf");
 
+
+		//gltf_model->set_material(make(BoneTextureMaterial,t));
 
 		camera = std::make_shared<Camera>();
 		camera->set_type(Camera::PERSPECTIVE);
@@ -32,8 +32,6 @@ public:
 
 		glEnable(GL_TEXTURE_2D);
 		glEnable(GL_DEPTH_TEST);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		//glCullFace(GL_BACK);
 		glClearColor(1.0, 0.5, 0.2, 1.0);
 
@@ -43,10 +41,16 @@ public:
 		/* Render here */
 		static int i = 0;
 		model->transform.rotate = vec3(0, i, 0);
+		//gltf_model->transform.rotate = vec3(-90, 0, 0);
+		scene.transform.rotate = vec3(0, i, 0);
+		//scene.transform.position= vec3(-0.0, -1, 0);
+		ground->transform.position= vec3(0, 0, 0);
 		i++;
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //| GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT
-		model->render(camera);
+		//model->render(camera);
+		//gltf_model->render(camera);
 		ground->render(camera);
+		scene.draw(camera);
 	}
 
 	virtual void key(int key) {}

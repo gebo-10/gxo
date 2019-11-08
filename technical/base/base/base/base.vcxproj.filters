@@ -4,9 +4,6 @@
     <Filter Include="demo">
       <UniqueIdentifier>{4e80bb02-ddc4-45e9-861f-e6d921c6b2ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="demo\clearclolor">
-      <UniqueIdentifier>{a951c6f9-a8b6-4652-ad6e-08858a83f28e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core">
       <UniqueIdentifier>{fe4f55e7-66a7-4ca7-a2a2-cd44e616b9bc}</UniqueIdentifier>
     </Filter>
@@ -16,23 +13,11 @@
     <Filter Include="core\render">
       <UniqueIdentifier>{58bfc719-4deb-45fa-a541-1fe34940eace}</UniqueIdentifier>
     </Filter>
-    <Filter Include="demo\cube">
-      <UniqueIdentifier>{a19b9bfb-f6df-49d0-8b1b-47d2214a894a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="demo\blur">
-      <UniqueIdentifier>{6019642e-8547-4a5c-9209-0dd95610b4f4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="core\component">
       <UniqueIdentifier>{2e15f369-f2f6-4ce2-9b3a-395e20cad688}</UniqueIdentifier>
     </Filter>
     <Filter Include="core\entity">
       <UniqueIdentifier>{f3c71c00-8b8d-4ac4-8191-b8f4b189ecbc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="demo\model_load">
-      <UniqueIdentifier>{d051f64a-5e68-4b31-8910-c61ec2c804f2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="demo\fbo">
-      <UniqueIdentifier>{31a007cf-6192-485f-8ac1-6e6c13d01c31}</UniqueIdentifier>
     </Filter>
     <Filter Include="demo\phong">
       <UniqueIdentifier>{7f5f4835-4d52-4972-b052-8daac0a0b55a}</UniqueIdentifier>
@@ -43,6 +28,12 @@
     <Filter Include="demo\shadow_map">
       <UniqueIdentifier>{78bf2507-0dbb-4f28-9211-801e61563c6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="demo\bone">
+      <UniqueIdentifier>{1865bb76-c5f9-48f0-bb15-852b2c247a75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd">
+      <UniqueIdentifier>{85c640f2-37eb-4fc5-afd2-827918a64045}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="log.h">
@@ -50,9 +41,6 @@
     </ClInclude>
     <ClInclude Include="module.h">
       <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="clearcolor.h">
-      <Filter>demo\clearclolor</Filter>
     </ClInclude>
     <ClInclude Include="core_base.h">
       <Filter>core</Filter>
@@ -105,32 +93,20 @@
     <ClInclude Include="resource_manager.h">
       <Filter>core\resource</Filter>
     </ClInclude>
-    <ClInclude Include="cube_module.h">
-      <Filter>demo\cube</Filter>
-    </ClInclude>
     <ClInclude Include="texture_material.h">
       <Filter>core\component</Filter>
     </ClInclude>
     <ClInclude Include="blur_material.h">
       <Filter>core\component</Filter>
     </ClInclude>
-    <ClInclude Include="fbo_module.h">
-      <Filter>demo\fbo</Filter>
-    </ClInclude>
     <ClInclude Include="texture_plane_model.h">
       <Filter>core\component</Filter>
-    </ClInclude>
-    <ClInclude Include="blur_module.h">
-      <Filter>demo\blur</Filter>
     </ClInclude>
     <ClInclude Include="pass_blur_material.h">
       <Filter>core\component</Filter>
     </ClInclude>
     <ClInclude Include="blit_pass.h">
       <Filter>core\render</Filter>
-    </ClInclude>
-    <ClInclude Include="model_load_module.h">
-      <Filter>demo\model_load</Filter>
     </ClInclude>
     <ClInclude Include="scene.h">
       <Filter>core\resource</Filter>
@@ -183,11 +159,68 @@
     <ClInclude Include="shader_map_module.h">
       <Filter>demo\shadow_map</Filter>
     </ClInclude>
+    <ClInclude Include="clearcolor.h">
+      <Filter>demo</Filter>
+    </ClInclude>
+    <ClInclude Include="blur_module.h">
+      <Filter>demo</Filter>
+    </ClInclude>
+    <ClInclude Include="cube_module.h">
+      <Filter>demo</Filter>
+    </ClInclude>
+    <ClInclude Include="fbo_module.h">
+      <Filter>demo</Filter>
+    </ClInclude>
+    <ClInclude Include="model_load_module.h">
+      <Filter>demo</Filter>
+    </ClInclude>
+    <ClInclude Include="depth_render_target.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="depth_pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
+    <ClInclude Include="shadow_ground.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_module.h">
+      <Filter>demo\bone</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_material.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="bone_model.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="fbx_model.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="gltf_model.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="gltf_module.h">
+      <Filter>demo</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>3rd</Filter>
+    </ClInclude>
+    <ClInclude Include="gltf_scene.h">
+      <Filter>core\resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base.cpp" />
     <ClCompile Include="gpu_type.cpp">
       <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
+      <Filter>3rd</Filter>
+    </ClCompile>
+    <ClCompile Include="gltf_model.cpp">
+      <Filter>core\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>core\resource</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

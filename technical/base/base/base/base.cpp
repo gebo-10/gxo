@@ -1,5 +1,9 @@
 ﻿// base.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
+
+
+
+#define _CRT_SECURE_NO_DEPRECATE
 #pragma comment(lib,"ws2_32.lib")
 #pragma comment(lib,"OpenGL32.lib")
 #pragma comment(lib, "glew32sd.lib")
@@ -7,6 +11,7 @@
 #pragma comment(lib, "kernel32.lib")
 #pragma comment(lib, "assimp-vc140-mt.lib")
 
+//#pragma comment(lib, "libfbxsdk-mt.lib")
 
 #include<iostream>
 
@@ -26,8 +31,11 @@
 #include "hdr_module.h"
 
 #include "shader_map_module.h"
-
+#include "bone_module.h"
+#include "gltf_module.h"
 Module* module=nullptr;
+
+
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
@@ -101,7 +109,10 @@ int main()
 	//module = new ModelLoadModule();
 	//module = new LightModule();
 	//module = new HdrModule();
-	module = new ShadowMapModule();
+	//module = new ShadowMapModule();
+	//module = new BoneModule();
+
+	module = new GltfModule();
 
 	module->window_height = 800;
 	module->window_width = 800;

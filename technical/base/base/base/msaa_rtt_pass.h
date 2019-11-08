@@ -40,8 +40,9 @@ public:
 
 		}
 
-
-
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glReadBuffer(GL_COLOR_ATTACHMENT0 );
+		glDrawBuffer(GL_COLOR_ATTACHMENT0 );
 		
 	}
 

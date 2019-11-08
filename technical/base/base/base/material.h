@@ -43,6 +43,10 @@
 			glUniformMatrix4fv(location, 1, false, &P[0][0]);
 		}
 
+		void set_bone(float* bones, int size) {
+			int location = glGetUniformLocation(shader->gpu_id, "bones");
+			glUniformMatrix4fv(location, size, GL_TRUE, bones);
+		}
 		
 	  void set_uniform(string_view key, GPUDataType data_type, std::any value) {
 			bind();

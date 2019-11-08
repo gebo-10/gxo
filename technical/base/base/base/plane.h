@@ -24,7 +24,7 @@
 			element_size = 6;
 
 			add_default_attr(VAT_POSITION);
-			add_default_attr(VAT_UV);
+			add_default_attr(VAT_UV0);
 
 			build();
 		}
