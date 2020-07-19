@@ -229,7 +229,7 @@ public:
 		}
 		av_packet_unref(avPacket);
 
-		cout << "当前解码 " << currentIndex << "帧" << endl;
+		//cout << "当前解码 " << currentIndex << "帧" << endl;
 
 
 		//static int i = 0;
