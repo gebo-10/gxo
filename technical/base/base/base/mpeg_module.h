@@ -26,22 +26,11 @@ public:
 	SwsContext* swsContext;
 	AVFrame* pAVFrameYUV420P;
 	int currentIndex;
-	FILE* fileYUV420P;
 	uint8_t* outBuffer;
 
-	AVFrame* pFrame, * pFrameYUV;
-	uint8_t* out_buffer;
-	AVPacket* pPacket;
-	int y_size;
-	int ret, got_picture;
-	struct SwsContext* img_convert_ctx;
-	FILE* fp_yuv;
-	int frame_cnt;
-	clock_t time_start, time_finish;
-	double  time_duration = 0.0;
+
 
 	const char* input_str = "a.mp4";
-	const char* output_str = "a2.mp4";
 
 
 
@@ -131,10 +120,7 @@ public:
 			LOGE("create condectext failed ");
 			return;
 		}
-		//pCodecCtx = avcodec_alloc_context3(pCodec);
-		//pCodecCtx->width = 1280;
-		//pCodecCtx->height = 720;
-		
+
 
 		//打开解码器
 		avcodec_parameters_to_context(pCodecCtx, avcodecParameters);
@@ -142,35 +128,6 @@ public:
 			LOGE("Couldn't open codec.\n");
 			return ;
 		}
-
-		////用来保存数据缓存的对像
-		//pFrame = av_frame_alloc();
-		//pFrameYUV = av_frame_alloc();
-
-		//out_buffer = (unsigned char*)av_malloc(av_image_get_buffer_size(AV_PIX_FMT_YUV420P, pCodecCtx->width, pCodecCtx->height, 1));
-		//av_image_fill_arrays(pFrameYUV->data, pFrameYUV->linesize, out_buffer,
-		//	AV_PIX_FMT_YUV420P, pCodecCtx->width, pCodecCtx->height, 1);
-
-		//pPacket = (AVPacket*)av_malloc(sizeof(AVPacket));
-
-		//img_convert_ctx = sws_getContext(pCodecCtx->width, pCodecCtx->height, pCodecCtx->pix_fmt,
-		//	pCodecCtx->width, pCodecCtx->height, AV_PIX_FMT_YUV420P, SWS_BICUBIC, NULL, NULL, NULL);
-
-		////sprintf(info, "[Input     ]%s\n", input_str);
-		////sprintf(info, "%s[Output    ]%s\n", info, output_str);
-		////sprintf(info, "%s[Format    ]%s\n", info, pFormatCtx->iformat->name);
-		////sprintf(info, "%s[Codec     ]%s\n", info, pCodecCtx->codec->name);
-		////sprintf(info, "%s[Resolution]%dx%d\n", info, pCodecCtx->width, pCodecCtx->height);
-
-		//fp_yuv = fopen(output_str, "wb+");
-		//if (fp_yuv == NULL) {
-		//	printf("Cannot open output file.\n");
-		//	return ;
-		//}
-
-		//frame_cnt = 0;
-		//time_start = clock();
-
 
 
 		/*
@@ -232,11 +189,8 @@ public:
 			pCodecCtx->width,
 			pCodecCtx->height,
 			1);
-		fileYUV420P = fopen("out.yuv", "wb+");
-		currentIndex = 0;
 
-		
-		
+		currentIndex = 0;
 
 	}
 	virtual void render() {
@@ -256,25 +210,11 @@ public:
 				avcodec_send_packet(pCodecCtx, avPacket);
 
 				//解码
-				ret = avcodec_receive_frame(pCodecCtx, avFrameIn);
+				int ret = avcodec_receive_frame(pCodecCtx, avFrameIn);
 				if (ret == 0)  //解码成功
 				{
 					currentIndex++;
 					cout << "当前解码 " << currentIndex << "帧" << endl;
-
-					
-
-					//此处无法保证视频的像素格式一定是YUV格式
-					 //将解码出来的这一帧数据，统一转类型为YUV
-					 // sws_scale(struct SwsContext *c, const uint8_t *const *srcSlice, const int *srcStride, int srcSliceY, int srcSliceH, uint8_t *const *dst, const int *dstStride)
-					  // SwsContext *c: 视频像素格式的上下文
-					  // srcSlice: 原始视频输入数据
-					  // srcStride: 原数据每一行的大小
-					  // srcSliceY: 输入画面的开始位置，一般从0开始
-					  // srcSliceH: 原始数据的长度
-					  // dst: 输出的视频格式
-					  // dstStride: 输出的画面大小
-					//sws_scale(sws_ctx, _std_frame->data, _std_frame->linesize, 0, _codec_context_video->height, _rgb_frame->data, _rgb_frame->linesize);
 
 					sws_scale(swsContext, (const uint8_t* const*)avFrameIn->data,
 						avFrameIn->linesize,
@@ -284,28 +224,6 @@ public:
 						pAVFrameYUV420P->linesize);
 
 					t->update(pAVFrameYUV420P->data[0]);
-					
-
-					//方式二：写入yuv文件格式
-					//5、将yuv420p数据写入.yuv文件中
-					//5.1 计算YUV大小
-					//分析一下原理?
-					//Y表示：亮度
-					//UV表示：色度
-					//有规律
-					//YUV420P格式规范一：Y结构表示一个像素(一个像素对应一个Y)
-					//YUV420P格式规范二：4个像素点对应一个(U和V: 4Y = U = V)
-					/*
-					int ySize, uSize, vSize;
-					ySize = pCodecCtx->width * pCodecCtx->height;
-					uSize = ySize / 4;
-					vSize = ySize / 4;
-					fwrite(pAVFrameYUV420P->data[0], 1, ySize, fileYUV420P);
-					fwrite(pAVFrameYUV420P->data[1], 1, uSize, fileYUV420P);
-					fwrite(pAVFrameYUV420P->data[2], 1, vSize, fileYUV420P);
-					
-					
-					*/
 				}
 			}
 		}
