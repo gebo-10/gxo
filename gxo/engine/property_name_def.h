@@ -24,7 +24,7 @@ namespace gxo {
 		TEXTURE_PTR,
 		NODE_PTR,
 		SCENE,
-		CAMERA,
+		SCENE_CAMERA,
 	};
 }
 #endif

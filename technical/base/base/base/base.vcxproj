@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\gxo\master\gxo\3rdpart\base64\include;D:\gxo\master\gxo\3rdpart\nlohmann;D:\gxo\master\gxo\3rdpart\tinygltf;D:\gxo\master\gxo\3rdpart\fbx\include;D:\gxo\master\gxo\3rdpart\assimp\include;D:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\3rdpart\spdlog\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\stb;D:\gxo\master\gxo\3rdpart;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\gxo\master\gxo\3rdpart\fbx\lib\vs2015\x86\debug;D:\gxo\master\gxo\3rdpart\assimp\lib;D:\gxo\master\gxo\3rdpart\glew\lib;D:\gxo\master\gxo\3rdpart\glfw\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\gxo\depence\ffmpeg\ffmpeg-4.3-win32-dev\include;D:\gxo\master\gxo\3rdpart\base64\include;D:\gxo\master\gxo\3rdpart\nlohmann;D:\gxo\master\gxo\3rdpart\tinygltf;D:\gxo\master\gxo\3rdpart\fbx\include;D:\gxo\master\gxo\3rdpart\assimp\include;D:\gxo\master\gxo\3rdpart\glew\include;D:\gxo\master\gxo\3rdpart\spdlog\include;D:\gxo\master\gxo\3rdpart\glfw\include;D:\gxo\master\gxo\3rdpart\stb;D:\gxo\master\gxo\3rdpart;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\gxo\depence\ffmpeg\ffmpeg-4.3-win32-dev\lib;D:\gxo\master\gxo\3rdpart\fbx\lib\vs2015\x86\debug;D:\gxo\master\gxo\3rdpart\assimp\lib;D:\gxo\master\gxo\3rdpart\glew\lib;D:\gxo\master\gxo\3rdpart\glfw\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -186,6 +186,7 @@
     <ClInclude Include="hdr_module.h" />
     <ClInclude Include="hdr_render_target.h" />
     <ClInclude Include="hdr_texture.h" />
+    <ClInclude Include="mpeg_module.h" />
     <ClInclude Include="msaa_render_target.h" />
     <ClInclude Include="msaa_rtt_pass.h" />
     <ClInclude Include="msaa_texture.h" />
@@ -205,6 +206,7 @@
     <ClInclude Include="phong_material.h" />
     <ClInclude Include="pipeline.h" />
     <ClInclude Include="plane.h" />
+    <ClInclude Include="plane_model.h" />
     <ClInclude Include="render_target.h" />
     <ClInclude Include="resource_manager.h" />
     <ClInclude Include="scene.h" />
@@ -218,6 +220,7 @@
     <ClInclude Include="texture_plane_model.h" />
     <ClInclude Include="times_blur_material.h" />
     <ClInclude Include="times_blur_pass.h" />
+    <ClInclude Include="video_material.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

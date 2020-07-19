@@ -2,6 +2,7 @@
 #include "env.h"
 bool gxo::UiViewPort::on_render()
 {
+	auto scene = get<SceneRef>(SCENE);
 	if (!scene.available() || !scene_camera.available()) return false;
 
 	draw_rect();
@@ -11,7 +12,7 @@ bool gxo::UiViewPort::on_render()
 	//cameranode;
 
 	//mvp
-	//bvh kdtree
+	//bvh kdtree 
 	//oit
 	//pre-z
 	//dof

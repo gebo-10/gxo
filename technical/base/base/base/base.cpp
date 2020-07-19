@@ -11,6 +11,16 @@
 #pragma comment(lib, "kernel32.lib")
 #pragma comment(lib, "assimp-vc140-mt.lib")
 
+
+#pragma comment(lib,"avcodec.lib")
+#pragma comment(lib,"avdevice.lib")
+#pragma comment(lib,"avfilter.lib")
+#pragma comment(lib,"avformat.lib")
+#pragma comment(lib,"avutil.lib")
+#pragma comment(lib,"postproc.lib")
+#pragma comment(lib,"swresample.lib")
+#pragma comment(lib,"swscale.lib")
+
 //#pragma comment(lib, "libfbxsdk-mt.lib")
 
 #include<iostream>
@@ -33,6 +43,7 @@
 #include "shader_map_module.h"
 #include "bone_module.h"
 #include "gltf_module.h"
+#include "mpeg_module.h"
 Module* module=nullptr;
 
 
@@ -77,7 +88,7 @@ int main()
 
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(800, 800, "Hello World", NULL, NULL);
+	window = glfwCreateWindow(800, 800, "TestFramework", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();
@@ -112,7 +123,9 @@ int main()
 	//module = new ShadowMapModule();
 	//module = new BoneModule();
 
-	module = new GltfModule();
+	//module = new GltfModule();
+
+	module = new MpegModule();
 
 	module->window_height = 800;
 	module->window_width = 800;
@@ -128,7 +141,7 @@ int main()
 		/* Poll for and process events */
 		glfwPollEvents();
 	}
-
+	module->quit();
 	glfwTerminate();
 	return 0;
 }

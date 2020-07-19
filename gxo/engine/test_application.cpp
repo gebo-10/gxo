@@ -55,7 +55,7 @@ public:
 
 
 		auto viewport2d = new UiViewPort();
-		viewport2d->add_property(LAYOUT_SIZE, ivec2(300, 300));
+		viewport2d->add_property(LAYOUT_SIZE, ivec2(50, 300));
 		viewport2d->add_property(POSITION, ivec2(100, 10));
 
 		ui_root->add_child(viewport2d);
@@ -77,7 +77,8 @@ public:
 			scene->add_child(cube);
 		}
 
-		viewport2d->scene = scene;
+		//viewport2d->scene = scene;
+		viewport2d->set<SceneRef>(SCENE,scene);
 		viewport2d->scene_camera = scene_camera;
 
 		Engine::instacne().tree_manager.screen.add_child(ui_root);

@@ -196,6 +196,9 @@
     <Filter Include="core\vfs">
       <UniqueIdentifier>{1c1bb8a1-ad6f-4c59-b80e-6883e14b5207}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ecs\component">
+      <UniqueIdentifier>{cd92c30e-a747-4685-8864-3f9cb321b003}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="net_system.h">
@@ -598,6 +601,45 @@
     </ClInclude>
     <ClInclude Include="node_ref.h">
       <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="channel.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="sampler.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="key_animation.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_manager.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="state.h">
+      <Filter>logic\state_machine</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_listener.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="path_sampler.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="sequence.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="gxo_animation.h">
+      <Filter>logic\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_player.h">
+      <Filter>ecs\component</Filter>
+    </ClInclude>
+    <ClInclude Include="triggler_manager.h">
+      <Filter>ecs\component</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stream_image.h">
+      <Filter>ecs\ui\2d\nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="state_animation.h">
+      <Filter>logic\animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

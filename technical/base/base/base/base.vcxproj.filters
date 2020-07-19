@@ -207,6 +207,15 @@
     <ClInclude Include="gltf_scene.h">
       <Filter>core\resource</Filter>
     </ClInclude>
+    <ClInclude Include="mpeg_module.h">
+      <Filter>demo</Filter>
+    </ClInclude>
+    <ClInclude Include="video_material.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="plane_model.h">
+      <Filter>core\component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base.cpp" />

@@ -6,6 +6,7 @@
 #include "cube.h"
 #include "texture_material.h"
 #include "render_target.h"
+#include "plane_model.h"
 #include "texture_plane_model.h"
 #include "blur_material.h"
 #include "phong_material.h"
@@ -26,6 +27,7 @@
 #include "bone_model.h"
 //#include "fbx_model.h"
 #include "gltf_model.h"
+#include "video_material.h"
 
 class Module
 {
@@ -41,6 +43,7 @@ public:
 	int window_height;
 	virtual void init() {}
 	virtual void render(){}
+	virtual void quit(){}
 
 	virtual void key(int key){}
 

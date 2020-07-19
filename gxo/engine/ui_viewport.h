@@ -9,12 +9,14 @@ namespace gxo {
 	class UiViewPort :public UiNode
 	{
 	public:
-		SceneRef scene = nullptr;
+
+		//SceneRef scene = nullptr;
 		SceneCameraRef scene_camera = nullptr;
 		PipelinePtr pipeline;
 		RenderPass passgroup;
 		UiViewPort()
 		{
+			//set<SceneRef>(SCENE, nullptr);
 			pipeline = std::make_shared<Pipeline>();
 		}
 

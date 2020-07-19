@@ -11,8 +11,6 @@ public:
 		this->material=std::make_shared<TextureMaterial>(texture);
 		this->mesh = std::make_shared<Plane>();
 	}
-
-
 	void set_texture(TexturePtr texture) {
 		std::dynamic_pointer_cast<TextureMaterial>(material)->set_texture(texture);
 	}
