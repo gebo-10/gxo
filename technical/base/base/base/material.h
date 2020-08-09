@@ -49,7 +49,7 @@
 		}
 		
 	  void set_uniform(string_view key, GPUDataType data_type, std::any value) {
-			bind();
+		    shader->bind();
 			int location = glGetUniformLocation(shader->gpu_id, key.data());
 			switch (data_type)
 			{

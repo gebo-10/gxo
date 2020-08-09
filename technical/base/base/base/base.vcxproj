@@ -176,6 +176,10 @@
     <ClInclude Include="core_base.h" />
     <ClInclude Include="cube.h" />
     <ClInclude Include="cube_module.h" />
+    <ClInclude Include="deferred_gpass_material.h" />
+    <ClInclude Include="deferred_lightpass_material.h" />
+    <ClInclude Include="deferred_light_pass.h" />
+    <ClInclude Include="deferred_module.h" />
     <ClInclude Include="depth_pass.h" />
     <ClInclude Include="depth_render_target.h" />
     <ClInclude Include="fbx_model.h" />

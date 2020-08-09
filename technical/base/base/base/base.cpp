@@ -44,6 +44,8 @@
 #include "bone_module.h"
 #include "gltf_module.h"
 #include "mpeg_module.h"
+
+#include "deferred_module.h"
 Module* module=nullptr;
 
 
@@ -118,14 +120,16 @@ int main()
 	//module = new FboModule();
 	//module = new BlurModule();
 	//module = new ModelLoadModule();
-	//module = new LightModule();
+	//module = new PhongModule();
 	//module = new HdrModule();
 	//module = new ShadowMapModule();
 	//module = new BoneModule();
 
 	//module = new GltfModule();
 
-	module = new MpegModule();
+	//module = new MpegModule();
+
+	module = new DeferredModule();
 
 	module->window_height = 800;
 	module->window_width = 800;

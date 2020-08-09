@@ -34,6 +34,9 @@
     <Filter Include="3rd">
       <UniqueIdentifier>{85c640f2-37eb-4fc5-afd2-827918a64045}</UniqueIdentifier>
     </Filter>
+    <Filter Include="demo\deferred">
+      <UniqueIdentifier>{dd73cf45-ee93-4e63-8f62-ad4b54500b8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="log.h">
@@ -215,6 +218,18 @@
     </ClInclude>
     <ClInclude Include="plane_model.h">
       <Filter>core\component</Filter>
+    </ClInclude>
+    <ClInclude Include="deferred_module.h">
+      <Filter>demo\deferred</Filter>
+    </ClInclude>
+    <ClInclude Include="deferred_gpass_material.h">
+      <Filter>demo\deferred</Filter>
+    </ClInclude>
+    <ClInclude Include="deferred_lightpass_material.h">
+      <Filter>demo\deferred</Filter>
+    </ClInclude>
+    <ClInclude Include="deferred_light_pass.h">
+      <Filter>demo\deferred</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
