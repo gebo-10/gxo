@@ -1,0 +1,13 @@
+E:\gxo\gxo\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.exe
+E:\gxo\gxo\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.deps.json
+E:\gxo\gxo\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.runtimeconfig.json
+E:\gxo\gxo\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.runtimeconfig.dev.json
+E:\gxo\gxo\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.dll
+E:\gxo\gxo\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.pdb
+E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.csprojAssemblyReference.cache
+E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.AssemblyInfoInputs.cache
+E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.AssemblyInfo.cs
+E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.csproj.CoreCompileInputs.cache
+E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.dll
+E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.pdb
+E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.genruntimeconfig.cache

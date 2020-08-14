@@ -1,0 +1,4 @@
+E:\gxo\gxo\gxo-sharp\gxo\engine\obj\Debug\netcoreapp3.1\Engine.csprojAssemblyReference.cache
+E:\gxo\gxo\gxo-sharp\gxo\engine\obj\Debug\netcoreapp3.1\Engine.AssemblyInfoInputs.cache
+E:\gxo\gxo\gxo-sharp\gxo\engine\obj\Debug\netcoreapp3.1\Engine.AssemblyInfo.cs
+E:\gxo\gxo\gxo-sharp\gxo\engine\obj\Debug\netcoreapp3.1\Engine.csproj.CoreCompileInputs.cache

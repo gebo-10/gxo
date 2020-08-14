@@ -1,0 +1,13 @@
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\bin\Debug\netcoreapp3.1\bootstrip.exe
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\bin\Debug\netcoreapp3.1\bootstrip.deps.json
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\bin\Debug\netcoreapp3.1\bootstrip.runtimeconfig.json
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\bin\Debug\netcoreapp3.1\bootstrip.runtimeconfig.dev.json
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\bin\Debug\netcoreapp3.1\bootstrip.dll
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\bin\Debug\netcoreapp3.1\bootstrip.pdb
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.csprojAssemblyReference.cache
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.AssemblyInfoInputs.cache
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.AssemblyInfo.cs
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.csproj.CoreCompileInputs.cache
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.dll
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.pdb
+E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.genruntimeconfig.cache
