@@ -231,6 +231,9 @@
     <ClInclude Include="deferred_light_pass.h">
       <Filter>demo\deferred</Filter>
     </ClInclude>
+    <ClInclude Include="render_pass.h">
+      <Filter>core\render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="base.cpp" />

@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("studio")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Studio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("studio")]
-[assembly: System.Reflection.AssemblyTitleAttribute("studio")]
+[assembly: System.Reflection.AssemblyProductAttribute("Studio")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Studio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。

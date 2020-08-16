@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\gxo\\gxo\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj": {}
+    "D:\\gxo\\master\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj": {}
   },
   "projects": {
-    "E:\\gxo\\gxo\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj": {
+    "D:\\gxo\\master\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj",
+        "projectUniqueName": "D:\\gxo\\master\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj",
         "projectName": "AssetsManager",
-        "projectPath": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj",
-        "packagesPath": "C:\\Users\\gebo\\.nuget\\packages\\",
-        "outputPath": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\AssetsManager\\obj\\",
+        "projectPath": "D:\\gxo\\master\\gxo-sharp\\gxo\\AssetsManager\\AssetsManager.csproj",
+        "packagesPath": "C:\\Users\\gebo_10\\.nuget\\packages\\",
+        "outputPath": "D:\\gxo\\master\\gxo-sharp\\gxo\\AssetsManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gebo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gebo_10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

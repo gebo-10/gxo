@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("bootstrip")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Bootstrip")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("bootstrip")]
-[assembly: System.Reflection.AssemblyTitleAttribute("bootstrip")]
+[assembly: System.Reflection.AssemblyProductAttribute("Bootstrip")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Bootstrip")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。

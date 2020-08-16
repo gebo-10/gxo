@@ -11,3 +11,9 @@ E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.csproj.Core
 E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.dll
 E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.pdb
 E:\gxo\gxo\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\bootstrip.genruntimeconfig.cache
+D:\gxo\master\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\Bootstrip.csprojAssemblyReference.cache
+D:\gxo\master\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\Bootstrip.AssemblyInfoInputs.cache
+D:\gxo\master\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\Bootstrip.AssemblyInfo.cs
+D:\gxo\master\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\Bootstrip.csproj.CoreCompileInputs.cache
+D:\gxo\master\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\Bootstrip.dll
+D:\gxo\master\gxo-sharp\gxo\bootstrip\obj\Debug\netcoreapp3.1\Bootstrip.pdb

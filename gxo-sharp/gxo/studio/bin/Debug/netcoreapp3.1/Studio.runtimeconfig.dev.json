@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\gebo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\gebo\\.nuget\\packages"
+      "C:\\Users\\gebo_10\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\gebo_10\\.nuget\\packages"
     ]
   }
 }

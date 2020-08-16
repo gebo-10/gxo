@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AslLbKi8S1jSJovePraF3EgK8cm++Nn5QaBuBIYAKD/s2gf8qnICkM/mCVWNJMzAawGqMn+VHL1t4EKdjJhGAQ==",
+  "dgSpecHash": "P5i38QuMs37ffYGeop2tRAiotfa2aAiiZP6Hy4gAa7k8kxNDZjip08Jbfhs7J/oItpruowp7hDW25CNW5ALR5w==",
   "success": true,
-  "projectFilePath": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\core\\Core.csproj",
+  "projectFilePath": "D:\\gxo\\master\\gxo-sharp\\gxo\\core\\Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

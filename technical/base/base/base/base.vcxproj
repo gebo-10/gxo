@@ -211,6 +211,7 @@
     <ClInclude Include="pipeline.h" />
     <ClInclude Include="plane.h" />
     <ClInclude Include="plane_model.h" />
+    <ClInclude Include="render_pass.h" />
     <ClInclude Include="render_target.h" />
     <ClInclude Include="resource_manager.h" />
     <ClInclude Include="scene.h" />

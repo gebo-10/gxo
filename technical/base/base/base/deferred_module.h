@@ -66,14 +66,14 @@ public:
 		i+=0.6;
 		model->transform.rotate = vec3(0, i, 0);
 
-		for (size_t i = 0; i < 32; i++)
-		{
-			
-			float r=(rand() % 500) / 100.0;
+		//for (size_t i = 0; i < 32; i++)
+		//{
+		//	
+		//	float r=(rand() % 500) / 100.0;
 
-			light_mat->set_light(i, vec3(r,r,r), vec3(r/100.0,r/100.0,r/100.0));
-		}
-		
+		//	light_mat->set_light(i, vec3(r,r,r), vec3(r/100.0,r/100.0,r/100.0));
+		//}
+		//
 
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

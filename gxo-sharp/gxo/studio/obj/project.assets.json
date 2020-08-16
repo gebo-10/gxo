@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\gebo\\.nuget\\packages\\": {}
+    "C:\\Users\\gebo_10\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\studio\\studio.csproj",
-      "projectName": "studio",
-      "projectPath": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\studio\\studio.csproj",
-      "packagesPath": "C:\\Users\\gebo\\.nuget\\packages\\",
-      "outputPath": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\studio\\obj\\",
+      "projectUniqueName": "D:\\gxo\\master\\gxo-sharp\\gxo\\studio\\Studio.csproj",
+      "projectName": "Studio",
+      "projectPath": "D:\\gxo\\master\\gxo-sharp\\gxo\\studio\\Studio.csproj",
+      "packagesPath": "C:\\Users\\gebo_10\\.nuget\\packages\\",
+      "outputPath": "D:\\gxo\\master\\gxo-sharp\\gxo\\studio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gebo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gebo_10\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

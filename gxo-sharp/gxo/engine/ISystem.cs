@@ -4,7 +4,10 @@ using System.Text;
 
 namespace gxo.engine
 {
-    class Processer
+    class ISystem
     {
+        //init
+        //process
+        //destory
     }
 }

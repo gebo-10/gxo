@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lnP1LG+A2cqpzXyJ6uDnZ8dexRaRjtWQwFx5rWdHLiqS79kGd62mPXEWYUctiHZPgILFLidBVQVT4RGnJk+OWA==",
+  "dgSpecHash": "l/dGiL1M3n61bqpdU9lZVImcuOsj/gO9VXwln0JZavq6IMXoSRH8ZfpSy0Ke8pIPKFKCNiEbgeyubf+2erAyqQ==",
   "success": true,
-  "projectFilePath": "E:\\gxo\\gxo\\gxo-sharp\\gxo\\Event\\Event.csproj",
+  "projectFilePath": "D:\\gxo\\master\\gxo-sharp\\gxo\\Event\\Event.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

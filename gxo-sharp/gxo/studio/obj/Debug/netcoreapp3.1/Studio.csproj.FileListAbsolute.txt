@@ -11,3 +11,16 @@ E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.csproj.CoreCompil
 E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.dll
 E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.pdb
 E:\gxo\gxo\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.genruntimeconfig.cache
+D:\gxo\master\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.exe
+D:\gxo\master\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.deps.json
+D:\gxo\master\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.runtimeconfig.json
+D:\gxo\master\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.runtimeconfig.dev.json
+D:\gxo\master\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.dll
+D:\gxo\master\gxo-sharp\gxo\studio\bin\Debug\netcoreapp3.1\Studio.pdb
+D:\gxo\master\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.csprojAssemblyReference.cache
+D:\gxo\master\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.AssemblyInfoInputs.cache
+D:\gxo\master\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.AssemblyInfo.cs
+D:\gxo\master\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.csproj.CoreCompileInputs.cache
+D:\gxo\master\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.dll
+D:\gxo\master\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.pdb
+D:\gxo\master\gxo-sharp\gxo\studio\obj\Debug\netcoreapp3.1\Studio.genruntimeconfig.cache
