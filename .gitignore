@@ -50,3 +50,8 @@
 gxo/assets/a.mp4
 /gxo-sharp/gxo/.vs
 .vs
+*.recipe
+*.tlog
+*.idb
+*.pdb
+*.ilk
